@@ -33,8 +33,13 @@ Use OASG when you need durable workflow operation, auditability, and fail-closed
 around an agent. Do not use it as a benchmark score, model trainer, LLM judge, sandbox, or semantic
 truth oracle.
 
+If you have five minutes, start with
+[`docs/quick_mental_model.md`](docs/quick_mental_model.md), then run the
+[`examples/minimal_agent_integration`](examples/minimal_agent_integration) example.
+
 ## Contents
 
+- [Quick Mental Model](#quick-mental-model)
 - [Why This Is Different](#why-this-is-different)
 - [Current Status](#current-status)
 - [Quickstart](#quickstart)
@@ -47,6 +52,15 @@ truth oracle.
 - [Citation](#citation)
 - [Project Layout](#project-layout)
 - [License](#license)
+
+## Quick Mental Model
+
+OASG is like Git + unit tests + CI gate + rollback receipts for an AI agent workflow. Your agent
+keeps running in its normal framework. OASG records observable events, checks workflow debt and
+viability, trials policy changes, and promotes only changes with receipt-backed evidence.
+
+Read the five-minute explanation:
+[`docs/quick_mental_model.md`](docs/quick_mental_model.md).
 
 ## Why This Is Different
 
@@ -158,7 +172,9 @@ Default runtime behavior is local-only and network-free.
 
 | goal | start here |
 | --- | --- |
+| understand the concept in 5 minutes | [`docs/quick_mental_model.md`](docs/quick_mental_model.md) |
 | inspect the core receipts | `uv run oasg demo quickstart` |
+| see the shortest agent insertion point | [`examples/minimal_agent_integration`](examples/minimal_agent_integration) |
 | verify a ledger from another implementation | `uv run oasg ledger verify history.jsonl` |
 | wrap an existing agent | [Use OASG With Your Agent](#use-oasg-with-your-agent) |
 | run a local optimization cycle | `uv run oasg optimize run --history history.jsonl --library workflow_library.json --out-dir .oasg/run` |
@@ -284,6 +300,18 @@ The safe pattern is:
 5. let reducers, gates, and trial receipts decide whether workflow policy can change.
 
 Local Ollama experiments in this repository use only localhost Ollama as the model endpoint.
+
+### Works With Existing Orchestrators
+
+OASG is not a replacement for an agent framework. It can sit beside one:
+
+- plain Python: wrap a function or model call and append an OASG event;
+- LangGraph: LangGraph handles durable execution and resume, OASG handles promotion gates;
+- CrewAI: CrewAI handles crew/task execution, OASG observes outcomes and gates policy changes;
+- any provider: emit JSONL observations and keep provider output outside the trusted gate.
+
+See [`examples/framework_adapters`](examples/framework_adapters) for dependency-free adapter
+patterns. LangGraph and CrewAI are optional examples, not package dependencies.
 
 ## Rejection Guide
 
@@ -429,6 +457,7 @@ autonomic agents, JSONL ledger, canonical hashing, Ollama experiments, Python uv
 
 ```text
 theory.md                      v1.0 theory and specification
+docs/quick_mental_model.md     five-minute engineering mental model
 src/oasg/canonical.py          canonical JSON and hash domains
 src/oasg/ledger.py             JSONL sealing and prefix verification
 src/oasg/reducers/             deterministic reducers
@@ -447,6 +476,8 @@ src/oasg/gate.py               dominance gate and witness validation
 src/oasg/schemas/              JSON Schema export
 src/oasg/adapters/             model/tool connector contracts
 examples/                      quickstart and conformance fixtures
+examples/minimal_agent_integration/ shortest agent-to-ledger-to-gate example
+examples/framework_adapters/   optional plain Python, LangGraph, and CrewAI patterns
 experiment/                    Ollama experiment protocols and results
 tests/                         unit, integration, and experiment-script tests
 ```

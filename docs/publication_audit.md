@@ -43,13 +43,15 @@ Residual limits:
 
 Public entry points are present:
 
-- README explains purpose, uniqueness, limits, quickstart, first-agent integration, CLI map,
-  model integration, rejection statuses, experiment evidence, DOI citation, and reproducibility.
+- README explains purpose, uniqueness, limits, five-minute mental model, minimal-agent integration,
+  CLI map, model integration, rejection statuses, experiment evidence, DOI citation, and
+  reproducibility.
 - SECURITY describes supported version, reporting, security model, runner safety, and publication
   checklist.
 - CITATION.cff contains the Zenodo DOI `10.5281/zenodo.20107660`.
 - Architecture documentation states the implementation/theory version distinction.
-- Quickstart and conformance examples include runnable commands.
+- Quickstart, minimal-agent integration, framework-adapter, and conformance examples include
+  runnable or dependency-guarded commands.
 
 The old `CONTRIBUTING.md` file was intentionally removed.
 
