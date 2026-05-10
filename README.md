@@ -18,6 +18,8 @@ resource counters, and ledger checks are ordinary observable channels.
 
 ## Why This Is Different
 
+> OASG turns long-running AI agents into self-maintaining workflow systems that improve only from observable operational evidence, without LLM judges, external rewards, or model-weight updates.
+
 Most agent-improvement systems optimize for answer quality, benchmark scores, human feedback,
 LLM-judge feedback, or externally supplied reward functions. OASG instead treats a long-running
 agent as an operational system whose future action capacity can expand or collapse.
