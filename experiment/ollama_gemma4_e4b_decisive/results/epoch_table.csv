@@ -1,0 +1,341 @@
+seed,condition,epoch,phase,burst,task_count,closed,closure_rate_bps,operational_debt_auc,validation_failures,parse_failures,retries,unresolved_obligations,attempts,char_budget,active_mutation_ids,active_mutation_epoch_count,hard_floor_regression_count
+20260509,baseline_fixed,4,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1753,[],0,0
+20260509,baseline_fixed,5,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1847,[],0,0
+20260509,baseline_fixed,6,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,2758,[],0,0
+20260509,baseline_fixed,7,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1851,[],0,0
+20260509,baseline_fixed,8,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1778,[],0,0
+20260509,baseline_fixed,9,longrun_eval,recovery,8,0,0,24,8,8,0,8,8,1862,[],0,0
+20260509,baseline_fixed,10,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1859,[],0,0
+20260509,baseline_fixed,11,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1771,[],0,0
+20260509,baseline_fixed,12,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,1772,[],0,0
+20260509,baseline_fixed,13,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1758,[],0,0
+20260509,baseline_fixed,14,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1764,[],0,0
+20260509,baseline_fixed,15,longrun_eval,recovery,8,0,0,24,8,8,0,8,8,2814,[],0,0
+20260509,baseline_fixed,16,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1858,[],0,0
+20260509,baseline_fixed,17,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1782,[],0,0
+20260509,baseline_fixed,18,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,2727,[],0,0
+20260509,baseline_fixed,19,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1809,[],0,0
+20260509,baseline_fixed,20,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1762,[],0,0
+20260509,forced_policy_positive_control,4,longrun_eval,validator_failure_burst,8,5,6250,6,3,0,0,3,8,1968,[],0,0
+20260509,forced_policy_positive_control,5,longrun_eval,context_budget_pressure,8,5,6250,6,3,0,0,3,8,2038,[],0,0
+20260509,forced_policy_positive_control,6,longrun_eval,obligation_backlog_burst,8,5,6250,6,3,0,0,3,8,2486,[],0,0
+20260509,forced_policy_positive_control,7,longrun_eval,stale_format_drift,8,6,7500,4,2,0,0,2,8,2123,[],0,0
+20260509,forced_policy_positive_control,8,longrun_eval,rollback_receipt_gap,8,6,7500,4,2,0,0,2,8,2088,[],0,0
+20260509,forced_policy_positive_control,9,longrun_eval,recovery,8,6,7500,4,2,0,0,2,8,2094,[],0,0
+20260509,forced_policy_positive_control,10,longrun_eval,validator_failure_burst,8,5,6250,6,3,0,0,3,8,2041,[],0,0
+20260509,forced_policy_positive_control,11,longrun_eval,context_budget_pressure,8,6,7500,4,2,0,0,2,8,2061,[],0,0
+20260509,forced_policy_positive_control,12,longrun_eval,obligation_backlog_burst,8,6,7500,4,2,0,0,2,8,2037,[],0,0
+20260509,forced_policy_positive_control,13,longrun_eval,stale_format_drift,8,6,7500,4,2,0,0,2,8,2081,[],0,0
+20260509,forced_policy_positive_control,14,longrun_eval,rollback_receipt_gap,8,5,6250,6,3,0,0,3,8,1997,[],0,0
+20260509,forced_policy_positive_control,15,longrun_eval,recovery,8,5,6250,6,3,0,0,3,8,2519,[],0,0
+20260509,forced_policy_positive_control,16,longrun_eval,validator_failure_burst,8,6,7500,4,2,0,0,2,8,2100,[],0,0
+20260509,forced_policy_positive_control,17,longrun_eval,context_budget_pressure,8,6,7500,4,2,0,0,2,8,2071,[],0,0
+20260509,forced_policy_positive_control,18,longrun_eval,obligation_backlog_burst,8,5,6250,6,3,0,0,3,8,2471,[],0,0
+20260509,forced_policy_positive_control,19,longrun_eval,stale_format_drift,8,6,7500,4,2,0,0,2,8,2097,[],0,0
+20260509,forced_policy_positive_control,20,longrun_eval,rollback_receipt_gap,8,6,7500,4,2,0,0,2,8,2057,[],0,0
+20260509,oasg_adaptive,4,longrun_eval,validator_failure_burst,8,4,5000,11,4,3,0,4,8,1722,"['mut_receipt_template_only_replay_rollback_receipt', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260509,oasg_adaptive,5,longrun_eval,context_budget_pressure,8,4,5000,11,4,3,0,4,8,1790,"['mut_receipt_template_only_replay_rollback_receipt', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260509,oasg_adaptive,6,longrun_eval,obligation_backlog_burst,8,4,5000,10,4,2,0,4,8,2294,"['mut_receipt_template_only_replay_rollback_receipt', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260509,oasg_adaptive,7,longrun_eval,stale_format_drift,8,4,5000,11,4,3,0,4,8,1801,"['mut_receipt_template_only_replay_rollback_receipt', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260509,oasg_adaptive,8,longrun_eval,rollback_receipt_gap,8,3,3750,14,5,4,0,5,8,1640,"['mut_receipt_template_only_replay_rollback_receipt', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260509,oasg_adaptive,9,longrun_eval,recovery,8,5,6250,8,3,2,0,3,8,1907,"['mut_receipt_template_only_replay_rollback_receipt', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260509,oasg_adaptive,10,longrun_eval,validator_failure_burst,8,4,5000,11,4,3,0,4,8,1802,"['mut_receipt_template_only_replay_rollback_receipt', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260509,oasg_adaptive,11,longrun_eval,context_budget_pressure,8,4,5000,11,4,3,0,4,8,1733,"['mut_receipt_template_only_replay_rollback_receipt', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260509,oasg_adaptive,12,longrun_eval,obligation_backlog_burst,8,5,6250,8,3,2,0,3,8,1845,"['mut_receipt_template_only_replay_rollback_receipt', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260509,oasg_adaptive,13,longrun_eval,stale_format_drift,8,3,3750,14,5,4,0,5,8,1619,"['mut_receipt_template_only_replay_rollback_receipt', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260509,oasg_adaptive,14,longrun_eval,rollback_receipt_gap,8,3,3750,14,5,4,0,5,8,1622,"['mut_receipt_template_only_replay_rollback_receipt', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260509,oasg_adaptive,15,longrun_eval,recovery,8,4,5000,10,4,2,0,4,8,2327,"['mut_receipt_template_only_replay_rollback_receipt', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260509,oasg_adaptive,16,longrun_eval,validator_failure_burst,8,5,6250,8,3,2,0,3,8,1909,"['mut_receipt_template_only_replay_rollback_receipt', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260509,oasg_adaptive,17,longrun_eval,context_budget_pressure,8,4,5000,11,4,3,0,4,8,1748,"['mut_receipt_template_only_replay_rollback_receipt', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260509,oasg_adaptive,18,longrun_eval,obligation_backlog_burst,8,3,3750,13,5,3,0,5,8,2151,"['mut_receipt_template_only_replay_rollback_receipt', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260509,oasg_adaptive,19,longrun_eval,stale_format_drift,8,4,5000,11,4,3,0,4,8,1779,"['mut_receipt_template_only_replay_rollback_receipt', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260509,oasg_adaptive,20,longrun_eval,rollback_receipt_gap,8,4,5000,11,4,3,0,4,8,1741,"['mut_receipt_template_only_replay_rollback_receipt', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260509,oasg_observe_only,4,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1753,[],0,0
+20260509,oasg_observe_only,5,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1847,[],0,0
+20260509,oasg_observe_only,6,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,2758,[],0,0
+20260509,oasg_observe_only,7,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1851,[],0,0
+20260509,oasg_observe_only,8,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1778,[],0,0
+20260509,oasg_observe_only,9,longrun_eval,recovery,8,0,0,24,8,8,0,8,8,1862,[],0,0
+20260509,oasg_observe_only,10,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1859,[],0,0
+20260509,oasg_observe_only,11,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1771,[],0,0
+20260509,oasg_observe_only,12,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,1772,[],0,0
+20260509,oasg_observe_only,13,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1758,[],0,0
+20260509,oasg_observe_only,14,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1764,[],0,0
+20260509,oasg_observe_only,15,longrun_eval,recovery,8,0,0,24,8,8,0,8,8,2814,[],0,0
+20260509,oasg_observe_only,16,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1858,[],0,0
+20260509,oasg_observe_only,17,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1782,[],0,0
+20260509,oasg_observe_only,18,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,2727,[],0,0
+20260509,oasg_observe_only,19,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1809,[],0,0
+20260509,oasg_observe_only,20,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1762,[],0,0
+20260510,baseline_fixed,4,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1755,[],0,0
+20260510,baseline_fixed,5,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1790,[],0,0
+20260510,baseline_fixed,6,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,1796,[],0,0
+20260510,baseline_fixed,7,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,2806,[],0,0
+20260510,baseline_fixed,8,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1766,[],0,0
+20260510,baseline_fixed,9,longrun_eval,recovery,8,0,0,24,8,8,0,8,8,1764,[],0,0
+20260510,baseline_fixed,10,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1872,[],0,0
+20260510,baseline_fixed,11,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1778,[],0,0
+20260510,baseline_fixed,12,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,1772,[],0,0
+20260510,baseline_fixed,13,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1810,[],0,0
+20260510,baseline_fixed,14,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,2727,[],0,0
+20260510,baseline_fixed,15,longrun_eval,recovery,8,0,0,24,8,8,0,8,8,1761,[],0,0
+20260510,baseline_fixed,16,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,3684,[],0,0
+20260510,baseline_fixed,17,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1769,[],0,0
+20260510,baseline_fixed,18,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,1835,[],0,0
+20260510,baseline_fixed,19,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1777,[],0,0
+20260510,baseline_fixed,20,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1946,[],0,0
+20260510,forced_policy_positive_control,4,longrun_eval,validator_failure_burst,8,4,5000,8,4,0,0,4,8,1919,[],0,0
+20260510,forced_policy_positive_control,5,longrun_eval,context_budget_pressure,8,6,7500,4,2,0,0,2,8,2064,[],0,0
+20260510,forced_policy_positive_control,6,longrun_eval,obligation_backlog_burst,8,6,7500,4,2,0,0,2,8,2064,[],0,0
+20260510,forced_policy_positive_control,7,longrun_eval,stale_format_drift,8,5,6250,6,3,0,0,3,8,2510,[],0,0
+20260510,forced_policy_positive_control,8,longrun_eval,rollback_receipt_gap,8,6,7500,4,2,0,0,2,8,2082,[],0,0
+20260510,forced_policy_positive_control,9,longrun_eval,recovery,8,5,6250,6,3,0,0,3,8,2001,[],0,0
+20260510,forced_policy_positive_control,10,longrun_eval,validator_failure_burst,8,6,7500,4,2,0,0,2,8,2133,[],0,0
+20260510,forced_policy_positive_control,11,longrun_eval,context_budget_pressure,8,6,7500,4,2,0,0,2,8,2065,[],0,0
+20260510,forced_policy_positive_control,12,longrun_eval,obligation_backlog_burst,8,6,7500,4,2,0,0,2,8,2059,[],0,0
+20260510,forced_policy_positive_control,13,longrun_eval,stale_format_drift,8,6,7500,4,2,0,0,2,8,2076,[],0,0
+20260510,forced_policy_positive_control,14,longrun_eval,rollback_receipt_gap,8,5,6250,6,3,0,0,3,8,2445,[],0,0
+20260510,forced_policy_positive_control,15,longrun_eval,recovery,8,4,5000,8,4,0,0,4,8,1921,[],0,0
+20260510,forced_policy_positive_control,16,longrun_eval,validator_failure_burst,8,4,5000,8,4,0,0,4,8,2859,[],0,0
+20260510,forced_policy_positive_control,17,longrun_eval,context_budget_pressure,8,6,7500,4,2,0,0,2,8,2031,[],0,0
+20260510,forced_policy_positive_control,18,longrun_eval,obligation_backlog_burst,8,6,7500,4,2,0,0,2,8,2105,[],0,0
+20260510,forced_policy_positive_control,19,longrun_eval,stale_format_drift,8,5,6250,6,3,0,0,3,8,1982,[],0,0
+20260510,forced_policy_positive_control,20,longrun_eval,rollback_receipt_gap,8,6,7500,4,2,0,0,2,8,2169,[],0,0
+20260510,oasg_adaptive,4,longrun_eval,validator_failure_burst,8,3,3750,12,5,2,0,5,8,2251,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260510,oasg_adaptive,5,longrun_eval,context_budget_pressure,8,4,5000,11,4,3,0,4,8,2287,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260510,oasg_adaptive,6,longrun_eval,obligation_backlog_burst,8,4,5000,11,4,3,0,4,8,2289,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260510,oasg_adaptive,7,longrun_eval,stale_format_drift,8,4,5000,11,4,3,0,4,8,3273,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260510,oasg_adaptive,8,longrun_eval,rollback_receipt_gap,8,5,6250,8,3,2,0,3,8,2414,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260510,oasg_adaptive,9,longrun_eval,recovery,8,4,5000,10,4,2,0,4,8,2334,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260510,oasg_adaptive,10,longrun_eval,validator_failure_burst,8,5,6250,8,3,2,0,3,8,2466,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260510,oasg_adaptive,11,longrun_eval,context_budget_pressure,8,4,5000,11,4,3,0,4,8,2297,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260510,oasg_adaptive,12,longrun_eval,obligation_backlog_burst,8,4,5000,11,4,3,0,4,8,2293,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260510,oasg_adaptive,13,longrun_eval,stale_format_drift,8,4,5000,11,4,3,0,4,8,2308,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260510,oasg_adaptive,14,longrun_eval,rollback_receipt_gap,8,3,3750,14,5,4,0,5,8,3112,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260510,oasg_adaptive,15,longrun_eval,recovery,8,3,3750,12,5,2,0,5,8,2256,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260510,oasg_adaptive,16,longrun_eval,validator_failure_burst,8,3,3750,14,5,4,0,5,8,4069,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260510,oasg_adaptive,17,longrun_eval,context_budget_pressure,8,3,3750,14,5,4,0,5,8,2154,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260510,oasg_adaptive,18,longrun_eval,obligation_backlog_burst,8,5,6250,8,3,2,0,3,8,2437,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260510,oasg_adaptive,19,longrun_eval,stale_format_drift,8,3,3750,13,5,3,0,5,8,2214,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260510,oasg_adaptive,20,longrun_eval,rollback_receipt_gap,8,5,6250,8,3,2,0,3,8,2495,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260510,oasg_observe_only,4,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1755,[],0,0
+20260510,oasg_observe_only,5,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1790,[],0,0
+20260510,oasg_observe_only,6,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,1796,[],0,0
+20260510,oasg_observe_only,7,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,2806,[],0,0
+20260510,oasg_observe_only,8,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1766,[],0,0
+20260510,oasg_observe_only,9,longrun_eval,recovery,8,0,0,24,8,8,0,8,8,1764,[],0,0
+20260510,oasg_observe_only,10,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1872,[],0,0
+20260510,oasg_observe_only,11,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1778,[],0,0
+20260510,oasg_observe_only,12,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,1772,[],0,0
+20260510,oasg_observe_only,13,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1810,[],0,0
+20260510,oasg_observe_only,14,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,2727,[],0,0
+20260510,oasg_observe_only,15,longrun_eval,recovery,8,0,0,24,8,8,0,8,8,1761,[],0,0
+20260510,oasg_observe_only,16,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,3684,[],0,0
+20260510,oasg_observe_only,17,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1769,[],0,0
+20260510,oasg_observe_only,18,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,1835,[],0,0
+20260510,oasg_observe_only,19,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1777,[],0,0
+20260510,oasg_observe_only,20,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1946,[],0,0
+20260511,baseline_fixed,4,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1853,[],0,0
+20260511,baseline_fixed,5,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1761,[],0,0
+20260511,baseline_fixed,6,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,2714,[],0,0
+20260511,baseline_fixed,7,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1853,[],0,0
+20260511,baseline_fixed,8,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,2816,[],0,0
+20260511,baseline_fixed,9,longrun_eval,recovery,8,0,0,24,8,8,0,8,8,1759,[],0,0
+20260511,baseline_fixed,10,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1860,[],0,0
+20260511,baseline_fixed,11,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1860,[],0,0
+20260511,baseline_fixed,12,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,1868,[],0,0
+20260511,baseline_fixed,13,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1896,[],0,0
+20260511,baseline_fixed,14,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1766,[],0,0
+20260511,baseline_fixed,15,longrun_eval,recovery,8,0,0,24,8,8,0,8,8,2723,[],0,0
+20260511,baseline_fixed,16,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1810,[],0,0
+20260511,baseline_fixed,17,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1774,[],0,0
+20260511,baseline_fixed,18,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,1797,[],0,0
+20260511,baseline_fixed,19,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1799,[],0,0
+20260511,baseline_fixed,20,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1766,[],0,0
+20260511,forced_policy_positive_control,4,longrun_eval,validator_failure_burst,8,5,6250,6,3,0,0,3,8,2045,[],0,0
+20260511,forced_policy_positive_control,5,longrun_eval,context_budget_pressure,8,5,6250,6,3,0,0,3,8,1967,[],0,0
+20260511,forced_policy_positive_control,6,longrun_eval,obligation_backlog_burst,8,4,5000,8,4,0,0,4,8,2384,[],0,0
+20260511,forced_policy_positive_control,7,longrun_eval,stale_format_drift,8,5,6250,6,3,0,0,3,8,2039,[],0,0
+20260511,forced_policy_positive_control,8,longrun_eval,rollback_receipt_gap,8,5,6250,6,3,0,0,3,8,2510,[],0,0
+20260511,forced_policy_positive_control,9,longrun_eval,recovery,8,5,6250,6,3,0,0,3,8,1967,[],0,0
+20260511,forced_policy_positive_control,10,longrun_eval,validator_failure_burst,8,6,7500,4,2,0,0,2,8,2124,[],0,0
+20260511,forced_policy_positive_control,11,longrun_eval,context_budget_pressure,8,5,6250,6,3,0,0,3,8,2045,[],0,0
+20260511,forced_policy_positive_control,12,longrun_eval,obligation_backlog_burst,8,6,7500,4,2,0,0,2,8,2127,[],0,0
+20260511,forced_policy_positive_control,13,longrun_eval,stale_format_drift,8,6,7500,4,2,0,0,2,8,2139,[],0,0
+20260511,forced_policy_positive_control,14,longrun_eval,rollback_receipt_gap,8,5,6250,6,3,0,0,3,8,1976,[],0,0
+20260511,forced_policy_positive_control,15,longrun_eval,recovery,8,5,6250,6,3,0,0,3,8,2395,[],0,0
+20260511,forced_policy_positive_control,16,longrun_eval,validator_failure_burst,8,6,7500,4,2,0,0,2,8,2101,[],0,0
+20260511,forced_policy_positive_control,17,longrun_eval,context_budget_pressure,8,6,7500,4,2,0,0,2,8,2058,[],0,0
+20260511,forced_policy_positive_control,18,longrun_eval,obligation_backlog_burst,8,6,7500,4,2,0,0,2,8,2069,[],0,0
+20260511,forced_policy_positive_control,19,longrun_eval,stale_format_drift,8,7,8750,2,1,0,0,1,8,2101,[],0,0
+20260511,forced_policy_positive_control,20,longrun_eval,rollback_receipt_gap,8,6,7500,4,2,0,0,2,8,2031,[],0,0
+20260511,oasg_adaptive,4,longrun_eval,validator_failure_burst,8,4,5000,10,4,2,0,4,8,2372,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260511,oasg_adaptive,5,longrun_eval,context_budget_pressure,8,3,3750,13,5,3,0,5,8,2196,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260511,oasg_adaptive,6,longrun_eval,obligation_backlog_burst,8,3,3750,13,5,3,0,5,8,3154,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260511,oasg_adaptive,7,longrun_eval,stale_format_drift,8,4,5000,10,4,2,0,4,8,2375,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260511,oasg_adaptive,8,longrun_eval,rollback_receipt_gap,8,4,5000,11,4,3,0,4,8,3279,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260511,oasg_adaptive,9,longrun_eval,recovery,8,3,3750,13,5,3,0,5,8,2198,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260511,oasg_adaptive,10,longrun_eval,validator_failure_burst,8,5,6250,8,3,2,0,3,8,2456,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260511,oasg_adaptive,11,longrun_eval,context_budget_pressure,8,4,5000,10,4,2,0,4,8,2378,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260511,oasg_adaptive,12,longrun_eval,obligation_backlog_burst,8,5,6250,8,3,2,0,3,8,2462,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260511,oasg_adaptive,13,longrun_eval,stale_format_drift,8,5,6250,8,3,2,0,3,8,2475,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260511,oasg_adaptive,14,longrun_eval,rollback_receipt_gap,8,3,3750,13,5,3,0,5,8,2206,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260511,oasg_adaptive,15,longrun_eval,recovery,8,4,5000,11,4,3,0,4,8,3167,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260511,oasg_adaptive,16,longrun_eval,validator_failure_burst,8,5,6250,8,3,2,0,3,8,2433,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260511,oasg_adaptive,17,longrun_eval,context_budget_pressure,8,4,5000,11,4,3,0,4,8,2289,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260511,oasg_adaptive,18,longrun_eval,obligation_backlog_burst,8,4,5000,11,4,3,0,4,8,2296,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260511,oasg_adaptive,19,longrun_eval,stale_format_drift,8,6,7500,6,2,2,0,2,8,2434,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260511,oasg_adaptive,20,longrun_eval,rollback_receipt_gap,8,3,3750,14,5,4,0,5,8,2151,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",1,0
+20260511,oasg_observe_only,4,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1853,[],0,0
+20260511,oasg_observe_only,5,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1761,[],0,0
+20260511,oasg_observe_only,6,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,2714,[],0,0
+20260511,oasg_observe_only,7,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1853,[],0,0
+20260511,oasg_observe_only,8,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,2816,[],0,0
+20260511,oasg_observe_only,9,longrun_eval,recovery,8,0,0,24,8,8,0,8,8,1759,[],0,0
+20260511,oasg_observe_only,10,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1860,[],0,0
+20260511,oasg_observe_only,11,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1860,[],0,0
+20260511,oasg_observe_only,12,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,1868,[],0,0
+20260511,oasg_observe_only,13,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1896,[],0,0
+20260511,oasg_observe_only,14,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1766,[],0,0
+20260511,oasg_observe_only,15,longrun_eval,recovery,8,0,0,24,8,8,0,8,8,2723,[],0,0
+20260511,oasg_observe_only,16,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1810,[],0,0
+20260511,oasg_observe_only,17,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1774,[],0,0
+20260511,oasg_observe_only,18,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,1797,[],0,0
+20260511,oasg_observe_only,19,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1799,[],0,0
+20260511,oasg_observe_only,20,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1766,[],0,0
+20260512,baseline_fixed,4,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1848,[],0,0
+20260512,baseline_fixed,5,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1790,[],0,0
+20260512,baseline_fixed,6,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,1858,[],0,0
+20260512,baseline_fixed,7,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,2744,[],0,0
+20260512,baseline_fixed,8,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1806,[],0,0
+20260512,baseline_fixed,9,longrun_eval,recovery,8,0,0,24,8,8,0,8,8,2810,[],0,0
+20260512,baseline_fixed,10,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,2810,[],0,0
+20260512,baseline_fixed,11,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1803,[],0,0
+20260512,baseline_fixed,12,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,1759,[],0,0
+20260512,baseline_fixed,13,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1761,[],0,0
+20260512,baseline_fixed,14,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1809,[],0,0
+20260512,baseline_fixed,15,longrun_eval,recovery,8,0,0,24,8,8,0,8,8,1776,[],0,0
+20260512,baseline_fixed,16,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1794,[],0,0
+20260512,baseline_fixed,17,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1768,[],0,0
+20260512,baseline_fixed,18,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,3686,[],0,0
+20260512,baseline_fixed,19,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1862,[],0,0
+20260512,baseline_fixed,20,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1957,[],0,0
+20260512,forced_policy_positive_control,4,longrun_eval,validator_failure_burst,8,5,6250,6,3,0,0,3,8,2038,[],0,0
+20260512,forced_policy_positive_control,5,longrun_eval,context_budget_pressure,8,5,6250,6,3,0,0,3,8,2008,[],0,0
+20260512,forced_policy_positive_control,6,longrun_eval,obligation_backlog_burst,8,5,6250,6,3,0,0,3,8,2045,[],0,0
+20260512,forced_policy_positive_control,7,longrun_eval,stale_format_drift,8,5,6250,6,3,0,0,3,8,2477,[],0,0
+20260512,forced_policy_positive_control,8,longrun_eval,rollback_receipt_gap,8,6,7500,4,2,0,0,2,8,2105,[],0,0
+20260512,forced_policy_positive_control,9,longrun_eval,recovery,8,5,6250,6,3,0,0,3,8,2509,[],0,0
+20260512,forced_policy_positive_control,10,longrun_eval,validator_failure_burst,8,5,6250,6,3,0,0,3,8,2514,[],0,0
+20260512,forced_policy_positive_control,11,longrun_eval,context_budget_pressure,8,5,6250,6,3,0,0,3,8,2014,[],0,0
+20260512,forced_policy_positive_control,12,longrun_eval,obligation_backlog_burst,8,4,5000,8,4,0,0,4,8,1918,[],0,0
+20260512,forced_policy_positive_control,13,longrun_eval,stale_format_drift,8,4,5000,8,4,0,0,4,8,1918,[],0,0
+20260512,forced_policy_positive_control,14,longrun_eval,rollback_receipt_gap,8,6,7500,4,2,0,0,2,8,2103,[],0,0
+20260512,forced_policy_positive_control,15,longrun_eval,recovery,8,6,7500,4,2,0,0,2,8,2014,[],0,0
+20260512,forced_policy_positive_control,16,longrun_eval,validator_failure_burst,8,6,7500,4,2,0,0,2,8,2095,[],0,0
+20260512,forced_policy_positive_control,17,longrun_eval,context_budget_pressure,8,6,7500,4,2,0,0,2,8,2090,[],0,0
+20260512,forced_policy_positive_control,18,longrun_eval,obligation_backlog_burst,8,4,5000,8,4,0,0,4,8,2858,[],0,0
+20260512,forced_policy_positive_control,19,longrun_eval,stale_format_drift,8,6,7500,4,2,0,0,2,8,2100,[],0,0
+20260512,forced_policy_positive_control,20,longrun_eval,rollback_receipt_gap,8,6,7500,4,2,0,0,2,8,2166,[],0,0
+20260512,oasg_adaptive,4,longrun_eval,validator_failure_burst,8,5,6250,9,3,3,0,3,8,2365,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260512,oasg_adaptive,5,longrun_eval,context_budget_pressure,8,5,6250,9,3,3,0,3,8,2335,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260512,oasg_adaptive,6,longrun_eval,obligation_backlog_burst,8,5,6250,9,3,3,0,3,8,2372,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260512,oasg_adaptive,7,longrun_eval,stale_format_drift,8,5,6250,9,3,3,0,3,8,3296,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260512,oasg_adaptive,8,longrun_eval,rollback_receipt_gap,8,6,7500,6,2,2,0,2,8,2487,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260512,oasg_adaptive,9,longrun_eval,recovery,8,5,6250,9,3,3,0,3,8,3328,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260512,oasg_adaptive,10,longrun_eval,validator_failure_burst,8,5,6250,9,3,3,0,3,8,3333,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260512,oasg_adaptive,11,longrun_eval,context_budget_pressure,8,5,6250,9,3,3,0,3,8,2341,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260512,oasg_adaptive,12,longrun_eval,obligation_backlog_burst,8,4,5000,12,4,4,0,4,8,2190,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260512,oasg_adaptive,13,longrun_eval,stale_format_drift,8,4,5000,12,4,4,0,4,8,2190,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260512,oasg_adaptive,14,longrun_eval,rollback_receipt_gap,8,6,7500,6,2,2,0,2,8,2485,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260512,oasg_adaptive,15,longrun_eval,recovery,8,5,6250,9,3,3,0,3,8,2336,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260512,oasg_adaptive,16,longrun_eval,validator_failure_burst,8,6,7500,6,2,2,0,2,8,2477,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260512,oasg_adaptive,17,longrun_eval,context_budget_pressure,8,6,7500,6,2,2,0,2,8,2472,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260512,oasg_adaptive,18,longrun_eval,obligation_backlog_burst,8,4,5000,12,4,4,0,4,8,4114,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260512,oasg_adaptive,19,longrun_eval,stale_format_drift,8,6,7500,6,2,2,0,2,8,2482,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260512,oasg_adaptive,20,longrun_eval,rollback_receipt_gap,8,6,7500,6,2,2,0,2,8,2548,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",1,0
+20260512,oasg_observe_only,4,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1848,[],0,0
+20260512,oasg_observe_only,5,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1790,[],0,0
+20260512,oasg_observe_only,6,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,1858,[],0,0
+20260512,oasg_observe_only,7,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,2744,[],0,0
+20260512,oasg_observe_only,8,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1806,[],0,0
+20260512,oasg_observe_only,9,longrun_eval,recovery,8,0,0,24,8,8,0,8,8,2810,[],0,0
+20260512,oasg_observe_only,10,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,2810,[],0,0
+20260512,oasg_observe_only,11,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1803,[],0,0
+20260512,oasg_observe_only,12,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,1759,[],0,0
+20260512,oasg_observe_only,13,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1761,[],0,0
+20260512,oasg_observe_only,14,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1809,[],0,0
+20260512,oasg_observe_only,15,longrun_eval,recovery,8,0,0,24,8,8,0,8,8,1776,[],0,0
+20260512,oasg_observe_only,16,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1794,[],0,0
+20260512,oasg_observe_only,17,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1768,[],0,0
+20260512,oasg_observe_only,18,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,3686,[],0,0
+20260512,oasg_observe_only,19,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1862,[],0,0
+20260512,oasg_observe_only,20,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1957,[],0,0
+20260513,baseline_fixed,4,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1803,[],0,0
+20260513,baseline_fixed,5,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,2714,[],0,0
+20260513,baseline_fixed,6,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,1788,[],0,0
+20260513,baseline_fixed,7,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1887,[],0,0
+20260513,baseline_fixed,8,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1856,[],0,0
+20260513,baseline_fixed,9,longrun_eval,recovery,8,0,0,24,8,8,0,8,8,1892,[],0,0
+20260513,baseline_fixed,10,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,2726,[],0,0
+20260513,baseline_fixed,11,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1772,[],0,0
+20260513,baseline_fixed,12,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,1796,[],0,0
+20260513,baseline_fixed,13,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1895,[],0,0
+20260513,baseline_fixed,14,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1779,[],0,0
+20260513,baseline_fixed,15,longrun_eval,recovery,8,0,0,24,8,8,0,8,8,2730,[],0,0
+20260513,baseline_fixed,16,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1890,[],0,0
+20260513,baseline_fixed,17,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,2731,[],0,0
+20260513,baseline_fixed,18,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,1871,[],0,0
+20260513,baseline_fixed,19,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1771,[],0,0
+20260513,baseline_fixed,20,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1761,[],0,0
+20260513,forced_policy_positive_control,4,longrun_eval,validator_failure_burst,8,6,7500,4,2,0,0,2,8,2063,[],0,0
+20260513,forced_policy_positive_control,5,longrun_eval,context_budget_pressure,8,4,5000,8,4,0,0,4,8,2384,[],0,0
+20260513,forced_policy_positive_control,6,longrun_eval,obligation_backlog_burst,8,6,7500,4,2,0,0,2,8,2064,[],0,0
+20260513,forced_policy_positive_control,7,longrun_eval,stale_format_drift,8,6,7500,4,2,0,0,2,8,2141,[],0,0
+20260513,forced_policy_positive_control,8,longrun_eval,rollback_receipt_gap,8,6,7500,4,2,0,0,2,8,2129,[],0,0
+20260513,forced_policy_positive_control,9,longrun_eval,recovery,8,6,7500,4,2,0,0,2,8,2134,[],0,0
+20260513,forced_policy_positive_control,10,longrun_eval,validator_failure_burst,8,5,6250,6,3,0,0,3,8,2478,[],0,0
+20260513,forced_policy_positive_control,11,longrun_eval,context_budget_pressure,8,5,6250,6,3,0,0,3,8,1973,[],0,0
+20260513,forced_policy_positive_control,12,longrun_eval,obligation_backlog_burst,8,5,6250,6,3,0,0,3,8,2021,[],0,0
+20260513,forced_policy_positive_control,13,longrun_eval,stale_format_drift,8,6,7500,4,2,0,0,2,8,2138,[],0,0
+20260513,forced_policy_positive_control,14,longrun_eval,rollback_receipt_gap,8,6,7500,4,2,0,0,2,8,2028,[],0,0
+20260513,forced_policy_positive_control,15,longrun_eval,recovery,8,5,6250,6,3,0,0,3,8,2478,[],0,0
+20260513,forced_policy_positive_control,16,longrun_eval,validator_failure_burst,8,6,7500,4,2,0,0,2,8,2136,[],0,0
+20260513,forced_policy_positive_control,17,longrun_eval,context_budget_pressure,8,5,6250,6,3,0,0,3,8,2444,[],0,0
+20260513,forced_policy_positive_control,18,longrun_eval,obligation_backlog_burst,8,6,7500,4,2,0,0,2,8,2140,[],0,0
+20260513,forced_policy_positive_control,19,longrun_eval,stale_format_drift,8,6,7500,4,2,0,0,2,8,2031,[],0,0
+20260513,forced_policy_positive_control,20,longrun_eval,rollback_receipt_gap,8,5,6250,6,3,0,0,3,8,1997,[],0,0
+20260513,oasg_adaptive,4,longrun_eval,validator_failure_burst,8,3,3750,13,5,3,0,5,8,1757,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_replay_rollback_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_strict_json_minimal_code_transform']",1,0
+20260513,oasg_adaptive,5,longrun_eval,context_budget_pressure,8,2,2500,14,6,2,0,6,8,2190,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_replay_rollback_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_strict_json_minimal_code_transform']",1,0
+20260513,oasg_adaptive,6,longrun_eval,obligation_backlog_burst,8,3,3750,13,5,3,0,5,8,1758,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_replay_rollback_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_strict_json_minimal_code_transform']",1,0
+20260513,oasg_adaptive,7,longrun_eval,stale_format_drift,8,2,2500,16,6,4,0,6,8,1753,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_replay_rollback_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_strict_json_minimal_code_transform']",1,0
+20260513,oasg_adaptive,8,longrun_eval,rollback_receipt_gap,8,3,3750,13,5,3,0,5,8,1853,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_replay_rollback_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_strict_json_minimal_code_transform']",1,0
+20260513,oasg_adaptive,9,longrun_eval,recovery,8,2,2500,16,6,4,0,6,8,1746,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_replay_rollback_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_strict_json_minimal_code_transform']",1,0
+20260513,oasg_adaptive,10,longrun_eval,validator_failure_burst,8,3,3750,12,5,2,0,5,8,2284,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_replay_rollback_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_strict_json_minimal_code_transform']",1,0
+20260513,oasg_adaptive,11,longrun_eval,context_budget_pressure,8,3,3750,12,5,2,0,5,8,1779,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_replay_rollback_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_strict_json_minimal_code_transform']",1,0
+20260513,oasg_adaptive,12,longrun_eval,obligation_backlog_burst,8,2,2500,15,6,3,0,6,8,1715,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_replay_rollback_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_strict_json_minimal_code_transform']",1,0
+20260513,oasg_adaptive,13,longrun_eval,stale_format_drift,8,2,2500,16,6,4,0,6,8,1750,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_replay_rollback_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_strict_json_minimal_code_transform']",1,0
+20260513,oasg_adaptive,14,longrun_eval,rollback_receipt_gap,8,4,5000,10,4,2,0,4,8,1834,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_replay_rollback_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_strict_json_minimal_code_transform']",1,0
+20260513,oasg_adaptive,15,longrun_eval,recovery,8,3,3750,12,5,2,0,5,8,2284,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_replay_rollback_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_strict_json_minimal_code_transform']",1,0
+20260513,oasg_adaptive,16,longrun_eval,validator_failure_burst,8,2,2500,16,6,4,0,6,8,1748,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_replay_rollback_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_strict_json_minimal_code_transform']",1,0
+20260513,oasg_adaptive,17,longrun_eval,context_budget_pressure,8,3,3750,12,5,2,0,5,8,2250,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_replay_rollback_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_strict_json_minimal_code_transform']",1,0
+20260513,oasg_adaptive,18,longrun_eval,obligation_backlog_burst,8,3,3750,13,5,3,0,5,8,1864,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_replay_rollback_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_strict_json_minimal_code_transform']",1,0
+20260513,oasg_adaptive,19,longrun_eval,stale_format_drift,8,4,5000,10,4,2,0,4,8,1837,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_replay_rollback_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_strict_json_minimal_code_transform']",1,0
+20260513,oasg_adaptive,20,longrun_eval,rollback_receipt_gap,8,3,3750,12,5,2,0,5,8,1803,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_replay_rollback_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_strict_json_minimal_code_transform']",1,0
+20260513,oasg_observe_only,4,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1803,[],0,0
+20260513,oasg_observe_only,5,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,2714,[],0,0
+20260513,oasg_observe_only,6,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,1788,[],0,0
+20260513,oasg_observe_only,7,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1887,[],0,0
+20260513,oasg_observe_only,8,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1856,[],0,0
+20260513,oasg_observe_only,9,longrun_eval,recovery,8,0,0,24,8,8,0,8,8,1892,[],0,0
+20260513,oasg_observe_only,10,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,2726,[],0,0
+20260513,oasg_observe_only,11,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,1772,[],0,0
+20260513,oasg_observe_only,12,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,1796,[],0,0
+20260513,oasg_observe_only,13,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1895,[],0,0
+20260513,oasg_observe_only,14,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1779,[],0,0
+20260513,oasg_observe_only,15,longrun_eval,recovery,8,0,0,24,8,8,0,8,8,2730,[],0,0
+20260513,oasg_observe_only,16,longrun_eval,validator_failure_burst,8,0,0,24,8,8,0,8,8,1890,[],0,0
+20260513,oasg_observe_only,17,longrun_eval,context_budget_pressure,8,0,0,24,8,8,0,8,8,2731,[],0,0
+20260513,oasg_observe_only,18,longrun_eval,obligation_backlog_burst,8,0,0,24,8,8,0,8,8,1871,[],0,0
+20260513,oasg_observe_only,19,longrun_eval,stale_format_drift,8,0,0,24,8,8,0,8,8,1771,[],0,0
+20260513,oasg_observe_only,20,longrun_eval,rollback_receipt_gap,8,0,0,24,8,8,0,8,8,1761,[],0,0

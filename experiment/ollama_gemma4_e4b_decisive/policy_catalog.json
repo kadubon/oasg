@@ -1,0 +1,64 @@
+{
+  "catalog_id": "oasg_decisive_policy_catalog_v1",
+  "policies": [
+    {
+      "policy_id": "strict_json_minimal",
+      "description": "Minimal JSON-only instruction without family schema detail.",
+      "families": [
+        "json_schema_repair",
+        "validator_receipt",
+        "safe_python_expression",
+        "code_transform",
+        "obligation_closure",
+        "replay_rollback_receipt"
+      ],
+      "max_attempts": 1,
+      "eligible_for_oasg_promotion": true
+    },
+    {
+      "policy_id": "schema_keys_only",
+      "description": "Adds required keys and primitive types only.",
+      "families": [
+        "json_schema_repair",
+        "validator_receipt",
+        "obligation_closure",
+        "replay_rollback_receipt"
+      ],
+      "max_attempts": 1,
+      "eligible_for_oasg_promotion": true
+    },
+    {
+      "policy_id": "single_repair_retry",
+      "description": "Allows one validator-guided repair attempt after a failed first attempt.",
+      "families": [
+        "json_schema_repair",
+        "validator_receipt",
+        "safe_python_expression",
+        "code_transform",
+        "obligation_closure",
+        "replay_rollback_receipt"
+      ],
+      "max_attempts": 2,
+      "eligible_for_oasg_promotion": true
+    },
+    {
+      "policy_id": "family_safe_expr_prompt",
+      "description": "Specialized prompt for safe Python expression tasks.",
+      "families": ["safe_python_expression"],
+      "max_attempts": 1,
+      "eligible_for_oasg_promotion": true
+    },
+    {
+      "policy_id": "receipt_template_only",
+      "description": "Specialized schema template for receipt-like operational artifacts.",
+      "families": [
+        "validator_receipt",
+        "obligation_closure",
+        "replay_rollback_receipt"
+      ],
+      "max_attempts": 1,
+      "eligible_for_oasg_promotion": true
+    }
+  ],
+  "forbidden_automatic_policies": ["set_action_grade"]
+}

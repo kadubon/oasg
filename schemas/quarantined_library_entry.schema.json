@@ -1,0 +1,1 @@
+{"additionalProperties":false,"properties":{"mutation_id":{"title":"Mutation Id","type":"string"},"reason":{"title":"Reason","type":"string"}},"required":["mutation_id","reason"],"title":"QuarantinedLibraryEntry","type":"object"}

@@ -1,0 +1,21 @@
+seed,condition,task_count,closed,closure_rate_bps,operational_debt_auc,validation_failures,parse_failures,retries,unresolved_obligations,attempts,char_budget,active_mutation_ids,active_mutation_epoch_count,hard_floor_regression_count
+20260509,baseline_fixed,136,0,0,408,136,136,0,136,136,33525,[],0,0
+20260509,oasg_observe_only,136,0,0,408,136,136,0,136,136,33525,[],0,0
+20260509,forced_policy_positive_control,136,95,6985,82,41,0,0,41,136,36329,[],0,0
+20260509,oasg_adaptive,136,67,4926,187,69,49,0,69,136,31430,"['mut_receipt_template_only_replay_rollback_receipt', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",17,0
+20260510,baseline_fixed,136,0,0,408,136,136,0,136,136,34408,[],0,0
+20260510,oasg_observe_only,136,0,0,408,136,136,0,136,136,34408,[],0,0
+20260510,forced_policy_positive_control,136,92,6765,88,44,0,0,44,136,36485,[],0,0
+20260510,oasg_adaptive,136,66,4853,187,70,47,0,70,136,42949,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",17,0
+20260511,baseline_fixed,136,0,0,408,136,136,0,136,136,33675,[],0,0
+20260511,oasg_observe_only,136,0,0,408,136,136,0,136,136,33675,[],0,0
+20260511,forced_policy_positive_control,136,93,6838,86,43,0,0,43,136,36078,[],0,0
+20260511,oasg_adaptive,136,69,5074,178,67,44,0,67,136,42321,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_obligation_closure', 'mut_strict_json_minimal_code_transform']",17,0
+20260512,baseline_fixed,136,0,0,408,136,136,0,136,136,35641,[],0,0
+20260512,oasg_observe_only,136,0,0,408,136,136,0,136,136,35641,[],0,0
+20260512,forced_policy_positive_control,136,89,6544,94,47,0,0,47,136,36972,[],0,0
+20260512,oasg_adaptive,136,88,6471,144,48,48,0,48,136,45151,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_validator_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_schema_keys_only_obligation_closure']",17,0
+20260513,baseline_fixed,136,0,0,408,136,136,0,136,136,34662,[],0,0
+20260513,oasg_observe_only,136,0,0,408,136,136,0,136,136,34662,[],0,0
+20260513,forced_policy_positive_control,136,94,6912,84,42,0,0,42,136,36779,[],0,0
+20260513,oasg_adaptive,136,47,3456,225,89,47,0,89,136,32205,"['mut_family_safe_expr_prompt_safe_python_expression', 'mut_receipt_template_only_replay_rollback_receipt', 'mut_schema_keys_only_json_schema_repair', 'mut_strict_json_minimal_code_transform']",17,0

@@ -1,0 +1,23 @@
+{
+  "adaptive_initial_max_attempts": 1,
+  "adaptive_promoted_max_attempts": 2,
+  "append_lease_observations": true,
+  "baseline_max_attempts": 1,
+  "batch_size": 6,
+  "calibration_count": 12,
+  "effect_profile": true,
+  "evaluation_count": 48,
+  "experiment_id": "ollama_gemma4_e4b_effect_pilot",
+  "max_output_chars": 6000,
+  "model": "gemma4:e4b",
+  "ollama_endpoint": "http://127.0.0.1:11434",
+  "optimizer_max_candidates": 4,
+  "optimizer_max_iterations": 1,
+  "results_dir": "experiment/ollama_gemma4_e4b_pilot/results_effect",
+  "runs_dir": "experiment/ollama_gemma4_e4b_pilot/runs_effect",
+  "task_count": 60,
+  "task_generator_seed": 20260508,
+  "tasks_path": "experiment/ollama_gemma4_e4b_pilot/tasks_effect.jsonl",
+  "temperature": 0,
+  "timeout_seconds": 60
+}

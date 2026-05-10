@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+      - name: Sync
+        run: uv sync
+      - name: Ruff
+        run: uv run ruff check
+      - name: Mypy
+        run: uv run mypy src
+      - name: Pytest
+        run: uv run pytest
+      - name: README smoke
+        run: |
+          uv run oasg doctor
+          uv run oasg demo quickstart --out examples/quickstart
+          uv run oasg conformance run examples/conformance

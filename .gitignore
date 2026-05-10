@@ -1,0 +1,29 @@
+.venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+dist/
+build/
+*.egg-info/
+.coverage
+htmlcov/
+.env
+.env.*
+!.env.example
+
+# Local OASG optimizer / experiment outputs
+.oasg/
+optimizer_state.json
+workflow_library.json
+experiment/**/runs/**
+experiment/**/runs*/**
+!experiment/**/runs/
+!experiment/**/runs/.gitignore
+
+# Keep curated result summaries, but ignore ad hoc large/generated files unless
+# intentionally moved out of runs and reviewed.
+*.tmp
+*.log

@@ -1,0 +1,1 @@
+{"additionalProperties":false,"properties":{"affected_scope":{"default":"default","title":"Affected Scope","type":"string"},"reason":{"title":"Reason","type":"string"},"record_type":{"default":"quarantine_record","title":"Record Type","type":"string"},"status":{"title":"Status","type":"string"}},"required":["status","reason"],"title":"QuarantineRecord","type":"object"}

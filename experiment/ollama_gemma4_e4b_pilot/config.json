@@ -1,0 +1,18 @@
+{
+  "experiment_id": "ollama_gemma4_e4b_pilot",
+  "model": "gemma4:e4b",
+  "ollama_endpoint": "http://127.0.0.1:11434",
+  "temperature": 0,
+  "timeout_seconds": 60,
+  "batch_size": 4,
+  "baseline_max_attempts": 1,
+  "adaptive_initial_max_attempts": 1,
+  "adaptive_promoted_max_attempts": 2,
+  "max_output_chars": 6000,
+  "tasks_path": "experiment/ollama_gemma4_e4b_pilot/tasks.jsonl",
+  "runs_dir": "experiment/ollama_gemma4_e4b_pilot/runs",
+  "results_dir": "experiment/ollama_gemma4_e4b_pilot/results",
+  "optimizer_max_candidates": 1,
+  "optimizer_max_iterations": 1,
+  "append_lease_observations": true
+}

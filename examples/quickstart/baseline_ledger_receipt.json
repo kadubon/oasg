@@ -1,0 +1,1 @@
+{"ledger_prefix_hash":"sha256:c4fc311ca1440eec5b1e6dcbc9773845679f951ca4d6545a80d38490163780e9","line_statuses":[{"append_index":1,"event_id":"evt_observe_state","reason":null,"status":"ledger_prefix_valid"}],"receipt_type":"ledger_integrity_receipt","records_seen":1,"status":"ledger_prefix_valid"}

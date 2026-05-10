@@ -1,0 +1,48 @@
+{
+  "artifact_type": "workflow_policy_catalog",
+  "catalog_id": "oasg-definitive-policy-catalog-v1",
+  "policies": [
+    {
+      "policy_id": "strict_json_prompt",
+      "patch_op": "set_validator_policy",
+      "target_action_id": "validate_artifact",
+      "expected_coordinates": ["evidence", "protected_debt.evidence", "KLB_2.validate_artifact"]
+    },
+    {
+      "policy_id": "validator_guided_retry",
+      "patch_op": "set_retry_policy",
+      "target_action_id": "close_obligation",
+      "expected_coordinates": ["queue", "protected_debt.queue", "KLB_2.close_obligation"]
+    },
+    {
+      "policy_id": "family_specific_schema_prompt",
+      "patch_op": "set_validator_policy",
+      "target_action_id": "validate_artifact",
+      "expected_coordinates": ["evidence", "protected_debt.evidence", "KLB_2.validate_artifact"]
+    },
+    {
+      "policy_id": "safe_expression_repair",
+      "patch_op": "set_retry_policy",
+      "target_action_id": "close_obligation",
+      "expected_coordinates": ["queue", "protected_debt.queue", "KLB_2.close_obligation"]
+    },
+    {
+      "policy_id": "receipt_template_policy",
+      "patch_op": "set_validator_policy",
+      "target_action_id": "validate_artifact",
+      "expected_coordinates": ["evidence", "protected_debt.evidence", "KLB_2.validate_artifact"]
+    },
+    {
+      "policy_id": "bounded_retry_max_2",
+      "patch_op": "set_retry_policy",
+      "target_action_id": "close_obligation",
+      "expected_coordinates": ["queue", "protected_debt.queue", "KLB_2.close_obligation"]
+    },
+    {
+      "policy_id": "context_shortening_policy",
+      "patch_op": "set_context_compression",
+      "target_action_id": "replay_artifact",
+      "expected_coordinates": ["budget", "protected_debt.budget"]
+    }
+  ]
+}
