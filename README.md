@@ -1,6 +1,10 @@
 # OASG
 
-Observable-only Autonomic Slack Gradient reference implementation.
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20107660.svg)](https://doi.org/10.5281/zenodo.20107660)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
+[![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-blue.svg)](pyproject.toml)
+
+Observable-only Autonomic Slack Gradient for local-first AI agent workflow optimization.
 
 OASG is a local-first toolkit for long-running AI-agent workflows. It records what the
 agent can observe, reduces that history into operational state, proposes bounded workflow-policy
@@ -15,6 +19,34 @@ The project target is not a smarter model. The target is a more durable workflow
 OASG optimizes workflow policy only. It does not fine-tune model weights, does not use an LLM judge,
 and does not claim semantic truth. Deterministic validators, replay receipts, rollback receipts,
 resource counters, and ledger checks are ordinary observable channels.
+
+## What You Can Do With It
+
+- Wrap any local or remote model as an observation source without making that model trusted.
+- Store agent activity as append-only JSONL ledgers with canonical hashes and prefix checks.
+- Reduce long-running workflow history into operational debt, pressure, and viability receipts.
+- Trial workflow-policy changes through shadow/lease ledgers before promotion.
+- Run conservative local optimization loops that can reject, quarantine, roll back, or promote.
+- Export JSON Schemas and conformance fixtures for ports in other languages.
+
+Use OASG when you need durable workflow operation, auditability, and fail-closed self-improvement
+around an agent. Do not use it as a benchmark score, model trainer, LLM judge, sandbox, or semantic
+truth oracle.
+
+## Contents
+
+- [Why This Is Different](#why-this-is-different)
+- [Current Status](#current-status)
+- [Quickstart](#quickstart)
+- [Use OASG With Your Agent](#use-oasg-with-your-agent)
+- [CLI Map](#cli-map)
+- [Model Integration](#model-integration)
+- [Rejection Guide](#rejection-guide)
+- [Experiments and Evidence](#experiments-and-evidence)
+- [Development Checks](#development-checks)
+- [Citation](#citation)
+- [Project Layout](#project-layout)
+- [License](#license)
 
 ## Why This Is Different
 
@@ -121,6 +153,17 @@ uv run oasg gate --baseline examples/quickstart/baseline.jsonl --candidate examp
 ```
 
 Default runtime behavior is local-only and network-free.
+
+### Choose a Path
+
+| goal | start here |
+| --- | --- |
+| inspect the core receipts | `uv run oasg demo quickstart` |
+| verify a ledger from another implementation | `uv run oasg ledger verify history.jsonl` |
+| wrap an existing agent | [Use OASG With Your Agent](#use-oasg-with-your-agent) |
+| run a local optimization cycle | `uv run oasg optimize run --history history.jsonl --library workflow_library.json --out-dir .oasg/run` |
+| run repeated local supervision | `uv run oasg optimize supervise --history history.jsonl --library workflow_library.json --state optimizer_state.json --out-dir .oasg/supervise` |
+| reproduce the current evidence | [Experiments and Evidence](#experiments-and-evidence) |
 
 ## Use OASG With Your Agent
 
@@ -359,6 +402,28 @@ public-surface cleanup: `83 passed`, `ruff` clean, `mypy` clean, and conformance
 
 The current public-readiness review is recorded in
 [`docs/publication_audit.md`](docs/publication_audit.md).
+
+## Citation
+
+If you use OASG, cite the archived software release:
+
+- DOI: [10.5281/zenodo.20107660](https://doi.org/10.5281/zenodo.20107660)
+- Repository: [github.com/kadubon/oasg](https://github.com/kadubon/oasg)
+- Citation metadata: [`CITATION.cff`](CITATION.cff)
+
+```yaml
+cff-version: 1.2.0
+title: "OASG: Observable-only Autonomic Slack Gradient for Local-first AI Agent Workflow Optimization"
+version: 1.1.0
+doi: 10.5281/zenodo.20107660
+repository-code: "https://github.com/kadubon/oasg"
+```
+
+## Keywords
+
+AI agents, agent workflow optimization, long-running agents, local-first AI, model-agnostic agent
+framework, no LLM judge, observable ledgers, deterministic reducers, workflow policy optimization,
+autonomic agents, JSONL ledger, canonical hashing, Ollama experiments, Python uv.
 
 ## Project Layout
 

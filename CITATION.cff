@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "OASG: Observable-only Autonomic Slack Gradient Theory"
+title: "OASG: Observable-only Autonomic Slack Gradient for Local-first AI Agent Workflow Optimization"
 message: "If you use OASG, please cite this repository."
 type: software
 authors:
@@ -7,4 +7,5 @@ authors:
     given-names: K.
 license: Apache-2.0
 version: 1.1.0
+doi: 10.5281/zenodo.20107660
 repository-code: "https://github.com/kadubon/oasg"
