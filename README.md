@@ -349,6 +349,7 @@ kept failed, rejected, and inconclusive receipts.
 | `experiment/ollama_gemma4_e4b_definitive` | `workload_not_sensitive` | mechanism qualification blocked Stage B; no effect claim | The positive-control policy did not establish a useful measurement workload. |
 | `experiment/ollama_gemma4_e4b_decisive` | `oasg_effect_confirmed` | 5 seeds, 680 paired held-out tasks; adaptive debt AUC 2040 -> 921; closure 0 -> 337; hard-floor regressions 0 | Under this preregistered weak-baseline workload, OASG adaptive produced a practical workflow-operation improvement. |
 | `experiment/ollama_gemma4_e4b_strong_baseline` | `promotion_mechanism_failure_vs_strong_baseline` | strong baseline qualified; adaptive readiness active seeds 0/4 required; run interrupted after 7/25 held-out condition blocks | No incremental OASG effect over the strong baseline is claimed. The run was stopped because adaptive activation failed before evaluation, making the primary effect question non-identifiable. |
+| `experiment/ollama_gemma4_e4b_strong_baseline_v2` | protocol implemented | adds an incremental-headroom stage before readiness/evaluation | Designed to avoid spending held-out compute when a strong static baseline leaves no measurable debt or efficiency headroom. No real-result claim is made until artifacts are produced. |
 
 ### Decisive Run Details
 
@@ -412,6 +413,19 @@ Strong-baseline follow-up:
   [`experiment/ollama_gemma4_e4b_strong_baseline/results/20260511T113612Z_interrupted/report.md`](experiment/ollama_gemma4_e4b_strong_baseline/results/20260511T113612Z_interrupted/report.md)
   and
   [`experiment/ollama_gemma4_e4b_strong_baseline/results/20260511T113612Z_interrupted/interruption_receipt.json`](experiment/ollama_gemma4_e4b_strong_baseline/results/20260511T113612Z_interrupted/interruption_receipt.json).
+
+Strong-baseline v2 protocol:
+
+- The v2 profile adds an explicit `incremental_headroom` gate. It first asks whether any
+  runner-ledger-backed candidate can improve debt or cost-to-close over the calibrated strong
+  static workflow.
+- If no headroom exists, it stops as `strong_baseline_ceiling_no_headroom`; this is a ceiling result,
+  not an OASG promotion failure.
+- If headroom exists but OASG cannot active-promote it in the required seeds, it stops as
+  `promotion_mechanism_failure_vs_strong_baseline`.
+- Held-out evaluation runs only after both headroom and readiness pass.
+- Protocol directory:
+  [`experiment/ollama_gemma4_e4b_strong_baseline_v2`](experiment/ollama_gemma4_e4b_strong_baseline_v2).
 
 ### Reproduce the Decisive Experiment
 
