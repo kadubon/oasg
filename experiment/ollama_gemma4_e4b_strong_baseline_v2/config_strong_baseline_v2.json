@@ -26,6 +26,14 @@
   "results_dir": "experiment/ollama_gemma4_e4b_strong_baseline_v2/results",
   "runs_dir": "experiment/ollama_gemma4_e4b_strong_baseline_v2/runs",
   "strong_baseline_min_reduction_bps": 1500,
+  "strong_static_default_policy_by_family": {
+    "code_transform": "context_shortening_policy",
+    "json_schema_repair": "context_shortening_policy",
+    "obligation_closure": "schema_keys_only",
+    "replay_rollback_receipt": "receipt_template_only",
+    "safe_python_expression": "family_safe_expr_prompt",
+    "validator_receipt": "context_shortening_policy"
+  },
   "task_generator_seed": 20260509,
   "tasks_path": "experiment/ollama_gemma4_e4b_strong_baseline_v2/tasks_strong_baseline_v2.jsonl",
   "temperature": 0,

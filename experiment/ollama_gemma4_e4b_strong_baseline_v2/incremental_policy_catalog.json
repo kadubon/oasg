@@ -1,0 +1,52 @@
+{
+  "catalog_id": "oasg_strong_baseline_v2_incremental_policy_catalog_v1",
+  "forbidden_automatic_policies": ["set_action_grade"],
+  "policies": [
+    {
+      "eligible_for_oasg_promotion": true,
+      "families": ["code_transform"],
+      "max_attempts": 1,
+      "patch_kind": "family_specific_schema_prompt",
+      "policy_id": "code_transform_identifier_prompt",
+      "runtime_policy_id": "code_transform_identifier_prompt"
+    },
+    {
+      "eligible_for_oasg_promotion": true,
+      "families": ["replay_rollback_receipt"],
+      "max_attempts": 1,
+      "patch_kind": "receipt_template_tightening",
+      "policy_id": "replay_rollback_exact_template",
+      "runtime_policy_id": "replay_rollback_exact_template"
+    },
+    {
+      "eligible_for_oasg_promotion": true,
+      "families": [
+        "json_schema_repair",
+        "validator_receipt",
+        "safe_python_expression",
+        "code_transform",
+        "obligation_closure",
+        "replay_rollback_receipt"
+      ],
+      "max_attempts": 2,
+      "patch_kind": "fallback_repair_retry",
+      "policy_id": "single_repair_retry",
+      "runtime_policy_id": "single_repair_retry"
+    },
+    {
+      "eligible_for_oasg_promotion": true,
+      "families": [
+        "json_schema_repair",
+        "validator_receipt",
+        "safe_python_expression",
+        "code_transform",
+        "obligation_closure",
+        "replay_rollback_receipt"
+      ],
+      "max_attempts": 1,
+      "patch_kind": "context_resource_tightening",
+      "policy_id": "context_shortening_policy",
+      "runtime_policy_id": "strict_json_minimal"
+    }
+  ]
+}

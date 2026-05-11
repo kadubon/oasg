@@ -47,8 +47,14 @@ def qualify_incremental_headroom(
     mock_model: bool = False,
 ) -> dict[str, Any]:
     config = read_json(config_path)
-    catalog = read_json(config_path.parent / "policy_catalog.json")
-    strong_policy_receipt = read_json(strong_policy_receipt_path)
+    incremental_catalog_path = config_path.parent / "incremental_policy_catalog.json"
+    catalog = read_json(
+        incremental_catalog_path if incremental_catalog_path.exists() else config_path.parent / "policy_catalog.json"
+    )
+    strong_policy_receipt = _complete_strong_policy_receipt(
+        config=config,
+        receipt=read_json(strong_policy_receipt_path),
+    )
     strong_map = dict(strong_policy_receipt.get("policy_by_family", {}))
     out_dir.mkdir(parents=True, exist_ok=True)
     write_json(out_dir / "config.json", config)
@@ -185,6 +191,28 @@ def _status_counts(trials: list[dict[str, Any]]) -> dict[str, int]:
         status = str(trial.get("status", "unknown"))
         counts[status] = counts.get(status, 0) + 1
     return counts
+
+
+def _complete_strong_policy_receipt(
+    *,
+    config: dict[str, Any],
+    receipt: dict[str, Any],
+) -> dict[str, Any]:
+    policy_by_family = dict(receipt.get("policy_by_family", {}))
+    defaults = dict(config.get("strong_static_default_policy_by_family", {}))
+    filled: dict[str, str] = {}
+    for family, policy_id in sorted(defaults.items()):
+        if family not in policy_by_family:
+            policy_by_family[str(family)] = str(policy_id)
+            filled[str(family)] = str(policy_id)
+    updated = dict(receipt)
+    updated["policy_by_family"] = policy_by_family
+    updated["default_filled_policy_by_family"] = filled
+    updated["policy_hash"] = receipt_hash(policy_by_family)
+    updated["strong_static_policy_completion"] = (
+        "completed_with_preregistered_defaults" if filled else "already_complete"
+    )
+    return updated
 
 
 if __name__ == "__main__":

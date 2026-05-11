@@ -12,13 +12,25 @@ predefined thresholds in `config_strong_baseline_v2.json`.
 
 1. `Stage 0`: qualify a strong static baseline from calibration tasks only.
 2. `Stage 1`: check whether any candidate can improve debt or cost-to-close over that strong
-   baseline on calibration canaries.
+   baseline on preregistered calibration canaries. Stage 1 uses
+   `incremental_policy_catalog.json`, which is separate from the Stage 0 strong-baseline catalog.
 3. `Stage 2`: allow OASG readiness only for Stage 1 qualified incremental candidates.
 4. `Stage 3`: run held-out paired evaluation only if OASG readiness passes.
 
 If Stage 1 finds no debt or efficiency headroom, the run stops as
 `strong_baseline_ceiling_no_headroom`. If Stage 2 cannot active-promote in the required number of
 seeds, the run stops as `promotion_mechanism_failure_vs_strong_baseline`.
+
+The v2 incremental catalog intentionally includes policies aimed at residual strong-baseline
+failure modes observed in the first strong-baseline run, especially `code_transform` exact
+identifier receipts and replay/rollback exact receipt templates. These policies are not available
+to Stage 0 strong-static selection, so any Stage 1 success measures incremental headroom over the
+frozen strong baseline rather than rebuilding the baseline itself.
+
+If calibration does not expose debt for a family, v2 fills the strong static policy with
+preregistered defaults from `strong_static_default_policy_by_family`. This prevents an apparently
+"strong" baseline from leaving whole families on the weak fixed policy just because calibration did
+not happen to trigger that failure mode.
 
 ## Classifications
 

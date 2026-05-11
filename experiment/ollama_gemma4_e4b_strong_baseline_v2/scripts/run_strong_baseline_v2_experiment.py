@@ -59,6 +59,10 @@ def main() -> int:
     strong_policy_receipt = read_json(
         run_dir / "strong_baseline_qualification" / "strong_static_policy_receipt.json"
     )
+    strong_policy_receipt = _complete_strong_policy_receipt(
+        config=config,
+        receipt=strong_policy_receipt,
+    )
     write_json(run_dir / "strong_static_policy_receipt.json", strong_policy_receipt)
     if qualification["status"] != "strong_baseline_qualified":
         _finish_with_analysis(run_dir, config)
@@ -149,6 +153,28 @@ def _readiness_from_headroom(*, config: dict[str, Any], headroom: dict[str, Any]
         "source_headroom_status": headroom.get("status"),
         "source_headroom_hash": receipt_hash(headroom),
     }
+
+
+def _complete_strong_policy_receipt(
+    *,
+    config: dict[str, Any],
+    receipt: dict[str, Any],
+) -> dict[str, Any]:
+    policy_by_family = dict(receipt.get("policy_by_family", {}))
+    defaults = dict(config.get("strong_static_default_policy_by_family", {}))
+    filled: dict[str, str] = {}
+    for family, policy_id in sorted(defaults.items()):
+        if family not in policy_by_family:
+            policy_by_family[str(family)] = str(policy_id)
+            filled[str(family)] = str(policy_id)
+    updated = dict(receipt)
+    updated["policy_by_family"] = policy_by_family
+    updated["default_filled_policy_by_family"] = filled
+    updated["policy_hash"] = receipt_hash(policy_by_family)
+    updated["strong_static_policy_completion"] = (
+        "completed_with_preregistered_defaults" if filled else "already_complete"
+    )
+    return updated
 
 
 def _run_stage3(

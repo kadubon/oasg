@@ -43,6 +43,7 @@ def _tiny_config(tmp_path: Path, *, seeds: list[int] | None = None) -> Path:
     config_path = tmp_path / "config_strong_baseline_v2.json"
     write_json(config_path, config)
     shutil.copy(PROFILE / "policy_catalog.json", tmp_path / "policy_catalog.json")
+    shutil.copy(PROFILE / "incremental_policy_catalog.json", tmp_path / "incremental_policy_catalog.json")
     return config_path
 
 
