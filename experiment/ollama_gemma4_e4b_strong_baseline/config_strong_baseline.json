@@ -1,0 +1,32 @@
+{
+  "adaptive_initial_max_attempts": 1,
+  "adaptive_promoted_max_attempts": 2,
+  "baseline_max_attempts": 1,
+  "condition_order": [
+    "weak_fixed",
+    "observe_only",
+    "strong_static_calibrated",
+    "strong_rule_adaptive_control",
+    "oasg_adaptive_from_strong"
+  ],
+  "confirmatory_min_active_seeds": 4,
+  "epoch_count": 20,
+  "experiment_id": "ollama_gemma4_e4b_strong_baseline",
+  "exploratory_seed_count": 3,
+  "forced_policy_max_attempts": 2,
+  "incremental_effect_confirmed_min_reduction_bps": 1000,
+  "minimum_incremental_reduction_bps": 500,
+  "model": "gemma4:e4b",
+  "ollama_endpoint": "http://127.0.0.1:11434",
+  "ollama_timeout_seconds": 60,
+  "promotion_canary_count": 2,
+  "replicate_seeds": [20260509, 20260510, 20260511, 20260512, 20260513],
+  "results_dir": "experiment/ollama_gemma4_e4b_strong_baseline/results",
+  "runs_dir": "experiment/ollama_gemma4_e4b_strong_baseline/runs",
+  "strong_baseline_min_reduction_bps": 1500,
+  "task_generator_seed": 20260509,
+  "tasks_path": "experiment/ollama_gemma4_e4b_strong_baseline/tasks_strong_baseline.jsonl",
+  "temperature": 0,
+  "timeout_seconds": 60,
+  "warmup_epochs": 3
+}

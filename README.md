@@ -348,6 +348,7 @@ kept failed, rejected, and inconclusive receipts.
 | `experiment/ollama_gemma4_e4b_longrun` | `inconclusive_no_active_policy` | baseline 276/408 closed; observe-only 277/408 closed; adaptive evaluation was not run because active promotions 0 | Long-run measurement correctly refused to claim OASG effect. |
 | `experiment/ollama_gemma4_e4b_definitive` | `workload_not_sensitive` | mechanism qualification blocked Stage B; no effect claim | The positive-control policy did not establish a useful measurement workload. |
 | `experiment/ollama_gemma4_e4b_decisive` | `oasg_effect_confirmed` | 5 seeds, 680 paired held-out tasks; adaptive debt AUC 2040 -> 921; closure 0 -> 337; hard-floor regressions 0 | Under this preregistered weak-baseline workload, OASG adaptive produced a practical workflow-operation improvement. |
+| `experiment/ollama_gemma4_e4b_strong_baseline` | protocol only | compares OASG against a calibration-selected strong static workflow and a rule-adaptive control | Added to test whether OASG has incremental value beyond a strong hand-calibrated workflow. No result is claimed until run artifacts are produced. |
 
 ### Decisive Run Details
 
@@ -426,7 +427,7 @@ uv run oasg conformance run examples/conformance
 ```
 
 At the time this README was updated, these checks passed in the current workspace after the
-public-surface cleanup: `83 passed`, `ruff` clean, `mypy` clean, and conformance `status: ok`.
+public-surface cleanup: `91 passed`, `ruff` clean, `mypy` clean, and conformance `status: ok`.
 
 The current public-readiness review is recorded in
 [`docs/publication_audit.md`](docs/publication_audit.md).

@@ -63,6 +63,10 @@ inconclusive, workload-not-sensitive, and positive decisive runs.
 The strongest reported result is limited to the decisive experiment's frozen workload, model,
 validators, prompts, implementation, and thresholds. It is not presented as universal proof.
 
+An additional strong-baseline protocol is included to test incremental OASG value against a
+calibration-selected static workflow and a simple rule-adaptive control. It is a protocol until
+real run artifacts are generated.
+
 ## Build And Quality Checks
 
 Commands run after public-surface cleanup:
