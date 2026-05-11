@@ -1,0 +1,11 @@
+seed,condition,task_count,closed,closure_rate_bps,operational_debt_auc,validation_failures,parse_failures,retries,unresolved_obligations,attempts,char_budget,active_mutation_ids,active_mutation_epoch_count,hard_floor_regression_count,rollback_failures
+20260509,weak_fixed,136,0,0,408,136,136,0,136,136,22101,[],0,0,0
+20260509,observe_only,136,95,6985,82,41,0,0,41,136,28089,[],0,0,0
+20260509,strong_static_calibrated,136,95,6985,82,41,0,0,41,136,28089,[],0,0,0
+20260509,strong_rule_adaptive_control,136,95,6985,82,41,0,0,41,136,28089,[],0,0,0
+20260509,oasg_adaptive_from_strong,136,95,6985,82,41,0,0,41,136,28089,[],0,0,0
+20260510,weak_fixed,136,0,0,408,136,136,0,136,136,24888,[],0,0,0
+20260510,observe_only,136,92,6765,88,44,0,0,44,136,28099,[],0,0,0
+20260510,strong_static_calibrated,0,0,0,0,0,0,0,0,0,0,[],0,0,0
+20260510,strong_rule_adaptive_control,0,0,0,0,0,0,0,0,0,0,[],0,0,0
+20260510,oasg_adaptive_from_strong,0,0,0,0,0,0,0,0,0,0,[],0,0,0

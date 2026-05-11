@@ -46,3 +46,41 @@ uv run python experiment\ollama_gemma4_e4b_strong_baseline\scripts\run_strong_ba
 ```
 
 Effect is claimed only for `oasg_incremental_effect_confirmed_vs_strong_baseline`.
+
+## Recorded Real Run: `20260511T113612Z`
+
+The first real strong-baseline run was intentionally interrupted during held-out evaluation after
+the adaptive readiness gate had already failed.
+
+Result:
+
+- Classification: `promotion_mechanism_failure_vs_strong_baseline`
+- Strong baseline qualification: `strong_baseline_qualified`
+- Strong static debt reduction over weak fixed during qualification: `7889` bps
+- Adaptive readiness: `promotion_mechanism_failure_vs_strong_baseline`
+- Active OASG seeds: `0 / 4` required
+- Readiness trial receipts: `5`
+- Readiness trial status: `trial_not_improved = 5`
+- Held-out Stage 2 progress at interruption: `7 / 25` condition blocks completed
+
+Reason for interruption:
+
+The experiment asks whether OASG can produce additional workflow-operation improvement after
+starting from a calibration-selected strong static policy. That question requires at least one
+runner-ledger-backed active OASG policy change before held-out evaluation. In this run, no active
+policy change was produced. Continuing the remaining held-out tasks would mostly compare the strong
+static policy against itself under the `oasg_adaptive_from_strong` label, so it would not provide a
+valid incremental OASG effect estimate.
+
+Artifacts:
+
+- [`results/20260511T113612Z_interrupted/report.md`](results/20260511T113612Z_interrupted/report.md)
+- [`results/20260511T113612Z_interrupted/metrics.json`](results/20260511T113612Z_interrupted/metrics.json)
+- [`results/20260511T113612Z_interrupted/interruption_receipt.json`](results/20260511T113612Z_interrupted/interruption_receipt.json)
+
+Interpretation:
+
+This run does not show that OASG is ineffective in general. It shows that, under this strong
+baseline protocol and implementation, OASG did not operationalize an incremental active workflow
+policy improvement before evaluation. The correct next step is to improve or replace the readiness
+mechanism before spending further compute on confirmatory strong-baseline evaluation.

@@ -1,0 +1,27 @@
+{
+  "receipt_type": "strong_baseline_interruption_receipt",
+  "run_id": "20260511T113612Z",
+  "status": "interrupted_after_readiness_failure",
+  "classification": "promotion_mechanism_failure_vs_strong_baseline",
+  "interruption_reason": "Adaptive readiness failed before held-out evaluation could identify an incremental OASG effect over the strong static baseline.",
+  "scientific_decision": "Stop the run because active OASG policy changes were absent; continuing Stage 2 would not test OASG adaptation.",
+  "strong_baseline_qualification_status": "strong_baseline_qualified",
+  "strong_static_debt_reduction_bps": 7889,
+  "adaptive_readiness_status": "promotion_mechanism_failure_vs_strong_baseline",
+  "active_seed_count": 0,
+  "required_active_seed_count": 4,
+  "trial_count": 5,
+  "trial_status_counts": {
+    "trial_not_improved": 5
+  },
+  "stage2_completed_conditions": 7,
+  "stage2_planned_conditions": 25,
+  "effect_claim_allowed": false,
+  "partial_stage2_use": "diagnostic_only",
+  "relative_artifacts": {
+    "metrics": "experiment/ollama_gemma4_e4b_strong_baseline/results/20260511T113612Z_interrupted/metrics.json",
+    "report": "experiment/ollama_gemma4_e4b_strong_baseline/results/20260511T113612Z_interrupted/report.md",
+    "verification": "experiment/ollama_gemma4_e4b_strong_baseline/results/20260511T113612Z_interrupted/verification.json",
+    "promotion_diagnostic": "experiment/ollama_gemma4_e4b_strong_baseline/results/20260511T113612Z_interrupted/promotion_diagnostic.json"
+  }
+}

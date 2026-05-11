@@ -348,7 +348,7 @@ kept failed, rejected, and inconclusive receipts.
 | `experiment/ollama_gemma4_e4b_longrun` | `inconclusive_no_active_policy` | baseline 276/408 closed; observe-only 277/408 closed; adaptive evaluation was not run because active promotions 0 | Long-run measurement correctly refused to claim OASG effect. |
 | `experiment/ollama_gemma4_e4b_definitive` | `workload_not_sensitive` | mechanism qualification blocked Stage B; no effect claim | The positive-control policy did not establish a useful measurement workload. |
 | `experiment/ollama_gemma4_e4b_decisive` | `oasg_effect_confirmed` | 5 seeds, 680 paired held-out tasks; adaptive debt AUC 2040 -> 921; closure 0 -> 337; hard-floor regressions 0 | Under this preregistered weak-baseline workload, OASG adaptive produced a practical workflow-operation improvement. |
-| `experiment/ollama_gemma4_e4b_strong_baseline` | protocol only | compares OASG against a calibration-selected strong static workflow and a rule-adaptive control | Added to test whether OASG has incremental value beyond a strong hand-calibrated workflow. No result is claimed until run artifacts are produced. |
+| `experiment/ollama_gemma4_e4b_strong_baseline` | `promotion_mechanism_failure_vs_strong_baseline` | strong baseline qualified; adaptive readiness active seeds 0/4 required; run interrupted after 7/25 held-out condition blocks | No incremental OASG effect over the strong baseline is claimed. The run was stopped because adaptive activation failed before evaluation, making the primary effect question non-identifiable. |
 
 ### Decisive Run Details
 
@@ -399,6 +399,19 @@ Scientific interpretation:
   policy improvement. It found a substantial subset.
 - The observe-only condition matched baseline, which supports the interpretation that improvement
   came from active workflow-policy promotion, not from measurement alone.
+
+Strong-baseline follow-up:
+
+- A later strong-baseline protocol qualified a strong static workflow, but OASG did not produce any
+  runner-ledger-backed active policy change from that strong starting point.
+- That run was interrupted after readiness failure, with classification
+  `promotion_mechanism_failure_vs_strong_baseline`.
+- This is negative evidence for the current implementation's ability to add incremental value over
+  that strong static workflow, not a general proof that OASG cannot help stronger baselines.
+- Artifacts:
+  [`experiment/ollama_gemma4_e4b_strong_baseline/results/20260511T113612Z_interrupted/report.md`](experiment/ollama_gemma4_e4b_strong_baseline/results/20260511T113612Z_interrupted/report.md)
+  and
+  [`experiment/ollama_gemma4_e4b_strong_baseline/results/20260511T113612Z_interrupted/interruption_receipt.json`](experiment/ollama_gemma4_e4b_strong_baseline/results/20260511T113612Z_interrupted/interruption_receipt.json).
 
 ### Reproduce the Decisive Experiment
 
