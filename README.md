@@ -361,6 +361,7 @@ Current evidence bottom line:
 | `experiment/ollama_gemma4_e4b_decisive` | `oasg_effect_confirmed` | 5 seeds, 680 paired held-out tasks; adaptive debt AUC 2040 -> 921; closure 0 -> 337; hard-floor regressions 0 | Under this preregistered weak-baseline workload, OASG adaptive produced a practical workflow-operation improvement. |
 | `experiment/ollama_gemma4_e4b_strong_baseline` | `promotion_mechanism_failure_vs_strong_baseline` | strong baseline qualified; adaptive readiness active seeds 0/4 required; run interrupted after 7/25 held-out condition blocks | No incremental OASG effect over the strong baseline is claimed. The run was stopped because adaptive activation failed before evaluation, making the primary effect question non-identifiable. |
 | `experiment/ollama_gemma4_e4b_strong_baseline_v2` | `no_incremental_effect_vs_strong_baseline` | 5 seeds, 680 paired held-out tasks; strong static debt AUC 434; OASG adaptive debt AUC 436; debt delta `+2`, CI `[0, 5]`; cost delta `+7652`, CI `[1534, 14346]`; hard-floor regressions 0 | Readiness succeeded, but held-out evaluation did not show incremental OASG value over the calibrated strong static workflow. |
+| `experiment/ollama_gemma4_e4b_nonstationary_strong_baseline` | protocol added; no effect claim yet | short time-boxed nonstationary protocol with Phase A calibration, Phase B/C/D drift, strong static, observe-only, rule-adaptive, and OASG-adaptive conditions | Designed to test whether fail-closed OASG adaptation can recover post-drift operational debt over a calibration-selected strong static workflow. Defaults target roughly 3-4 local hours; no real-result claim is made until artifacts are produced. |
 
 ### Decisive Run Details
 
@@ -473,8 +474,8 @@ uv run mypy src
 uv run oasg conformance run examples/conformance
 ```
 
-At the time this README was updated after the strong-baseline v2 result curation, these checks
-passed in the current workspace: `97 passed`, `ruff` clean, `mypy` clean, and conformance
+At the time this README was updated after adding the nonstationary strong-baseline protocol, these
+checks passed in the current workspace: `101 passed`, `ruff` clean, `mypy` clean, and conformance
 `status: ok`.
 
 The current public-readiness review is recorded in

@@ -74,6 +74,12 @@ Curated strong-baseline v2 artifacts are in
 ignored, while selected receipts, metrics, tables, verification, and report files were copied into
 the public results directory after a local-path and secret-string scan.
 
+The nonstationary strong-baseline profile has been added as a protocol stub, not as a result claim.
+It is designed to test drift recovery and fail-closed adaptation under a short time-boxed local
+Ollama run. The default config targets roughly 3-4 hours rather than maximizing duration, because
+the scientific target is post-drift recovery mechanism validity rather than broad precision. README
+labels it as "protocol added; no effect claim yet" until real artifacts are curated.
+
 ## Build And Quality Checks
 
 Commands run after public-surface cleanup:
@@ -86,11 +92,12 @@ uv run oasg conformance run examples/conformance
 uv build
 ```
 
-Observed results after strong-baseline v2 result curation:
+Observed results after adding the nonstationary strong-baseline protocol:
 
-- `pytest`: 97 passed.
+- `pytest`: 101 passed.
 - `ruff`: all checks passed.
 - `mypy`: no issues in 36 source files.
+- `mypy` on the new nonstationary experiment scripts: no issues in 5 files.
 - conformance: `status: ok`.
 - `uv build`: built `oasg-1.1.0` wheel and source distribution.
 

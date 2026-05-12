@@ -1,0 +1,48 @@
+{
+  "catalog_id": "oasg_nonstationary_strong_baseline_policy_catalog_v1",
+  "forbidden_automatic_policies": ["set_action_grade"],
+  "policies": [
+    {
+      "eligible_for_oasg_promotion": true,
+      "families": ["json_schema_repair", "validator_receipt", "code_transform", "obligation_closure", "replay_rollback_receipt"],
+      "max_attempts": 1,
+      "patch_kind": "prompt_tightening",
+      "policy_id": "strict_json_minimal"
+    },
+    {
+      "eligible_for_oasg_promotion": true,
+      "families": ["json_schema_repair", "validator_receipt", "obligation_closure"],
+      "max_attempts": 1,
+      "patch_kind": "schema_prompt_tightening",
+      "policy_id": "schema_keys_only"
+    },
+    {
+      "eligible_for_oasg_promotion": true,
+      "families": ["json_schema_repair", "validator_receipt", "safe_python_expression", "code_transform", "obligation_closure", "replay_rollback_receipt"],
+      "max_attempts": 2,
+      "patch_kind": "validator_guided_single_repair",
+      "policy_id": "single_repair_retry"
+    },
+    {
+      "eligible_for_oasg_promotion": true,
+      "families": ["safe_python_expression"],
+      "max_attempts": 1,
+      "patch_kind": "family_prompt_specialization",
+      "policy_id": "family_safe_expr_prompt"
+    },
+    {
+      "eligible_for_oasg_promotion": true,
+      "families": ["validator_receipt", "obligation_closure", "replay_rollback_receipt"],
+      "max_attempts": 1,
+      "patch_kind": "receipt_template_policy",
+      "policy_id": "receipt_template_only"
+    },
+    {
+      "eligible_for_oasg_promotion": true,
+      "families": ["json_schema_repair", "validator_receipt", "safe_python_expression", "code_transform", "obligation_closure", "replay_rollback_receipt"],
+      "max_attempts": 1,
+      "patch_kind": "context_resource_tightening",
+      "policy_id": "context_shortening_policy"
+    }
+  ]
+}
