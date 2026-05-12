@@ -44,6 +44,48 @@ not happen to trigger that failure mode.
 - `invalid_run`
 - `exploratory_only`
 
+## Current Real Result
+
+Latest completed run: `20260511T231627Z`
+
+Final classification: `no_incremental_effect_vs_strong_baseline`
+
+This run is scientifically useful because it passed all preregistered pre-evaluation gates:
+
+- Stage 0 strong baseline qualification: `strong_baseline_qualified`
+- Stage 1 incremental headroom: `debt_headroom_exists`
+- Stage 2 adaptive readiness: `adaptive_from_strong_ready`
+- Stage 3 held-out paired evaluation: completed
+
+The held-out evaluation did not show incremental OASG value over the strong static baseline.
+
+| condition | tasks | closed | debt AUC | cost units | parse failures | validation failures | hard-floor regressions |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| `strong_static_calibrated` | 680 | 463 | 434 | 1580136 | 0 | 217 | 0 |
+| `strong_rule_adaptive_control` | 680 | 463 | 440 | 1602751 | 6 | 217 | 0 |
+| `strong_positive_control` | 680 | 463 | 434 | 1575900 | 0 | 217 | 0 |
+| `oasg_adaptive_from_strong` | 680 | 463 | 436 | 1587788 | 2 | 217 | 0 |
+
+Primary comparison, `oasg_adaptive_from_strong` vs `strong_static_calibrated`:
+
+- Debt AUC delta: `+2`
+- Debt bootstrap CI: `[0, 5]`
+- Cost-to-close delta: `+7652`
+- Cost bootstrap CI: `[1534, 14346]`
+- Closure delta: `0`
+- Hard-floor regressions: `0`
+
+Interpretation: OASG readiness succeeded, but the promoted changes did not transfer into a
+held-out improvement over the calibrated strong static workflow. This is negative evidence for
+incremental value over this strong baseline, not a universal negative result for OASG.
+
+Curated public artifacts are in [`results/`](results/):
+
+- [`results/report.md`](results/report.md)
+- [`results/metrics.json`](results/metrics.json)
+- [`results/verification.json`](results/verification.json)
+- [`results/final_strong_v2_classification_receipt.json`](results/final_strong_v2_classification_receipt.json)
+
 ## Commands
 
 ```powershell

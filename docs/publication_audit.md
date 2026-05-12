@@ -1,6 +1,6 @@
 # Publication Audit
 
-Date: 2026-05-10
+Date: 2026-05-13
 
 This audit records the public-readiness checks for the current OASG reference package.
 
@@ -60,12 +60,19 @@ The old `CONTRIBUTING.md` file was intentionally removed.
 The README reports all local Ollama `gemma4:e4b` experiment outcomes, including null,
 inconclusive, workload-not-sensitive, and positive decisive runs.
 
-The strongest reported result is limited to the decisive experiment's frozen workload, model,
+The strongest positive result is limited to the decisive experiment's frozen workload, model,
 validators, prompts, implementation, and thresholds. It is not presented as universal proof.
 
-An additional strong-baseline protocol is included to test incremental OASG value against a
-calibration-selected static workflow and a simple rule-adaptive control. It is a protocol until
-real run artifacts are generated.
+The strong-baseline v2 protocol now has a completed real run. Its final classification is
+`no_incremental_effect_vs_strong_baseline`: readiness passed, but held-out evaluation did not show
+incremental OASG value over the calibrated strong static workflow. The README and experiment report
+state this as negative evidence for this implementation/workload/model combination, not as a
+universal negative result.
+
+Curated strong-baseline v2 artifacts are in
+`experiment/ollama_gemma4_e4b_strong_baseline_v2/results/`. The generated `runs/` directory remains
+ignored, while selected receipts, metrics, tables, verification, and report files were copied into
+the public results directory after a local-path and secret-string scan.
 
 ## Build And Quality Checks
 
@@ -79,9 +86,9 @@ uv run oasg conformance run examples/conformance
 uv build
 ```
 
-Observed results:
+Observed results after strong-baseline v2 result curation:
 
-- `pytest`: 83 passed.
+- `pytest`: 97 passed.
 - `ruff`: all checks passed.
 - `mypy`: no issues in 36 source files.
 - conformance: `status: ok`.
@@ -96,6 +103,17 @@ Package artifact inspection:
   protocols/results. Generated experiment run contents remain excluded by `.gitignore`.
 - Public files and built artifacts were scanned for local absolute paths and the local username;
   no matches remained outside the ignored virtual environment.
+
+Additional post-experiment public-surface scan on 2026-05-13:
+
+- No local absolute paths or local username strings were found in the curated strong-baseline v2
+  result artifacts.
+- No API keys, bearer tokens, or authorization strings were found in the curated artifacts.
+- The only localhost references are documented Ollama endpoint checks and not credentials.
+- Built wheel and source distribution were scanned for local absolute paths and the local username;
+  no matches were found. The wheel contains package files only; the source distribution includes
+  curated docs, tests, examples, and experiment result summaries, but not generated run payloads
+  beyond the `runs/.gitignore` placeholders.
 
 ## Release Position
 

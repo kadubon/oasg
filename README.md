@@ -128,7 +128,8 @@ Implemented:
   retirement, outcome memory, and conflict receipts.
 - Model-agnostic adapters that emit observation events rather than evaluator judgments.
 - JSON Schema export and conformance fixtures.
-- Ollama `gemma4:e4b` experiment profiles with null, inconclusive, and positive results retained.
+- Ollama `gemma4:e4b` experiment profiles with null, inconclusive, positive, interrupted, and
+  strong-baseline negative results retained.
 
 Not implemented or not claimed:
 
@@ -339,6 +340,16 @@ The repository includes local Ollama `gemma4:e4b` experiments. They are designed
 operation, not model intelligence. All reported runs used deterministic operational validators and
 kept failed, rejected, and inconclusive receipts.
 
+Current evidence bottom line:
+
+- OASG showed a practical workflow-operation improvement over a deliberately weak fixed baseline in
+  the decisive experiment.
+- OASG did not show an incremental improvement over a calibration-selected strong static baseline
+  in the strong-baseline v2 experiment.
+- Therefore, the scientifically honest claim is conditional: this implementation can improve a
+  brittle fixed workflow in the tested setting, but the repository does not yet show added value
+  over a strong hand-tuned workflow.
+
 ### Evidence Summary
 
 | experiment | classification | key result | interpretation |
@@ -349,11 +360,11 @@ kept failed, rejected, and inconclusive receipts.
 | `experiment/ollama_gemma4_e4b_definitive` | `workload_not_sensitive` | mechanism qualification blocked Stage B; no effect claim | The positive-control policy did not establish a useful measurement workload. |
 | `experiment/ollama_gemma4_e4b_decisive` | `oasg_effect_confirmed` | 5 seeds, 680 paired held-out tasks; adaptive debt AUC 2040 -> 921; closure 0 -> 337; hard-floor regressions 0 | Under this preregistered weak-baseline workload, OASG adaptive produced a practical workflow-operation improvement. |
 | `experiment/ollama_gemma4_e4b_strong_baseline` | `promotion_mechanism_failure_vs_strong_baseline` | strong baseline qualified; adaptive readiness active seeds 0/4 required; run interrupted after 7/25 held-out condition blocks | No incremental OASG effect over the strong baseline is claimed. The run was stopped because adaptive activation failed before evaluation, making the primary effect question non-identifiable. |
-| `experiment/ollama_gemma4_e4b_strong_baseline_v2` | protocol implemented | adds an incremental-headroom stage before readiness/evaluation | Designed to avoid spending held-out compute when a strong static baseline leaves no measurable debt or efficiency headroom. No real-result claim is made until artifacts are produced. |
+| `experiment/ollama_gemma4_e4b_strong_baseline_v2` | `no_incremental_effect_vs_strong_baseline` | 5 seeds, 680 paired held-out tasks; strong static debt AUC 434; OASG adaptive debt AUC 436; debt delta `+2`, CI `[0, 5]`; cost delta `+7652`, CI `[1534, 14346]`; hard-floor regressions 0 | Readiness succeeded, but held-out evaluation did not show incremental OASG value over the calibrated strong static workflow. |
 
 ### Decisive Run Details
 
-The decisive run is the current strongest evidence in this repository.
+The decisive run is the current strongest positive evidence in this repository.
 
 Artifacts:
 
@@ -416,16 +427,25 @@ Strong-baseline follow-up:
 
 Strong-baseline v2 protocol:
 
-- The v2 profile adds an explicit `incremental_headroom` gate. It first asks whether any
-  runner-ledger-backed candidate can improve debt or cost-to-close over the calibrated strong
-  static workflow.
-- If no headroom exists, it stops as `strong_baseline_ceiling_no_headroom`; this is a ceiling result,
-  not an OASG promotion failure.
-- If headroom exists but OASG cannot active-promote it in the required seeds, it stops as
-  `promotion_mechanism_failure_vs_strong_baseline`.
-- Held-out evaluation runs only after both headroom and readiness pass.
-- Protocol directory:
-  [`experiment/ollama_gemma4_e4b_strong_baseline_v2`](experiment/ollama_gemma4_e4b_strong_baseline_v2).
+- The v2 profile added an explicit `incremental_headroom` gate and then completed held-out
+  evaluation after readiness passed.
+- Stage 0: `strong_baseline_qualified`; the strong static policy reduced calibration debt AUC by
+  `7861` bps versus the weak fixed baseline.
+- Stage 1: `debt_headroom_exists`; calibration canaries found 43 incremental candidates.
+- Stage 2: `adaptive_from_strong_ready`; active changes appeared in all 5 seeds.
+- Stage 3: held-out evaluation did not show incremental gain over strong static:
+  - `strong_static_calibrated`: debt AUC `434`, cost units `1580136`, closed `463/680`.
+  - `oasg_adaptive_from_strong`: debt AUC `436`, cost units `1587788`, closed `463/680`.
+  - primary debt delta `+2`, debt CI `[0, 5]`; primary cost delta `+7652`, cost CI
+    `[1534, 14346]`.
+- Final classification: `no_incremental_effect_vs_strong_baseline`.
+- Interpretation: this is negative evidence for incremental value over this strong static workflow,
+  not evidence that OASG cannot help all strong baselines.
+- Curated artifacts:
+  [`experiment/ollama_gemma4_e4b_strong_baseline_v2/results/report.md`](experiment/ollama_gemma4_e4b_strong_baseline_v2/results/report.md),
+  [`experiment/ollama_gemma4_e4b_strong_baseline_v2/results/metrics.json`](experiment/ollama_gemma4_e4b_strong_baseline_v2/results/metrics.json),
+  and
+  [`experiment/ollama_gemma4_e4b_strong_baseline_v2/results/verification.json`](experiment/ollama_gemma4_e4b_strong_baseline_v2/results/verification.json).
 
 ### Reproduce the Decisive Experiment
 
@@ -453,8 +473,9 @@ uv run mypy src
 uv run oasg conformance run examples/conformance
 ```
 
-At the time this README was updated, these checks passed in the current workspace after the
-public-surface cleanup: `91 passed`, `ruff` clean, `mypy` clean, and conformance `status: ok`.
+At the time this README was updated after the strong-baseline v2 result curation, these checks
+passed in the current workspace: `97 passed`, `ruff` clean, `mypy` clean, and conformance
+`status: ok`.
 
 The current public-readiness review is recorded in
 [`docs/publication_audit.md`](docs/publication_audit.md).
