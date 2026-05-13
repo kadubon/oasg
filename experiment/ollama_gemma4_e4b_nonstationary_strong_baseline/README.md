@@ -7,11 +7,30 @@ question is narrower:
 > When a strong static workflow is selected from Phase A only, can OASG recover post-drift
 > operational performance by promoting runner-ledger-backed, fail-closed workflow-policy changes?
 
-No effect claim has been made yet for this protocol. The default config is a short time-boxed
-mechanism test that is expected to take roughly 3-4 hours on local Ollama `gemma4:e4b`, depending on
-hardware and model throughput. The shorter run is scientifically meaningful because it keeps the
-core mechanism intact: Phase A calibration, ordered Phase B/C/D drift, online observations, and
-fail-closed adaptation. It has less precision than a larger 5-seed confirmatory run.
+A completed local run is curated in `results/` with classification
+`oasg_nonstationary_effect_confirmed_timeboxed`. The default config is a short time-boxed mechanism
+test that took roughly five hours on local Ollama `gemma4:e4b` in this workspace. The shorter run is
+scientifically meaningful because it keeps the core mechanism intact: Phase A calibration, ordered
+Phase B/C/D drift, online observations, and fail-closed adaptation. It has less precision than a
+larger 5-seed confirmatory run.
+
+## Curated Result
+
+- Classification: `oasg_nonstationary_effect_confirmed_timeboxed`
+- Verification: `ok`
+- Paired post-drift tasks: `48`
+- Strong static debt AUC: `112`
+- OASG adaptive debt AUC: `84`
+- Debt delta: `-28`, bootstrap CI `[-51, -10]`
+- Closure: `20/48` -> `27/48`
+- Hard-floor regressions: `0`
+- OASG vs rule-adaptive debt delta: `-30`, bootstrap CI `[-50, -12]`
+- Adaptation lag: Phase B `1` epoch, Phase C `0`, Phase D `0`
+
+Interpretation: this is positive time-boxed evidence that fail-closed OASG adaptation can recover
+post-drift operational debt over a Phase-A-calibrated strong static workflow in this controlled
+`gemma4:e4b` setting. It is not evidence of universal OASG effectiveness or model intelligence
+improvement.
 
 ## Design
 
@@ -79,4 +98,4 @@ uv run python experiment\ollama_gemma4_e4b_nonstationary_strong_baseline\scripts
 uv run python experiment\ollama_gemma4_e4b_nonstationary_strong_baseline\scripts\analyze_nonstationary_results.py --run-dir experiment\ollama_gemma4_e4b_nonstationary_strong_baseline\runs\latest --out experiment\ollama_gemma4_e4b_nonstationary_strong_baseline\results
 ```
 
-Effect is claimed only after a completed run is curated into `results/` with verification receipts.
+Effect is claimed only for the curated result in `results/` and only under the limits stated above.

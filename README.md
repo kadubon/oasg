@@ -345,10 +345,12 @@ Current evidence bottom line:
 - OASG showed a practical workflow-operation improvement over a deliberately weak fixed baseline in
   the decisive experiment.
 - OASG did not show an incremental improvement over a calibration-selected strong static baseline
-  in the strong-baseline v2 experiment.
-- Therefore, the scientifically honest claim is conditional: this implementation can improve a
-  brittle fixed workflow in the tested setting, but the repository does not yet show added value
-  over a strong hand-tuned workflow.
+  on a fixed held-out distribution in the strong-baseline v2 experiment.
+- OASG did show time-boxed post-drift recovery over a calibration-selected strong static workflow
+  in the nonstationary strong-baseline protocol.
+- Therefore, the scientifically honest claim is conditional: this implementation has positive
+  evidence for workflow adaptation when operational requirements drift, while fixed-distribution
+  strong-baseline evidence remains negative.
 
 ### Evidence Summary
 
@@ -361,11 +363,11 @@ Current evidence bottom line:
 | `experiment/ollama_gemma4_e4b_decisive` | `oasg_effect_confirmed` | 5 seeds, 680 paired held-out tasks; adaptive debt AUC 2040 -> 921; closure 0 -> 337; hard-floor regressions 0 | Under this preregistered weak-baseline workload, OASG adaptive produced a practical workflow-operation improvement. |
 | `experiment/ollama_gemma4_e4b_strong_baseline` | `promotion_mechanism_failure_vs_strong_baseline` | strong baseline qualified; adaptive readiness active seeds 0/4 required; run interrupted after 7/25 held-out condition blocks | No incremental OASG effect over the strong baseline is claimed. The run was stopped because adaptive activation failed before evaluation, making the primary effect question non-identifiable. |
 | `experiment/ollama_gemma4_e4b_strong_baseline_v2` | `no_incremental_effect_vs_strong_baseline` | 5 seeds, 680 paired held-out tasks; strong static debt AUC 434; OASG adaptive debt AUC 436; debt delta `+2`, CI `[0, 5]`; cost delta `+7652`, CI `[1534, 14346]`; hard-floor regressions 0 | Readiness succeeded, but held-out evaluation did not show incremental OASG value over the calibrated strong static workflow. |
-| `experiment/ollama_gemma4_e4b_nonstationary_strong_baseline` | protocol added; no effect claim yet | short time-boxed nonstationary protocol with Phase A calibration, Phase B/C/D drift, strong static, observe-only, rule-adaptive, and OASG-adaptive conditions | Designed to test whether fail-closed OASG adaptation can recover post-drift operational debt over a calibration-selected strong static workflow. Defaults target roughly 3-4 local hours; no real-result claim is made until artifacts are produced. |
+| `experiment/ollama_gemma4_e4b_nonstationary_strong_baseline` | `oasg_nonstationary_effect_confirmed_timeboxed` | 2 seeds, 48 paired post-drift tasks; strong static debt AUC `112`; OASG adaptive debt AUC `84`; debt delta `-28`, CI `[-51, -10]`; closure `20/48 -> 27/48`; hard-floor regressions `0` | Time-boxed positive evidence that fail-closed OASG adaptation recovered post-drift operational debt over a calibration-selected strong static workflow. The claim is limited to this frozen protocol and is not universal. |
 
 ### Decisive Run Details
 
-The decisive run is the current strongest positive evidence in this repository.
+The decisive run is the strongest weak-baseline positive evidence in this repository.
 
 Artifacts:
 
@@ -448,6 +450,32 @@ Strong-baseline v2 protocol:
   and
   [`experiment/ollama_gemma4_e4b_strong_baseline_v2/results/verification.json`](experiment/ollama_gemma4_e4b_strong_baseline_v2/results/verification.json).
 
+Nonstationary strong-baseline protocol:
+
+- This profile tests the narrower OASG claim that adaptation should matter when a strong static
+  workflow is calibrated on Phase A but later faces ordered workload drift.
+- Final classification: `oasg_nonstationary_effect_confirmed_timeboxed`.
+- Integrity: verification `ok`, paired post-drift task count `48`, hard-floor regressions `0`.
+- Primary result:
+  - `strong_static_calibrated`: debt AUC `112`, cost units `148517`, closed `20/48`.
+  - `oasg_adaptive_from_strong`: debt AUC `84`, cost units `137059`, closed `27/48`.
+  - debt delta `-28`, debt CI `[-51, -10]`; cost delta `-11458`, cost CI `[-31074, 7272]`.
+  - adaptation lag: Phase B `1` epoch, Phase C `0`, Phase D `0`.
+- Secondary controls:
+  - OASG vs observe-only debt delta `-29`, CI `[-52, -11]`.
+  - OASG vs rule-adaptive debt delta `-30`, CI `[-50, -12]`.
+- Interpretation: this is positive time-boxed evidence for fail-closed post-drift workflow
+  adaptation over a strong static workflow. It does not contradict the fixed-distribution
+  strong-baseline v2 negative result; it narrows the claim to nonstationary operation.
+- Limits: only 2 seeds, controlled synthetic operational drift, local `gemma4:e4b`, deterministic
+  validators, and repository-defined thresholds. It is not universal evidence and does not imply
+  model intelligence improvement.
+- Curated artifacts:
+  [`experiment/ollama_gemma4_e4b_nonstationary_strong_baseline/results/report.md`](experiment/ollama_gemma4_e4b_nonstationary_strong_baseline/results/report.md),
+  [`experiment/ollama_gemma4_e4b_nonstationary_strong_baseline/results/metrics.json`](experiment/ollama_gemma4_e4b_nonstationary_strong_baseline/results/metrics.json),
+  and
+  [`experiment/ollama_gemma4_e4b_nonstationary_strong_baseline/results/verification.json`](experiment/ollama_gemma4_e4b_nonstationary_strong_baseline/results/verification.json).
+
 ### Reproduce the Decisive Experiment
 
 Requires local Ollama with `gemma4:e4b` installed.
@@ -463,6 +491,19 @@ uv run python experiment\ollama_gemma4_e4b_decisive\scripts\analyze_decisive_res
 The effect claim is limited to the frozen workload, model, prompts, validators, implementation, and
 decision thresholds in that experiment profile.
 
+### Reproduce the Nonstationary Strong-Baseline Experiment
+
+Requires local Ollama with `gemma4:e4b` installed. The default config is a short time-boxed
+nonstationary protocol, not a universal benchmark.
+
+```powershell
+cd path\to\oasg
+uv sync
+ollama list
+uv run python experiment\ollama_gemma4_e4b_nonstationary_strong_baseline\scripts\run_nonstationary_experiment.py --config experiment\ollama_gemma4_e4b_nonstationary_strong_baseline\config_nonstationary.json
+uv run python experiment\ollama_gemma4_e4b_nonstationary_strong_baseline\scripts\analyze_nonstationary_results.py --run-dir experiment\ollama_gemma4_e4b_nonstationary_strong_baseline\runs\latest --out experiment\ollama_gemma4_e4b_nonstationary_strong_baseline\results
+```
+
 ## Development Checks
 
 Before publishing a change or port:
@@ -474,7 +515,7 @@ uv run mypy src
 uv run oasg conformance run examples/conformance
 ```
 
-At the time this README was updated after adding the nonstationary strong-baseline protocol, these
+At the time this README was updated after curating the nonstationary strong-baseline result, these
 checks passed in the current workspace: `101 passed`, `ruff` clean, `mypy` clean, and conformance
 `status: ok`.
 

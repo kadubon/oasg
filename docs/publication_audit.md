@@ -58,9 +58,10 @@ The old `CONTRIBUTING.md` file was intentionally removed.
 ## Experiment Evidence Review
 
 The README reports all local Ollama `gemma4:e4b` experiment outcomes, including null,
-inconclusive, workload-not-sensitive, and positive decisive runs.
+inconclusive, workload-not-sensitive, negative strong-baseline, positive decisive, and positive
+time-boxed nonstationary runs.
 
-The strongest positive result is limited to the decisive experiment's frozen workload, model,
+The decisive weak-baseline result is limited to that experiment's frozen workload, model,
 validators, prompts, implementation, and thresholds. It is not presented as universal proof.
 
 The strong-baseline v2 protocol now has a completed real run. Its final classification is
@@ -74,11 +75,14 @@ Curated strong-baseline v2 artifacts are in
 ignored, while selected receipts, metrics, tables, verification, and report files were copied into
 the public results directory after a local-path and secret-string scan.
 
-The nonstationary strong-baseline profile has been added as a protocol stub, not as a result claim.
-It is designed to test drift recovery and fail-closed adaptation under a short time-boxed local
-Ollama run. The default config targets roughly 3-4 hours rather than maximizing duration, because
-the scientific target is post-drift recovery mechanism validity rather than broad precision. README
-labels it as "protocol added; no effect claim yet" until real artifacts are curated.
+The nonstationary strong-baseline profile now has a completed curated run with classification
+`oasg_nonstationary_effect_confirmed_timeboxed`. It tested drift recovery and fail-closed
+adaptation under a short time-boxed local Ollama run. The final report states that strong static
+calibration used Phase A only, primary metrics excluded Phase A, and OASG adaptive used only prior
+online observations. The result is positive evidence for post-drift workflow adaptation over a
+calibration-selected strong static workflow in this frozen protocol, not a universal effect claim.
+Curated artifacts are in
+`experiment/ollama_gemma4_e4b_nonstationary_strong_baseline/results/`.
 
 ## Build And Quality Checks
 
@@ -92,7 +96,7 @@ uv run oasg conformance run examples/conformance
 uv build
 ```
 
-Observed results after adding the nonstationary strong-baseline protocol:
+Observed results after curating the nonstationary strong-baseline result:
 
 - `pytest`: 101 passed.
 - `ruff`: all checks passed.

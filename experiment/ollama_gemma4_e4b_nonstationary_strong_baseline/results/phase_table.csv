@@ -1,0 +1,13 @@
+phase_id,condition,task_count,closed,closure_rate_bps,operational_debt_auc,cost_to_close_units,validation_failures,parse_failures,retries,unresolved_obligations,attempts,char_budget,latency_ms,active_mutation_ids,active_mutation_count,active_mutation_epoch_count,hard_floor_regression_count,rollback_failures,evidence_gap,rollback_gap
+phase_b_mild_drift,strong_static_calibrated,16,4,2500,48,52255,9,6,0,12,16,4606,316561,[],0,0,0,0,9,0
+phase_b_mild_drift,oasg_observe_only_from_strong,16,4,2500,49,55896,9,7,0,12,16,4385,355186,[],0,0,0,0,9,0
+phase_b_mild_drift,rule_adaptive_control,16,4,2500,48,50194,10,4,0,12,16,4575,296286,[],0,0,0,0,10,0
+phase_b_mild_drift,oasg_adaptive_from_strong,16,4,2500,48,50358,9,6,0,12,16,4229,301380,"['mut_context_shortening_policy_code_transform_phase_b_mild_drift', 'mut_family_safe_expr_prompt_safe_python_expression_phase_b_mild_drift', 'mut_schema_keys_only_obligation_closure_phase_b_mild_drift']",3,1,0,0,9,0
+phase_c_structural_drift,strong_static_calibrated,16,7,4375,36,55413,9,0,0,9,16,5869,335516,[],0,0,0,0,9,0
+phase_c_structural_drift,oasg_observe_only_from_strong,16,7,4375,36,59766,9,0,0,9,16,5869,379028,[],0,0,0,0,9,0
+phase_c_structural_drift,rule_adaptive_control,16,4,2500,49,60060,12,1,0,12,16,5187,388786,[],0,0,0,0,12,0
+phase_c_structural_drift,oasg_adaptive_from_strong,16,8,5000,32,46893,8,0,0,8,16,4804,260984,"['mut_context_shortening_policy_code_transform_phase_c_structural_drift', 'mut_family_safe_expr_prompt_safe_python_expression_phase_c_structural_drift', 'mut_schema_keys_only_obligation_closure_phase_c_structural_drift', 'mut_strict_json_minimal_code_transform_phase_c_structural_drift']",4,2,0,0,8,0
+phase_d_mixed_reversion,strong_static_calibrated,16,9,5625,28,40849,7,0,0,7,16,4131,207259,[],0,0,0,0,7,0
+phase_d_mixed_reversion,oasg_observe_only_from_strong,16,9,5625,28,41423,7,0,0,7,16,4131,213001,[],0,0,0,0,7,0
+phase_d_mixed_reversion,rule_adaptive_control,16,12,7500,17,53054,4,1,0,4,16,4324,327356,[],0,0,0,0,4,0
+phase_d_mixed_reversion,oasg_adaptive_from_strong,16,15,9375,4,39808,1,0,0,1,16,4251,195649,"['mut_context_shortening_policy_code_transform_phase_d_mixed_reversion', 'mut_family_safe_expr_prompt_safe_python_expression_phase_d_mixed_reversion', 'mut_schema_keys_only_json_schema_repair_phase_d_mixed_reversion', 'mut_schema_keys_only_obligation_closure_phase_d_mixed_reversion', 'mut_strict_json_minimal_code_transform_phase_d_mixed_reversion']",5,2,0,0,1,0

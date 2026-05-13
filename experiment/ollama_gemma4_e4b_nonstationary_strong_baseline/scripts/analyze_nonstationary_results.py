@@ -307,6 +307,8 @@ def _oracle_probe_comparison(rows: list[dict[str, Any]]) -> dict[str, Any]:
 def _render_report(metrics: dict[str, Any]) -> str:
     summaries = metrics["condition_summaries"]
     primary = metrics["comparisons"]["oasg_vs_strong_static"]
+    observe = metrics["comparisons"]["oasg_vs_observe_only"]
+    rule = metrics["comparisons"]["oasg_vs_rule_adaptive"]
     lines = [
         "# OASG Nonstationary Strong-Baseline Report",
         "",
@@ -368,6 +370,28 @@ def _render_report(metrics: dict[str, Any]) -> str:
             f"- Cost-to-close delta: `{primary['cost_to_close_delta']}`",
             f"- Cost bootstrap CI: `{primary['cost_bootstrap_ci']['delta_ci']}`",
             f"- Adaptation lag: `{metrics['adaptation_lag']}`",
+            "",
+            "## Secondary Comparisons",
+            "",
+            "- OASG vs observe-only debt delta: "
+            f"`{observe['debt_auc_delta']}`; CI `{observe['debt_bootstrap_ci']['delta_ci']}`.",
+            "- OASG vs rule-adaptive debt delta: "
+            f"`{rule['debt_auc_delta']}`; CI `{rule['debt_bootstrap_ci']['delta_ci']}`.",
+            "",
+            "## Phase-Wise Results",
+            "",
+            "| phase | condition | tasks | closed | debt AUC | cost units | active mutations |",
+            "| --- | --- | ---: | ---: | ---: | ---: | ---: |",
+        ]
+    )
+    for row in metrics["phase_table"]:
+        lines.append(
+            f"| `{row['phase_id']}` | `{row['condition']}` | {row['task_count']} | "
+            f"{row['closed']} | {row['operational_debt_auc']} | "
+            f"{row['cost_to_close_units']} | {row['active_mutation_count']} |"
+        )
+    lines.extend(
+        [
             "",
             "## Claims Supported",
             "",

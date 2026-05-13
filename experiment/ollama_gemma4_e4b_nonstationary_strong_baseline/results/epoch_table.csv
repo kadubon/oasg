@@ -1,0 +1,49 @@
+seed,condition,phase_id,epoch,task_count,closed,closure_rate_bps,operational_debt_auc,cost_to_close_units,validation_failures,parse_failures,retries,unresolved_obligations,attempts,char_budget,latency_ms,active_mutation_ids,active_mutation_count,active_mutation_epoch_count,hard_floor_regression_count,rollback_failures,evidence_gap,rollback_gap
+20260509,oasg_adaptive_from_strong,phase_b_mild_drift,3,4,1,2500,12,13719,2,2,0,3,4,1137,85839,[],0,0,0,0,2,0
+20260509,oasg_adaptive_from_strong,phase_b_mild_drift,4,4,1,2500,11,8340,2,1,0,3,4,1107,32358,"['mut_context_shortening_policy_code_transform_phase_b_mild_drift', 'mut_schema_keys_only_obligation_closure_phase_b_mild_drift']",2,1,0,0,2,0
+20260509,oasg_adaptive_from_strong,phase_c_structural_drift,5,4,1,2500,12,10153,3,0,0,3,4,1035,51202,['mut_context_shortening_policy_code_transform_phase_c_structural_drift'],1,1,0,0,3,0
+20260509,oasg_adaptive_from_strong,phase_c_structural_drift,6,4,3,7500,4,12660,1,0,0,1,4,1307,73548,"['mut_family_safe_expr_prompt_safe_python_expression_phase_c_structural_drift', 'mut_schema_keys_only_obligation_closure_phase_c_structural_drift']",2,1,0,0,1,0
+20260509,oasg_adaptive_from_strong,phase_d_mixed_reversion,7,4,3,7500,4,8793,1,0,0,1,4,1057,37389,"['mut_family_safe_expr_prompt_safe_python_expression_phase_d_mixed_reversion', 'mut_schema_keys_only_json_schema_repair_phase_d_mixed_reversion', 'mut_strict_json_minimal_code_transform_phase_d_mixed_reversion']",3,1,0,0,1,0
+20260509,oasg_adaptive_from_strong,phase_d_mixed_reversion,8,4,4,10000,0,8805,0,0,0,0,4,1076,37317,"['mut_family_safe_expr_prompt_safe_python_expression_phase_d_mixed_reversion', 'mut_schema_keys_only_obligation_closure_phase_d_mixed_reversion', 'mut_strict_json_minimal_code_transform_phase_d_mixed_reversion']",3,1,0,0,0,0
+20260509,oasg_observe_only_from_strong,phase_b_mild_drift,3,4,1,2500,12,13883,2,2,0,3,4,1137,87481,[],0,0,0,0,2,0
+20260509,oasg_observe_only_from_strong,phase_b_mild_drift,4,4,1,2500,12,13526,2,2,0,3,4,1259,82689,[],0,0,0,0,2,0
+20260509,oasg_observe_only_from_strong,phase_c_structural_drift,5,4,1,2500,12,15480,3,0,0,3,4,1343,101383,[],0,0,0,0,3,0
+20260509,oasg_observe_only_from_strong,phase_c_structural_drift,6,4,2,5000,8,11875,2,0,0,2,4,1365,65112,[],0,0,0,0,2,0
+20260509,oasg_observe_only_from_strong,phase_d_mixed_reversion,7,4,2,5000,8,7761,2,0,0,2,4,992,27709,[],0,0,0,0,2,0
+20260509,oasg_observe_only_from_strong,phase_d_mixed_reversion,8,4,3,7500,4,10761,1,0,0,1,4,1028,57346,[],0,0,0,0,1,0
+20260509,rule_adaptive_control,phase_b_mild_drift,3,4,1,2500,12,10860,2,2,0,3,4,1057,58048,[],0,0,0,0,2,0
+20260509,rule_adaptive_control,phase_b_mild_drift,4,4,1,2500,12,14135,3,0,0,3,4,1317,88209,[],0,0,0,0,3,0
+20260509,rule_adaptive_control,phase_c_structural_drift,5,4,0,0,16,11557,4,0,0,4,4,1062,64963,[],0,0,0,0,4,0
+20260509,rule_adaptive_control,phase_c_structural_drift,6,4,2,5000,8,14060,2,0,0,2,4,1323,87389,[],0,0,0,0,2,0
+20260509,rule_adaptive_control,phase_d_mixed_reversion,7,4,2,5000,9,14385,2,1,0,2,4,1052,93345,[],0,0,0,0,2,0
+20260509,rule_adaptive_control,phase_d_mixed_reversion,8,4,4,10000,0,8887,0,0,0,0,4,1076,38122,[],0,0,0,0,0,0
+20260509,strong_static_calibrated,phase_b_mild_drift,3,4,1,2500,12,12311,2,2,0,3,4,1137,71753,[],0,0,0,0,2,0
+20260509,strong_static_calibrated,phase_b_mild_drift,4,4,1,2500,12,12551,2,2,0,3,4,1259,72931,[],0,0,0,0,2,0
+20260509,strong_static_calibrated,phase_c_structural_drift,5,4,1,2500,12,13296,3,0,0,3,4,1343,79550,[],0,0,0,0,3,0
+20260509,strong_static_calibrated,phase_c_structural_drift,6,4,2,5000,8,11718,2,0,0,2,4,1365,63541,[],0,0,0,0,2,0
+20260509,strong_static_calibrated,phase_d_mixed_reversion,7,4,2,5000,8,8017,2,0,0,2,4,992,30271,[],0,0,0,0,2,0
+20260509,strong_static_calibrated,phase_d_mixed_reversion,8,4,3,7500,4,11494,1,0,0,1,4,1028,64681,[],0,0,0,0,1,0
+20260510,oasg_adaptive_from_strong,phase_b_mild_drift,3,4,1,2500,14,15001,3,2,0,3,4,948,100552,[],0,0,0,0,3,0
+20260510,oasg_adaptive_from_strong,phase_b_mild_drift,4,4,1,2500,11,13298,2,1,0,3,4,1037,82631,"['mut_family_safe_expr_prompt_safe_python_expression_phase_b_mild_drift', 'mut_schema_keys_only_obligation_closure_phase_b_mild_drift']",2,1,0,0,2,0
+20260510,oasg_adaptive_from_strong,phase_c_structural_drift,5,4,2,5000,8,12468,2,0,0,2,4,1231,72400,"['mut_schema_keys_only_obligation_closure_phase_c_structural_drift', 'mut_strict_json_minimal_code_transform_phase_c_structural_drift']",2,1,0,0,2,0
+20260510,oasg_adaptive_from_strong,phase_c_structural_drift,6,4,2,5000,8,11612,2,0,0,2,4,1231,63834,"['mut_context_shortening_policy_code_transform_phase_c_structural_drift', 'mut_schema_keys_only_obligation_closure_phase_c_structural_drift']",2,1,0,0,2,0
+20260510,oasg_adaptive_from_strong,phase_d_mixed_reversion,7,4,4,10000,0,12051,0,0,0,0,4,1057,69948,"['mut_context_shortening_policy_code_transform_phase_d_mixed_reversion', 'mut_family_safe_expr_prompt_safe_python_expression_phase_d_mixed_reversion', 'mut_schema_keys_only_obligation_closure_phase_d_mixed_reversion']",3,1,0,0,0,0
+20260510,oasg_adaptive_from_strong,phase_d_mixed_reversion,8,4,4,10000,0,10159,0,0,0,0,4,1061,50995,"['mut_context_shortening_policy_code_transform_phase_d_mixed_reversion', 'mut_schema_keys_only_obligation_closure_phase_d_mixed_reversion']",2,1,0,0,0,0
+20260510,oasg_observe_only_from_strong,phase_b_mild_drift,3,4,1,2500,13,14689,3,1,0,3,4,1169,95222,[],0,0,0,0,3,0
+20260510,oasg_observe_only_from_strong,phase_b_mild_drift,4,4,1,2500,12,13798,2,2,0,3,4,820,89794,[],0,0,0,0,2,0
+20260510,oasg_observe_only_from_strong,phase_c_structural_drift,5,4,2,5000,8,16088,2,0,0,2,4,1549,105406,[],0,0,0,0,2,0
+20260510,oasg_observe_only_from_strong,phase_c_structural_drift,6,4,2,5000,8,16323,2,0,0,2,4,1612,107127,[],0,0,0,0,2,0
+20260510,oasg_observe_only_from_strong,phase_d_mixed_reversion,7,4,2,5000,8,11396,2,0,0,2,4,1012,63859,[],0,0,0,0,2,0
+20260510,oasg_observe_only_from_strong,phase_d_mixed_reversion,8,4,2,5000,8,11505,2,0,0,2,4,1099,64087,[],0,0,0,0,2,0
+20260510,rule_adaptive_control,phase_b_mild_drift,3,4,1,2500,13,12134,3,1,0,3,4,1089,70475,[],0,0,0,0,3,0
+20260510,rule_adaptive_control,phase_b_mild_drift,4,4,1,2500,11,13065,2,1,0,3,4,1112,79554,[],0,0,0,0,2,0
+20260510,rule_adaptive_control,phase_c_structural_drift,5,4,1,2500,12,15432,3,0,0,3,4,1560,98729,[],0,0,0,0,3,0
+20260510,rule_adaptive_control,phase_c_structural_drift,6,4,1,2500,13,19011,3,1,0,3,4,1242,137705,[],0,0,0,0,3,0
+20260510,rule_adaptive_control,phase_d_mixed_reversion,7,4,3,7500,4,15555,1,0,0,1,4,1096,104602,[],0,0,0,0,1,0
+20260510,rule_adaptive_control,phase_d_mixed_reversion,8,4,3,7500,4,14227,1,0,0,1,4,1100,91287,[],0,0,0,0,1,0
+20260510,strong_static_calibrated,phase_b_mild_drift,3,4,1,2500,13,14075,3,1,0,3,4,1169,89077,[],0,0,0,0,3,0
+20260510,strong_static_calibrated,phase_b_mild_drift,4,4,1,2500,11,13318,2,1,0,3,4,1041,82800,[],0,0,0,0,2,0
+20260510,strong_static_calibrated,phase_c_structural_drift,5,4,2,5000,8,15694,2,0,0,2,4,1549,101468,[],0,0,0,0,2,0
+20260510,strong_static_calibrated,phase_c_structural_drift,6,4,2,5000,8,14705,2,0,0,2,4,1612,90957,[],0,0,0,0,2,0
+20260510,strong_static_calibrated,phase_d_mixed_reversion,7,4,2,5000,8,9725,2,0,0,2,4,1012,47145,[],0,0,0,0,2,0
+20260510,strong_static_calibrated,phase_d_mixed_reversion,8,4,2,5000,8,11613,2,0,0,2,4,1099,65162,[],0,0,0,0,2,0
