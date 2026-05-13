@@ -1,0 +1,50 @@
+{
+  "allow_effect_claim": true,
+  "bootstrap_samples": 1000,
+  "bootstrap_seed": 20260513,
+  "condition_order": [
+    "strong_static_calibrated",
+    "oasg_observe_only_from_strong",
+    "rule_adaptive_control",
+    "oasg_adaptive_from_strong"
+  ],
+  "confirmatory_min_active_seeds": 4,
+  "control_support_min_reduction_bps": 500,
+  "cost_regression_tolerance_bps": 1000,
+  "epochs_per_phase": 2,
+  "experiment_id": "ollama_gemma4_e4b_nonstationary_confirmatory",
+  "max_candidates_per_optimization": 3,
+  "minimum_paired_task_count": 600,
+  "model": "gemma4:e4b",
+  "ollama_endpoint": "http://127.0.0.1:11434",
+  "ollama_timeout_seconds": 60,
+  "oracle_probe_first_epoch_only": false,
+  "phase_d_support_min_reduction_bps": 500,
+  "post_drift_effect_min_reduction_bps": 1500,
+  "replicate_seeds": [
+    20260509,
+    20260510,
+    20260511,
+    20260512,
+    20260513
+  ],
+  "required_variants": [
+    "full_drift_confirmatory",
+    "no_mixed_reversion_ablation",
+    "mixed_reversion_only_probe",
+    "delayed_drift_recovery"
+  ],
+  "results_dir": "experiment/ollama_gemma4_e4b_nonstationary_confirmatory/results",
+  "runs_dir": "experiment/ollama_gemma4_e4b_nonstationary_confirmatory/runs",
+  "strong_baseline_min_reduction_bps": 1000,
+  "task_generator_seed": 20260509,
+  "tasks_per_epoch": 6,
+  "temperature": 0,
+  "trial_runner_timeout_seconds": 180,
+  "variants": [
+    "full_drift_confirmatory",
+    "no_mixed_reversion_ablation",
+    "mixed_reversion_only_probe",
+    "delayed_drift_recovery"
+  ]
+}

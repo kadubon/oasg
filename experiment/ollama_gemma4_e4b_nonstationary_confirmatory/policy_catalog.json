@@ -1,0 +1,81 @@
+{
+  "receipt_type": "confirmatory_policy_catalog",
+  "policies": [
+    {
+      "eligible_for_oasg_promotion": true,
+      "policy_id": "strict_json_minimal",
+      "target_failure_classes": [
+        "parse_failure",
+        "json_format_drift"
+      ]
+    },
+    {
+      "eligible_for_oasg_promotion": true,
+      "policy_id": "schema_keys_only",
+      "target_failure_classes": [
+        "schema_key_drift",
+        "missing_required_key"
+      ]
+    },
+    {
+      "eligible_for_oasg_promotion": true,
+      "policy_id": "single_repair_retry",
+      "target_failure_classes": [
+        "validation_failure",
+        "unresolved_obligation"
+      ]
+    },
+    {
+      "eligible_for_oasg_promotion": true,
+      "policy_id": "family_safe_expr_prompt",
+      "target_failure_classes": [
+        "unsafe_expression",
+        "ast_validation"
+      ]
+    },
+    {
+      "eligible_for_oasg_promotion": true,
+      "policy_id": "receipt_template_only",
+      "target_failure_classes": [
+        "receipt_shape_drift",
+        "rollback_gap",
+        "evidence_gap"
+      ]
+    },
+    {
+      "eligible_for_oasg_promotion": true,
+      "policy_id": "context_shortening_policy",
+      "target_failure_classes": [
+        "context_pressure",
+        "char_budget"
+      ]
+    },
+    {
+      "eligible_for_oasg_promotion": true,
+      "policy_id": "policy_retirement",
+      "target_failure_classes": [
+        "mixed_reversion_overfit",
+        "retirement_cost_pressure",
+        "queue_pressure"
+      ]
+    },
+    {
+      "eligible_for_oasg_promotion": true,
+      "policy_id": "policy_tightening",
+      "target_failure_classes": [
+        "mixed_reversion_overfit",
+        "retry_cap_tightening",
+        "validation_surface_tightening"
+      ]
+    },
+    {
+      "eligible_for_oasg_promotion": false,
+      "policy_id": "set_action_grade",
+      "target_failure_classes": [
+        "manual_demo_only"
+      ]
+    }
+  ],
+  "set_action_grade_policy": "manual_demo_only",
+  "statement": "Policies are workflow prompt/retry/receipt surfaces only. They do not alter model weights and cannot create promotion evidence without runner-produced observations."
+}

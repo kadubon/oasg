@@ -1,0 +1,17 @@
+variant_id,condition,task_count,closed,closure_rate_bps,operational_debt_auc,cost_units,cost_to_close_units,closure_adjusted_cost_units,validation_failures,parse_failures,retries,unresolved_obligations,attempts,char_budget,latency_ms,active_mutation_ids,active_mutation_count,active_retirement_ids,retirement_count,hard_floor_regression_count,rollback_failures,evidence_gap,rollback_gap
+delayed_drift_recovery,strong_static_calibrated,4,0,0,16,4577,4577,44577,4,0,0,4,4,577,0,[],0,[],0,0,0,4,0
+delayed_drift_recovery,oasg_observe_only_from_strong,4,0,0,16,4577,4577,44577,4,0,0,4,4,577,0,[],0,[],0,0,0,4,0
+delayed_drift_recovery,rule_adaptive_control,4,0,0,16,4577,4577,44577,4,0,0,4,4,577,0,[],0,[],0,0,0,4,0
+delayed_drift_recovery,oasg_adaptive_from_strong,4,0,0,16,4577,4577,44577,4,0,0,4,4,577,0,[],0,[],0,0,0,4,0
+full_drift_confirmatory,strong_static_calibrated,6,0,0,24,6909,6909,66909,5,2,0,6,6,909,0,[],0,[],0,0,0,5,0
+full_drift_confirmatory,oasg_observe_only_from_strong,6,0,0,24,6909,6909,66909,5,2,0,6,6,909,0,[],0,[],0,0,0,5,0
+full_drift_confirmatory,rule_adaptive_control,6,2,3333,16,7015,7015,47015,3,2,0,4,6,1015,0,[],0,[],0,0,0,3,0
+full_drift_confirmatory,oasg_adaptive_from_strong,6,2,3333,16,6993,6993,46993,3,2,0,4,6,993,0,"['mut_strict_json_minimal_code_transform_phase_d_mixed_reversion', 'mut_strict_json_minimal_json_schema_repair_phase_d_mixed_reversion']",2,[],0,0,0,3,0
+mixed_reversion_only_probe,strong_static_calibrated,4,0,0,16,4564,4564,44564,4,0,0,4,4,564,0,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,oasg_observe_only_from_strong,4,0,0,16,4564,4564,44564,4,0,0,4,4,564,0,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,rule_adaptive_control,4,1,2500,12,4674,4674,34674,3,0,0,3,4,674,0,[],0,[],0,0,0,3,0
+mixed_reversion_only_probe,oasg_adaptive_from_strong,4,1,2500,12,4674,4674,34674,3,0,0,3,4,674,0,['mut_schema_keys_only_obligation_closure_phase_d2_mixed_ratio_shift'],1,[],0,0,0,3,0
+no_mixed_reversion_ablation,strong_static_calibrated,6,2,3333,17,7129,7129,47129,4,0,0,4,6,1129,0,[],0,[],0,0,0,4,1
+no_mixed_reversion_ablation,oasg_observe_only_from_strong,6,2,3333,17,7129,7129,47129,4,0,0,4,6,1129,0,[],0,[],0,0,0,4,1
+no_mixed_reversion_ablation,rule_adaptive_control,6,2,3333,17,7129,7129,47129,4,0,0,4,6,1129,0,[],0,[],0,0,0,4,1
+no_mixed_reversion_ablation,oasg_adaptive_from_strong,6,2,3333,17,7129,7129,47129,4,0,0,4,6,1129,0,[],0,[],0,0,0,4,1

@@ -84,6 +84,18 @@ calibration-selected strong static workflow in this frozen protocol, not a unive
 Curated artifacts are in
 `experiment/ollama_gemma4_e4b_nonstationary_strong_baseline/results/`.
 
+The nonstationary confirmatory follow-up profile has been added as protocol-only public material in
+`experiment/ollama_gemma4_e4b_nonstationary_confirmatory/`. It defines four variants: direct full
+drift replication, no-mixed-reversion ablation, mixed-reversion-only probe, and delayed-drift
+recovery. The protocol was audited so its analysis now separates aggregate, mild-only,
+structural-only, mixed-only, and no-Phase-D effects with subset-local denominators. It also emits
+drift-class, oracle-headroom-by-class, cost, and retirement/tightening receipts. Mixed-only gains are
+classified as narrower phase-specific evidence rather than broad nonstationary support, and
+confirmed support requires structural drift support plus acceptable cost-to-close uncertainty. The
+checked mock/small run classifies `inconclusive_insufficient_power`; it is a wiring check and does
+not support a confirmatory effect claim. A real all-variant Ollama run is required before the root
+README may report a confirmatory result.
+
 ## Build And Quality Checks
 
 Commands run after public-surface cleanup:
@@ -96,14 +108,13 @@ uv run oasg conformance run examples/conformance
 uv build
 ```
 
-Observed results after curating the nonstationary strong-baseline result:
+Observed results after auditing and tightening the nonstationary confirmatory protocol:
 
-- `pytest`: 101 passed.
+- `pytest`: 111 passed.
 - `ruff`: all checks passed.
 - `mypy`: no issues in 36 source files.
-- `mypy` on the new nonstationary experiment scripts: no issues in 5 files.
+- `mypy` on the new nonstationary confirmatory experiment scripts: no issues in 5 files.
 - conformance: `status: ok`.
-- `uv build`: built `oasg-1.1.0` wheel and source distribution.
 
 Package artifact inspection:
 

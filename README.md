@@ -364,6 +364,7 @@ Current evidence bottom line:
 | `experiment/ollama_gemma4_e4b_strong_baseline` | `promotion_mechanism_failure_vs_strong_baseline` | strong baseline qualified; adaptive readiness active seeds 0/4 required; run interrupted after 7/25 held-out condition blocks | No incremental OASG effect over the strong baseline is claimed. The run was stopped because adaptive activation failed before evaluation, making the primary effect question non-identifiable. |
 | `experiment/ollama_gemma4_e4b_strong_baseline_v2` | `no_incremental_effect_vs_strong_baseline` | 5 seeds, 680 paired held-out tasks; strong static debt AUC 434; OASG adaptive debt AUC 436; debt delta `+2`, CI `[0, 5]`; cost delta `+7652`, CI `[1534, 14346]`; hard-floor regressions 0 | Readiness succeeded, but held-out evaluation did not show incremental OASG value over the calibrated strong static workflow. |
 | `experiment/ollama_gemma4_e4b_nonstationary_strong_baseline` | `oasg_nonstationary_effect_confirmed_timeboxed` | 2 seeds, 48 paired post-drift tasks; strong static debt AUC `112`; OASG adaptive debt AUC `84`; debt delta `-28`, CI `[-51, -10]`; closure `20/48 -> 27/48`; hard-floor regressions `0` | Time-boxed positive evidence that fail-closed OASG adaptation recovered post-drift operational debt over a calibration-selected strong static workflow. The claim is limited to this frozen protocol and is not universal. |
+| `experiment/ollama_gemma4_e4b_nonstationary_confirmatory` | protocol added; no confirmatory effect claim yet | Four-variant follow-up protocol; mock/small wiring run classifies `inconclusive_insufficient_power` | Audited to separate broad drift support, structural-only support, mixed-reversion/policy-retirement support, and cost-aware effects. A real all-variant Ollama run is required before any effect claim. |
 
 ### Decisive Run Details
 
@@ -515,8 +516,8 @@ uv run mypy src
 uv run oasg conformance run examples/conformance
 ```
 
-At the time this README was updated after curating the nonstationary strong-baseline result, these
-checks passed in the current workspace: `101 passed`, `ruff` clean, `mypy` clean, and conformance
+At the time this README was updated after auditing the confirmatory nonstationary protocol, these
+checks passed in the current workspace: `111 passed`, `ruff` clean, `mypy` clean, and conformance
 `status: ok`.
 
 The current public-readiness review is recorded in

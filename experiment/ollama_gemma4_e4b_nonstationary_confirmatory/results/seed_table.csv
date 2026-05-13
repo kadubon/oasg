@@ -1,0 +1,5 @@
+seed,condition,task_count,closed,closure_rate_bps,operational_debt_auc,cost_units,cost_to_close_units,closure_adjusted_cost_units,validation_failures,parse_failures,retries,unresolved_obligations,attempts,char_budget,latency_ms,active_mutation_ids,active_mutation_count,active_retirement_ids,retirement_count,hard_floor_regression_count,rollback_failures,evidence_gap,rollback_gap
+20260509,strong_static_calibrated,20,2,1000,73,23179,23179,203179,17,2,0,18,20,3179,0,[],0,[],0,0,0,17,1
+20260509,oasg_observe_only_from_strong,20,2,1000,73,23179,23179,203179,17,2,0,18,20,3179,0,[],0,[],0,0,0,17,1
+20260509,rule_adaptive_control,20,5,2500,61,23395,23395,173395,14,2,0,15,20,3395,0,[],0,[],0,0,0,14,1
+20260509,oasg_adaptive_from_strong,20,5,2500,61,23373,23373,173373,14,2,0,15,20,3373,0,"['mut_schema_keys_only_obligation_closure_phase_d2_mixed_ratio_shift', 'mut_strict_json_minimal_code_transform_phase_d_mixed_reversion', 'mut_strict_json_minimal_json_schema_repair_phase_d_mixed_reversion']",3,[],0,0,0,14,1
