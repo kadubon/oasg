@@ -349,11 +349,12 @@ Current evidence bottom line:
 - OASG did show time-boxed post-drift recovery over a calibration-selected strong static workflow
   in the nonstationary strong-baseline protocol.
 - The larger four-variant nonstationary confirmatory run found a real primary post-drift
-  improvement, but its final classification is `mixed_reversion_only_effect`, not broad
+  improvement, but its final classification is `phase_specific_nonstationary_support`, not broad
   `oasg_nonstationary_confirmed` support.
 - Therefore, the scientifically honest claim is conditional: this implementation has positive
-  evidence for workflow adaptation when operational requirements drift, especially under mixed
-  reversion or policy-retirement-sensitive drift, while fixed-distribution strong-baseline evidence
+  evidence for workflow adaptation when operational requirements drift, strongest under mixed
+  reversion / policy-retirement-sensitive drift and also present under mild drift, while
+  structural-only support remains below threshold and fixed-distribution strong-baseline evidence
   remains negative.
 
 ### Evidence Summary
@@ -368,7 +369,7 @@ Current evidence bottom line:
 | `experiment/ollama_gemma4_e4b_strong_baseline` | `promotion_mechanism_failure_vs_strong_baseline` | strong baseline qualified; adaptive readiness active seeds 0/4 required; run interrupted after 7/25 held-out condition blocks | No incremental OASG effect over the strong baseline is claimed. The run was stopped because adaptive activation failed before evaluation, making the primary effect question non-identifiable. |
 | `experiment/ollama_gemma4_e4b_strong_baseline_v2` | `no_incremental_effect_vs_strong_baseline` | 5 seeds, 680 paired held-out tasks; strong static debt AUC 434; OASG adaptive debt AUC 436; debt delta `+2`, CI `[0, 5]`; cost delta `+7652`, CI `[1534, 14346]`; hard-floor regressions 0 | Readiness succeeded, but held-out evaluation did not show incremental OASG value over the calibrated strong static workflow. |
 | `experiment/ollama_gemma4_e4b_nonstationary_strong_baseline` | `oasg_nonstationary_effect_confirmed_timeboxed` | 2 seeds, 48 paired post-drift tasks; strong static debt AUC `112`; OASG adaptive debt AUC `84`; debt delta `-28`, CI `[-51, -10]`; closure `20/48 -> 27/48`; hard-floor regressions `0` | Time-boxed positive evidence that fail-closed OASG adaptation recovered post-drift operational debt over a calibration-selected strong static workflow. The claim is limited to this frozen protocol and is not universal. |
-| `experiment/ollama_gemma4_e4b_nonstationary_confirmatory` | `mixed_reversion_only_effect` | 4 variants, 5 seeds, 600 paired post-drift tasks; strong static debt AUC `1524`; OASG adaptive debt AUC `1352`; debt delta `-172`, CI `[-222, -125]`; closure `259/600 -> 300/600`; cost delta `-87081`, CI `[-104210, -69629]`; hard-floor regressions `0` | Primary and control comparisons favor OASG, but structural-only improvement is below the preregistered support threshold. The final claim is narrower mixed-reversion / policy-retirement-sensitive support, not broad nonstationary confirmation. |
+| `experiment/ollama_gemma4_e4b_nonstationary_confirmatory` | `phase_specific_nonstationary_support` | 4 variants, 5 seeds, 600 paired post-drift tasks; strong static debt AUC `1524`; OASG adaptive debt AUC `1352`; debt delta `-172`, CI `[-220, -121]`; closure `259/600 -> 300/600`; cost delta `-87081`, CI `[-104221, -70419]`; hard-floor regressions `0` | Primary and control comparisons favor OASG. Mixed-reversion / policy-retirement-sensitive drift is strongly supported, mild drift also supports improvement, and structural-only improvement is below the preregistered support threshold. This is phase-specific support, not broad nonstationary confirmation. |
 
 ### Decisive Run Details
 
@@ -486,32 +487,33 @@ Nonstationary confirmatory follow-up:
 - This profile is the larger follow-up to the time-boxed nonstationary result. It runs four
   variants: full drift replication, no-mixed-reversion ablation, mixed-reversion-only probe, and
   delayed-drift recovery.
-- Final classification: `mixed_reversion_only_effect`.
+- Final classification: `phase_specific_nonstationary_support`.
 - Integrity: verification `ok`, all required variants complete, paired post-drift task count `600`,
   active post-drift OASG seeds `5`, stable A2 active mutation rows `0`, hard-floor regressions `0`.
 - Primary result:
   - `strong_static_calibrated`: debt AUC `1524`, cost-to-close units `1207320`, closed `259/600`.
   - `oasg_adaptive_from_strong`: debt AUC `1352`, cost-to-close units `1120239`, closed `300/600`.
-  - primary debt delta `-172`, debt CI `[-222, -125]`; cost delta `-87081`, cost CI
-    `[-104210, -69629]`; closure delta `+41`.
+  - primary debt delta `-172`, debt CI `[-220, -121]`; cost delta `-87081`, cost CI
+    `[-104221, -70419]`; closure delta `+41`.
 - Secondary controls:
-  - OASG vs observe-only debt delta `-172`, CI `[-222, -125]`.
-  - OASG vs rule-adaptive debt delta `-98`, CI `[-169, -28]`.
+  - OASG vs observe-only debt delta `-172`, CI `[-220, -126]`.
+  - OASG vs rule-adaptive debt delta `-98`, CI `[-170, -27]`.
 - Ablations and drift classes:
-  - mixed-only debt delta `-118`, reduction `1639` bps, CI `[-158, -78]`;
-  - mild-only debt delta `-50`, reduction `1562` bps, CI `[-76, -27]`;
-  - no-Phase-D aggregate debt delta `-54`, reduction `672` bps, CI `[-82, -28]`;
+  - mixed-only debt delta `-118`, reduction `1639` bps, CI `[-160, -78]`;
+  - mild-only debt delta `-50`, reduction `1562` bps, CI `[-72, -28]`;
+  - no-Phase-D aggregate debt delta `-54`, reduction `672` bps, CI `[-81, -28]`;
   - structural-only debt delta `-4`, reduction `83` bps, CI `[-12, 0]`, below the
     `500` bps support threshold.
-- Interpretation: the larger run supports post-drift workflow recovery over the strong static
-  baseline in this frozen local protocol, and the result is not explained by observe-only or the
-  rule-adaptive control. It does not meet the stricter broad nonstationary confirmation contract
-  because structural-only support is too small. The most defensible claim is narrower:
-  mixed-reversion / policy-retirement-sensitive drift support, with additional mild-drift support.
-- Limits: the final `classification_receipt.json` has `effect_claim_allowed: false` because only
-  `oasg_nonstationary_confirmed` is treated as a broad confirmatory effect claim. The result does
-  not prove universal OASG effectiveness, model intelligence improvement, or deployability of the
-  oracle control.
+- Interpretation: the larger run supports phase-specific post-drift workflow recovery over the
+  strong static baseline in this frozen local protocol, and the result is not explained by
+  observe-only or the rule-adaptive control. It does not meet the stricter broad nonstationary
+  confirmation contract because structural-only support is too small. The most defensible claim is
+  mixed-reversion / policy-retirement-sensitive support plus additional mild-drift support.
+- Limits: the final `classification_receipt.json` has `broad_effect_claim_allowed: false`,
+  `phase_specific_effect_claim_allowed: true`, and legacy `effect_claim_allowed: false` because
+  `effect_claim_allowed` is retained only for broad `oasg_nonstationary_confirmed` claims. The
+  result does not prove universal OASG effectiveness, model intelligence improvement, or
+  deployability of the oracle control.
 - Curated artifacts:
   [`experiment/ollama_gemma4_e4b_nonstationary_confirmatory/results/report.md`](experiment/ollama_gemma4_e4b_nonstationary_confirmatory/results/report.md),
   [`experiment/ollama_gemma4_e4b_nonstationary_confirmatory/results/metrics.json`](experiment/ollama_gemma4_e4b_nonstationary_confirmatory/results/metrics.json),
@@ -572,7 +574,7 @@ uv build
 ```
 
 At the time this README was updated after the final nonstationary confirmatory analysis, these
-checks passed in the current workspace: `112 passed`, `ruff` clean, `mypy` clean, conformance
+checks passed in the current workspace: `113 passed`, `ruff` clean, `mypy` clean, conformance
 `status: ok`, and a clean package build. Built artifacts were scanned for local paths,
 high-confidence secret patterns, and raw experiment run payloads.
 

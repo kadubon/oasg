@@ -350,27 +350,36 @@ def classify_confirmatory(
         and _ci_upper(mixed_only) <= 0
         and _oracle_class_present(oracle_headroom, "mixed")
     )
+    primary_supported = debt_reduction >= support_threshold and primary_ci_upper <= 0
+    controls_do_not_explain = (
+        int(observe.get("debt_auc_delta", 0)) < 0
+        and int(rule.get("debt_auc_delta", 0)) < 0
+    )
+    non_mixed_support_present = mild_supported or no_phase_d_supported
 
-    if mixed_supported and not structural_supported:
-        if debt_reduction >= full_threshold and primary_ci_upper < 0:
-            return "oasg_nonstationary_phase_specific_support"
-        return "mixed_reversion_only_effect"
-    if structural_supported and not mixed_supported:
-        return "no_mixed_reversion_support"
     if (
         debt_reduction >= full_threshold
         and primary_ci_upper < 0
         and active_seed_count >= min_active
         and stable_a2_active_mutations == 0
         and no_phase_d_supported
+        and mild_supported
         and structural_supported
         and mixed_supported
     ):
         return "oasg_nonstationary_confirmed"
-    if debt_reduction >= support_threshold and (
-        structural_supported or mixed_supported or mild_supported
-    ):
-        return "oasg_nonstationary_phase_specific_support"
+    if mixed_supported and not structural_supported:
+        if (
+            primary_supported
+            and controls_do_not_explain
+            and non_mixed_support_present
+        ):
+            return "phase_specific_nonstationary_support"
+        return "mixed_reversion_only_effect"
+    if structural_supported and not mixed_supported:
+        return "no_mixed_reversion_support"
+    if primary_supported and (structural_supported or mixed_supported or mild_supported):
+        return "phase_specific_nonstationary_support"
     return "no_incremental_effect_under_drift"
 
 

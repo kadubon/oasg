@@ -76,7 +76,7 @@ def analyze_run(run_dir: Path, bootstrap_samples: int | None = None) -> dict[str
     ledger_receipts: dict[str, Any] = {}
     variant_receipts = _variant_receipts(run_dir)
     completed_variants = set(variant_receipts)
-    for variant_id in completed_variants:
+    for variant_id in sorted(completed_variants):
         variant_dir = run_dir / variant_id
         for seed_dir in sorted(path for path in variant_dir.glob("seed_*") if path.is_dir()):
             seed = seed_dir.name.replace("seed_", "")
@@ -188,7 +188,13 @@ def analyze_run(run_dir: Path, bootstrap_samples: int | None = None) -> dict[str
         "receipt_type": "final_nonstationary_confirmatory_classification_receipt",
         "classification": classification,
         "metrics_hash": metrics["metrics_hash"],
+        "broad_effect_claim_allowed": classification == "oasg_nonstationary_confirmed",
+        "phase_specific_effect_claim_allowed": (
+            classification == "phase_specific_nonstationary_support"
+        ),
+        "claim_scope": _claim_scope(classification),
         "effect_claim_allowed": classification == "oasg_nonstationary_confirmed",
+        "legacy_effect_claim_allowed_meaning": "broad_nonstationary_confirmation_only",
         "completed_variants": sorted(completed_variants),
     }
     metrics["oracle_headroom_receipt"] = oracle
@@ -620,6 +626,7 @@ def _render_report(metrics: dict[str, Any]) -> str:
     interpretation_label = metrics.get("drift_class_effect_receipt", {}).get(
         "interpretation_label", "not_computed"
     )
+    oasg_summary = metrics.get("condition_summaries", {}).get("oasg_adaptive_from_strong", {})
     return "\n".join(
         [
             "# OASG Nonstationary Confirmatory Experiment Report",
@@ -647,6 +654,7 @@ def _render_report(metrics: dict[str, Any]) -> str:
             f"- Primary paired post-drift tasks: `{primary.get('paired_task_count', 0)}`.",
             f"- Active post-drift OASG seeds: `{metrics['active_post_drift_seed_count']}`.",
             f"- Stable A2 active mutation rows: `{metrics['stable_a2_active_mutations']}`.",
+            f"- Hard-floor regressions: `{oasg_summary.get('hard_floor_regression_count', 0)}`.",
             "",
             "## Primary Comparison",
             "",
@@ -758,16 +766,18 @@ def _interpretation(classification: str) -> str:
             "frozen protocol. The claim remains limited to this workload, model, implementation, "
             "and threshold contract."
         )
-    if classification == "oasg_nonstationary_phase_specific_support":
+    if classification == "phase_specific_nonstationary_support":
         return (
-            "The result supports a narrower phase-specific interpretation. The observed effect is "
-            "not broad across all drift types."
+            "The result supports a phase-specific nonstationary interpretation. Mixed reversion "
+            "and policy-retirement-sensitive phases show the strongest support, mild drift also "
+            "supports improvement, and structural-only drift is below the configured support "
+            "threshold. The result is therefore positive but not broad nonstationary confirmation."
         )
     if classification == "mixed_reversion_only_effect":
         return (
-            "The primary comparison favors OASG, but the ablation contract narrows the effect to "
-            "mixed reversion or policy-retirement-sensitive drift rather than broad confirmatory "
-            "nonstationary support."
+            "The primary comparison favors OASG, but the ablation contract confines the supported "
+            "effect to mixed reversion or policy-retirement-sensitive drift. Mild/no-Phase-D and "
+            "structural-only support are not strong enough for a broader phase-specific claim."
         )
     if classification == "no_mixed_reversion_support":
         return (
@@ -790,6 +800,8 @@ def _drift_interpretation_label(
     }
     if {"mild", "structural", "mixed"} <= supported:
         return "broad_nonstationary_support_within_protocol"
+    if {"mild", "mixed"} <= supported and "structural" not in supported:
+        return "phase_specific_mixed_reversion_and_mild_support"
     if "mixed" in supported and "structural" not in supported:
         return "mixed_reversion_or_retirement_specific_support"
     if "structural" in supported and "mixed" not in supported:
@@ -797,6 +809,18 @@ def _drift_interpretation_label(
     if supported:
         return "limited_drift_class_support"
     return "no_drift_class_support"
+
+
+def _claim_scope(classification: str) -> str:
+    if classification == "oasg_nonstationary_confirmed":
+        return "broad_nonstationary_support_within_protocol"
+    if classification == "phase_specific_nonstationary_support":
+        return "mixed_reversion_policy_retirement_and_mild_drift_support_only"
+    if classification == "mixed_reversion_only_effect":
+        return "mixed_reversion_policy_retirement_support_only"
+    if classification == "no_mixed_reversion_support":
+        return "non_mixed_structural_or_mild_support_without_mixed_reversion_support"
+    return "no_positive_effect_claim"
 
 
 def _read_optional(path: Path, default: Any) -> Any:

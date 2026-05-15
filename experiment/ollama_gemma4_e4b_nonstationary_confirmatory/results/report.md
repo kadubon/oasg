@@ -1,6 +1,6 @@
 # OASG Nonstationary Confirmatory Experiment Report
 
-Final classification: `mixed_reversion_only_effect`
+Final classification: `phase_specific_nonstationary_support`
 
 ## Scientific Question
 
@@ -15,37 +15,38 @@ This protocol does not test whether OASG is strong for nonstationarity in genera
 - Primary paired post-drift tasks: `600`.
 - Active post-drift OASG seeds: `5`.
 - Stable A2 active mutation rows: `0`.
+- Hard-floor regressions: `0`.
 
 ## Primary Comparison
 
-- `oasg_adaptive_from_strong` vs `strong_static_calibrated`: debt delta `-172`, debt CI `[-225, -126]`, cost delta `-87081`, cost CI `[-104847, -69824]`.
-- OASG vs observe-only: debt delta `-172`, CI `[-225, -124]`.
-- OASG vs rule-adaptive: debt delta `-98`, CI `[-164, -23]`.
+- `oasg_adaptive_from_strong` vs `strong_static_calibrated`: debt delta `-172`, debt CI `[-220, -121]`, cost delta `-87081`, cost CI `[-104221, -70419]`.
+- OASG vs observe-only: debt delta `-172`, CI `[-220, -126]`.
+- OASG vs rule-adaptive: debt delta `-98`, CI `[-170, -27]`.
 
 ## Ablation Summary
 
-- No-Phase-D aggregate: `-54` debt delta, CI `[-83, -29]`.
-- Mixed-reversion-only aggregate: `-118` debt delta, CI `[-158, -78]`.
+- No-Phase-D aggregate: `-54` debt delta, CI `[-81, -28]`.
+- Mixed-reversion-only aggregate: `-118` debt delta, CI `[-160, -78]`.
 - Structural-only aggregate: `-4` debt delta, CI `[-12, 0]`.
 - Mild-only aggregate: `-50` debt delta, CI `[-72, -28]`.
 
 ## Drift-Class Effects
 
-- Interpretation label: `mixed_reversion_or_retirement_specific_support`.
+- Interpretation label: `phase_specific_mixed_reversion_and_mild_support`.
 - `delayed_stable`: debt delta `0`, reduction `0` bps, CI `[0, 0]`, cost delta `54`.
 - `mild`: debt delta `-50`, reduction `1562` bps, CI `[-76, -28]`, cost delta `-9977`.
-- `mixed`: debt delta `-118`, reduction `1639` bps, CI `[-158, -78]`, cost delta `-50893`.
+- `mixed`: debt delta `-118`, reduction `1639` bps, CI `[-162, -80]`, cost delta `-50893`.
 - `structural`: debt delta `-4`, reduction `83` bps, CI `[-12, 0]`, cost delta `-26211`.
 
 ## Cost And Retirement
 
-- Primary cost-to-close delta: `-87081`, CI `[-104847, -69824]`.
+- Primary cost-to-close delta: `-87081`, CI `[-104221, -70419]`.
 - Active retirement/tightening rows: `9`.
 - Mixed retirement/tightening rows: `5`.
 
 ## Scientific Interpretation
 
-The primary comparison favors OASG, but the ablation contract narrows the effect to mixed reversion or policy-retirement-sensitive drift rather than broad confirmatory nonstationary support.
+The result supports a phase-specific nonstationary interpretation. Mixed reversion and policy-retirement-sensitive phases show the strongest support, mild drift also supports improvement, and structural-only drift is below the configured support threshold. The result is therefore positive but not broad nonstationary confirmation.
 
 ## Claims Not Supported
 

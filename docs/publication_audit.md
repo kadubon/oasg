@@ -97,27 +97,36 @@ Curated artifacts are in
 The nonstationary confirmatory follow-up profile now has a completed real all-variant Ollama run in
 `experiment/ollama_gemma4_e4b_nonstationary_confirmatory/results/`. It defines four variants:
 direct full drift replication, no-mixed-reversion ablation, mixed-reversion-only probe, and
-delayed-drift recovery. The final classification is `mixed_reversion_only_effect`: verification is
+delayed-drift recovery. The final classification is `phase_specific_nonstationary_support`:
+verification is
 `ok`, all four required variants completed, the primary comparison has 600 paired post-drift tasks,
 and OASG adaptive reduced debt AUC from `1524` to `1352` versus the Phase-A-calibrated strong static
-baseline. Primary debt delta is `-172` with CI `[-222, -125]`; primary cost-to-close delta is
-`-87081` with CI `[-104210, -69629]`; closure improves from `259/600` to `300/600`; hard-floor
+baseline. Primary debt delta is `-172` with CI `[-220, -121]`; primary cost-to-close delta is
+`-87081` with CI `[-104221, -70419]`; closure improves from `259/600` to `300/600`; hard-floor
 regressions remain `0`.
 
 The confirmatory result is scientifically positive but narrower than broad nonstationary
-confirmation. OASG also beats observe-only (`-172`, CI `[-222, -125]`) and rule-adaptive (`-98`, CI
-`[-169, -28]`), so the primary effect is not explained by measurement alone or by the simple
+confirmation. OASG also beats observe-only (`-172`, CI `[-220, -126]`) and rule-adaptive (`-98`, CI
+`[-170, -27]`), so the primary effect is not explained by measurement alone or by the simple
 hand-coded adaptation control. The strongest supported class is mixed reversion / policy-retirement
-sensitive drift (`-118`, 1639 bps, CI `[-158, -78]`), and mild drift also supports improvement
-(`-50`, 1562 bps, CI `[-76, -27]`). Structural-only movement is small (`-4`, 83 bps, CI `[-12, 0]`)
-and below the configured 500 bps support threshold. Therefore the README reports narrowed
-mixed-reversion support rather than `oasg_nonstationary_confirmed`; `classification_receipt.json`
-has `effect_claim_allowed: false`.
+sensitive drift (`-118`, 1639 bps, CI `[-160, -78]`), and mild drift also supports improvement
+(`-50`, 1562 bps, CI `[-72, -28]`). The no-Phase-D aggregate is also positive (`-54`, 672 bps, CI
+`[-81, -28]`). Structural-only movement is small (`-4`, 83 bps, CI `[-12, 0]`) and below the
+configured 500 bps support threshold. Therefore the README reports phase-specific nonstationary
+support rather than `oasg_nonstationary_confirmed`; `classification_receipt.json` has
+`broad_effect_claim_allowed: false`, `phase_specific_effect_claim_allowed: true`, and legacy
+`effect_claim_allowed: false`.
 
 During this update, the drift-class interpretation label was tightened to use the same configured
 support threshold as the final classifier, avoiding a misleading broad-support label when
-structural-only movement is below threshold. The checked mock/small path remains a wiring check and
-does not support a confirmatory effect claim.
+structural-only movement is below threshold. The final classifier now distinguishes
+`phase_specific_nonstationary_support` from the narrower `mixed_reversion_only_effect`: mild or
+no-Phase-D support lifts the claim to phase-specific support, while mixed-only support remains the
+narrower classification. The checked mock/small path remains a wiring check and does not support a
+confirmatory effect claim.
+
+The analyzer now reads completed variants in sorted order before bootstrap aggregation. This keeps
+the curated confidence intervals and `metrics_hash` stable across repeated analysis processes.
 
 ## Build And Quality Checks
 
@@ -133,7 +142,7 @@ uv build
 
 Observed results after auditing, completing, and tightening the nonstationary confirmatory protocol:
 
-- `pytest`: 112 passed.
+- `pytest`: 113 passed.
 - `ruff`: all checks passed.
 - `mypy`: no issues in 36 source files.
 - `mypy` on the new nonstationary confirmatory experiment scripts: no issues in 5 files.
@@ -173,8 +182,8 @@ Additional confirmatory-artifact scan on 2026-05-15:
   `experiment/ollama_gemma4_e4b_nonstationary_confirmatory/results/`.
 - No API-key, bearer-token, authorization, password, or token patterns were found in the curated
   nonstationary confirmatory result artifacts.
-- The final public report and README explicitly mark `mixed_reversion_only_effect` as narrowed
-  evidence, not broad `oasg_nonstationary_confirmed` support.
+- The final public report and README explicitly mark `phase_specific_nonstationary_support` as
+  narrowed phase-specific evidence, not broad `oasg_nonstationary_confirmed` support.
 
 ## Release Position
 

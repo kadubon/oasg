@@ -24,12 +24,14 @@ The audited version separates four questions that were previously too easy to co
 
 The completed main all-variant Ollama run classifies:
 
-`mixed_reversion_only_effect`
+`phase_specific_nonstationary_support`
 
 This is a positive but narrowed result. The primary paired comparison favors
 `oasg_adaptive_from_strong` over `strong_static_calibrated`, and both deployable controls also
-favor OASG. However, the structural-only effect is below the preregistered support threshold, so
-the run does not satisfy the broader `oasg_nonstationary_confirmed` contract.
+favor OASG. The strongest support is in mixed reversion / policy-retirement-sensitive drift, mild
+drift also shows clear support, and the no-Phase-D aggregate is positive. However, the
+structural-only effect is below the preregistered support threshold, so the run does not satisfy the
+broader `oasg_nonstationary_confirmed` contract.
 
 Integrity and scope:
 
@@ -48,25 +50,25 @@ Primary comparison:
 | --- | --- |
 | strong static debt AUC | `1524` |
 | OASG adaptive debt AUC | `1352` |
-| debt delta | `-172`, CI `[-222, -125]` |
+| debt delta | `-172`, CI `[-220, -121]` |
 | debt reduction | `1129` bps |
 | closure | `259/600 -> 300/600` |
-| cost-to-close delta | `-87081`, CI `[-104210, -69629]` |
+| cost-to-close delta | `-87081`, CI `[-104221, -70419]` |
 
 Control comparisons:
 
 | comparison | debt delta | CI |
 | --- | ---: | --- |
-| OASG vs observe-only | `-172` | `[-222, -125]` |
-| OASG vs rule-adaptive | `-98` | `[-169, -28]` |
+| OASG vs observe-only | `-172` | `[-220, -126]` |
+| OASG vs rule-adaptive | `-98` | `[-170, -27]` |
 
 Ablation and drift-class reading:
 
 | subset | debt delta | reduction | CI | interpretation |
 | --- | ---: | ---: | --- | --- |
-| mixed-only | `-118` | `1639` bps | `[-158, -78]` | strongest supported effect |
-| mild-only | `-50` | `1562` bps | `[-76, -27]` | supported, but not sufficient for broad confirmation |
-| no-Phase-D aggregate | `-54` | `672` bps | `[-82, -28]` | support outside Phase D exists |
+| mixed-only | `-118` | `1639` bps | `[-160, -78]` | strongest supported effect |
+| mild-only | `-50` | `1562` bps | `[-72, -28]` | supported, but not sufficient for broad confirmation |
+| no-Phase-D aggregate | `-54` | `672` bps | `[-81, -28]` | support outside Phase D exists |
 | structural-only | `-4` | `83` bps | `[-12, 0]` | below the `500` bps support threshold |
 
 Scientific interpretation:
@@ -76,8 +78,10 @@ Scientific interpretation:
 - The effect is not explained by observe-only measurement or by the simple rule-adaptive control.
 - The strongest support is in mixed reversion / policy-retirement-sensitive drift; mild drift also
   improves, but structural-only support is too small for broad confirmation.
-- `classification_receipt.json` sets `effect_claim_allowed` to `false`, because this repository
-  reserves broad confirmatory effect claims for `oasg_nonstationary_confirmed`.
+- `classification_receipt.json` sets `broad_effect_claim_allowed` to `false`,
+  `phase_specific_effect_claim_allowed` to `true`, and legacy `effect_claim_allowed` to `false`
+  because this repository reserves that legacy flag for broad `oasg_nonstationary_confirmed`
+  claims.
 - This is not evidence that the model became more intelligent and not a universal OASG
   effectiveness proof.
 
@@ -154,7 +158,7 @@ uv run python experiment\ollama_gemma4_e4b_nonstationary_confirmatory\scripts\ru
 Possible final classifications include:
 
 - `oasg_nonstationary_confirmed`
-- `oasg_nonstationary_phase_specific_support`
+- `phase_specific_nonstationary_support`
 - `mixed_reversion_only_effect`
 - `no_mixed_reversion_support`
 - `no_incremental_effect_under_drift`
@@ -166,12 +170,13 @@ Possible final classifications include:
 - `inconclusive_insufficient_power`
 - `interrupted_before_primary_evaluation`
 
-Positive confirmation requires all required variants, valid ledgers, post-drift OASG improvement over
-strong static, controls that do not explain the effect, structural-drift support, mixed-reversion
+Broad confirmation requires all required variants, valid ledgers, post-drift OASG improvement over
+strong static, controls that do not explain the effect, mild, structural, and mixed-reversion
 support, no excessive cost regression by bootstrap CI, no worse hard floors, active OASG changes
 after drift in the configured seed count, and no unnecessary active mutation during the delayed-drift
-A2 stable phase. Mixed-only support is classified as narrower phase-specific evidence, not broad
-nonstationary support.
+A2 stable phase. Mixed plus mild/no-Phase-D support without structural-only support is classified as
+phase-specific nonstationary support, not broad nonstationary confirmation. Mixed-only support
+without mild/no-Phase-D support remains `mixed_reversion_only_effect`.
 
 Additional receipts:
 

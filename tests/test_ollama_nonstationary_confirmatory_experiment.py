@@ -147,9 +147,9 @@ def test_confirmatory_classifier_core_statuses() -> None:
             "debt_bootstrap_ci": {"delta_ci": [-12, -1]},
         },
         "mild_only": {
-            "debt_auc_delta": 0,
-            "debt_reduction_bps": 0,
-            "debt_bootstrap_ci": {"delta_ci": [0, 0]},
+            "debt_auc_delta": -5,
+            "debt_reduction_bps": 500,
+            "debt_bootstrap_ci": {"delta_ci": [-10, 0]},
         },
     }
     config = {
@@ -171,7 +171,7 @@ def test_confirmatory_classifier_core_statuses() -> None:
                 "oracle_headroom_by_drift_class": {
                     "structural": {"status": "oracle_headroom_present"},
                     "mixed": {"status": "oracle_headroom_present"},
-                    "mild": {"status": "oracle_headroom_absent"},
+                    "mild": {"status": "oracle_headroom_present"},
                 },
             },
             active_seed_count=4,
@@ -410,7 +410,7 @@ def test_confirmatory_drift_label_uses_support_threshold() -> None:
     }
     assert (
         analyzer._drift_interpretation_label(effects, support_threshold_bps=500)
-        == "mixed_reversion_or_retirement_specific_support"
+        == "phase_specific_mixed_reversion_and_mild_support"
     )
 
 
@@ -479,10 +479,80 @@ def test_confirmatory_structural_support_required_for_confirmation() -> None:
         },
         interrupted=False,
     )
-    assert classification in {
-        "mixed_reversion_only_effect",
-        "oasg_nonstationary_phase_specific_support",
+    assert classification == "mixed_reversion_only_effect"
+
+
+def test_confirmatory_phase_specific_support_when_mild_or_no_phase_d_present() -> None:
+    common = _load_script("confirmatory_common")
+    summaries = {
+        "strong_static_calibrated": {
+            "operational_debt_auc": 1000,
+            "cost_to_close_units": 1000,
+            "hard_floor_regression_count": 0,
+        },
+        "oasg_adaptive_from_strong": {
+            "operational_debt_auc": 880,
+            "cost_to_close_units": 950,
+            "hard_floor_regression_count": 0,
+        },
     }
+    comparisons = {
+        "oasg_vs_strong_static": {
+            "paired_task_count": 100,
+            "debt_auc_delta": -120,
+            "baseline_cost_units": 1000,
+            "debt_bootstrap_ci": {"delta_ci": [-180, -40]},
+            "cost_bootstrap_ci": {"delta_ci": [-120, -10]},
+        },
+        "oasg_vs_observe_only": {"debt_auc_delta": -100},
+        "oasg_vs_rule_adaptive": {"debt_auc_delta": -80},
+    }
+    ablations = {
+        "no_phase_d": {
+            "debt_reduction_bps": 650,
+            "debt_bootstrap_ci": {"delta_ci": [-90, -20]},
+        },
+        "structural_only": {
+            "debt_reduction_bps": 100,
+            "debt_bootstrap_ci": {"delta_ci": [-10, 0]},
+        },
+        "mixed_only": {
+            "debt_reduction_bps": 1600,
+            "debt_bootstrap_ci": {"delta_ci": [-120, -30]},
+        },
+        "mild_only": {
+            "debt_reduction_bps": 1500,
+            "debt_bootstrap_ci": {"delta_ci": [-60, -20]},
+        },
+    }
+    classification = common.classify_confirmatory(
+        summaries=summaries,
+        comparisons=comparisons,
+        ablations=ablations,
+        oracle_headroom={
+            "status": "oracle_headroom_present",
+            "oracle_headroom_by_drift_class": {
+                "structural": {"status": "oracle_headroom_present"},
+                "mixed": {"status": "oracle_headroom_present"},
+                "mild": {"status": "oracle_headroom_present"},
+            },
+        },
+        active_seed_count=4,
+        stable_a2_active_mutations=0,
+        verification_status="ok",
+        completed_variants=set(common.REQUIRED_VARIANTS),
+        config={
+            "allow_effect_claim": True,
+            "minimum_paired_task_count": 100,
+            "required_variants": list(common.REQUIRED_VARIANTS),
+            "post_drift_effect_min_reduction_bps": 1500,
+            "control_support_min_reduction_bps": 500,
+            "cost_regression_tolerance_bps": 1000,
+            "confirmatory_min_active_seeds": 4,
+        },
+        interrupted=False,
+    )
+    assert classification == "phase_specific_nonstationary_support"
 
 
 def test_confirmatory_mock_run_creates_required_artifacts(tmp_path: Path) -> None:
@@ -505,6 +575,14 @@ def test_confirmatory_mock_run_creates_required_artifacts(tmp_path: Path) -> Non
     metrics = read_json(latest / "metrics.json")
     assert metrics["verification"]["status"] == "ok"
     assert metrics["classification"] == "inconclusive_insufficient_power"
+    classification_receipt = read_json(latest / "classification_receipt.json")
+    assert classification_receipt["broad_effect_claim_allowed"] is False
+    assert classification_receipt["phase_specific_effect_claim_allowed"] is False
+    assert classification_receipt["effect_claim_allowed"] is False
+    assert (
+        classification_receipt["legacy_effect_claim_allowed_meaning"]
+        == "broad_nonstationary_confirmation_only"
+    )
     assert set(metrics["completed_variants"]) == {
         "full_drift_confirmatory",
         "no_mixed_reversion_ablation",
