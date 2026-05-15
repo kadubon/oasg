@@ -71,8 +71,26 @@ The result supports a phase-specific nonstationary interpretation. Mixed reversi
 
 ## Reproduction
 
+### Real local Ollama run used for the curated result
+
+Requires local Ollama with `gemma4:e4b` installed.
+
 ```powershell
 uv sync
-uv run python experiment\ollama_gemma4_e4b_nonstationary_confirmatory\scripts\run_confirmatory_experiment.py --config experiment\ollama_gemma4_e4b_nonstationary_confirmatory\config_confirmatory_small.json --mock-model --all-variants
+ollama list
+uv run python experiment\ollama_gemma4_e4b_nonstationary_confirmatory\scripts\run_confirmatory_experiment.py --config experiment\ollama_gemma4_e4b_nonstationary_confirmatory\config_confirmatory_main.json --all-variants
 uv run python experiment\ollama_gemma4_e4b_nonstationary_confirmatory\scripts\analyze_confirmatory_results.py --run-dir experiment\ollama_gemma4_e4b_nonstationary_confirmatory\runs\latest --out experiment\ollama_gemma4_e4b_nonstationary_confirmatory\results
+```
+
+### Mock smoke run
+
+This is a wiring check only. It does not support any effect claim and should not be written over the
+curated public results directory.
+
+```powershell
+uv sync
+$mockOut = Join-Path $env:TEMP "oasg_nonstationary_confirmatory_mock_results"
+New-Item -ItemType Directory -Force $mockOut | Out-Null
+uv run python experiment\ollama_gemma4_e4b_nonstationary_confirmatory\scripts\run_confirmatory_experiment.py --config experiment\ollama_gemma4_e4b_nonstationary_confirmatory\config_confirmatory_small.json --mock-model --all-variants
+uv run python experiment\ollama_gemma4_e4b_nonstationary_confirmatory\scripts\analyze_confirmatory_results.py --run-dir experiment\ollama_gemma4_e4b_nonstationary_confirmatory\runs\latest --out $mockOut
 ```
