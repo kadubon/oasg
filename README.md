@@ -128,8 +128,8 @@ Implemented:
   retirement, outcome memory, and conflict receipts.
 - Model-agnostic adapters that emit observation events rather than evaluator judgments.
 - JSON Schema export and conformance fixtures.
-- Ollama `gemma4:e4b` experiment profiles with null, inconclusive, positive, interrupted, and
-  strong-baseline negative results retained.
+- Ollama `gemma4:e4b` experiment profiles with null, inconclusive, positive, interrupted,
+  strong-baseline negative, and nonstationary confirmatory mixed-reversion results retained.
 
 Not implemented or not claimed:
 
@@ -348,9 +348,13 @@ Current evidence bottom line:
   on a fixed held-out distribution in the strong-baseline v2 experiment.
 - OASG did show time-boxed post-drift recovery over a calibration-selected strong static workflow
   in the nonstationary strong-baseline protocol.
+- The larger four-variant nonstationary confirmatory run found a real primary post-drift
+  improvement, but its final classification is `mixed_reversion_only_effect`, not broad
+  `oasg_nonstationary_confirmed` support.
 - Therefore, the scientifically honest claim is conditional: this implementation has positive
-  evidence for workflow adaptation when operational requirements drift, while fixed-distribution
-  strong-baseline evidence remains negative.
+  evidence for workflow adaptation when operational requirements drift, especially under mixed
+  reversion or policy-retirement-sensitive drift, while fixed-distribution strong-baseline evidence
+  remains negative.
 
 ### Evidence Summary
 
@@ -364,7 +368,7 @@ Current evidence bottom line:
 | `experiment/ollama_gemma4_e4b_strong_baseline` | `promotion_mechanism_failure_vs_strong_baseline` | strong baseline qualified; adaptive readiness active seeds 0/4 required; run interrupted after 7/25 held-out condition blocks | No incremental OASG effect over the strong baseline is claimed. The run was stopped because adaptive activation failed before evaluation, making the primary effect question non-identifiable. |
 | `experiment/ollama_gemma4_e4b_strong_baseline_v2` | `no_incremental_effect_vs_strong_baseline` | 5 seeds, 680 paired held-out tasks; strong static debt AUC 434; OASG adaptive debt AUC 436; debt delta `+2`, CI `[0, 5]`; cost delta `+7652`, CI `[1534, 14346]`; hard-floor regressions 0 | Readiness succeeded, but held-out evaluation did not show incremental OASG value over the calibrated strong static workflow. |
 | `experiment/ollama_gemma4_e4b_nonstationary_strong_baseline` | `oasg_nonstationary_effect_confirmed_timeboxed` | 2 seeds, 48 paired post-drift tasks; strong static debt AUC `112`; OASG adaptive debt AUC `84`; debt delta `-28`, CI `[-51, -10]`; closure `20/48 -> 27/48`; hard-floor regressions `0` | Time-boxed positive evidence that fail-closed OASG adaptation recovered post-drift operational debt over a calibration-selected strong static workflow. The claim is limited to this frozen protocol and is not universal. |
-| `experiment/ollama_gemma4_e4b_nonstationary_confirmatory` | protocol added; no confirmatory effect claim yet | Four-variant follow-up protocol; mock/small wiring run classifies `inconclusive_insufficient_power` | Audited to separate broad drift support, structural-only support, mixed-reversion/policy-retirement support, and cost-aware effects. A real all-variant Ollama run is required before any effect claim. |
+| `experiment/ollama_gemma4_e4b_nonstationary_confirmatory` | `mixed_reversion_only_effect` | 4 variants, 5 seeds, 600 paired post-drift tasks; strong static debt AUC `1524`; OASG adaptive debt AUC `1352`; debt delta `-172`, CI `[-222, -125]`; closure `259/600 -> 300/600`; cost delta `-87081`, CI `[-104210, -69629]`; hard-floor regressions `0` | Primary and control comparisons favor OASG, but structural-only improvement is below the preregistered support threshold. The final claim is narrower mixed-reversion / policy-retirement-sensitive support, not broad nonstationary confirmation. |
 
 ### Decisive Run Details
 
@@ -477,6 +481,43 @@ Nonstationary strong-baseline protocol:
   and
   [`experiment/ollama_gemma4_e4b_nonstationary_strong_baseline/results/verification.json`](experiment/ollama_gemma4_e4b_nonstationary_strong_baseline/results/verification.json).
 
+Nonstationary confirmatory follow-up:
+
+- This profile is the larger follow-up to the time-boxed nonstationary result. It runs four
+  variants: full drift replication, no-mixed-reversion ablation, mixed-reversion-only probe, and
+  delayed-drift recovery.
+- Final classification: `mixed_reversion_only_effect`.
+- Integrity: verification `ok`, all required variants complete, paired post-drift task count `600`,
+  active post-drift OASG seeds `5`, stable A2 active mutation rows `0`, hard-floor regressions `0`.
+- Primary result:
+  - `strong_static_calibrated`: debt AUC `1524`, cost-to-close units `1207320`, closed `259/600`.
+  - `oasg_adaptive_from_strong`: debt AUC `1352`, cost-to-close units `1120239`, closed `300/600`.
+  - primary debt delta `-172`, debt CI `[-222, -125]`; cost delta `-87081`, cost CI
+    `[-104210, -69629]`; closure delta `+41`.
+- Secondary controls:
+  - OASG vs observe-only debt delta `-172`, CI `[-222, -125]`.
+  - OASG vs rule-adaptive debt delta `-98`, CI `[-169, -28]`.
+- Ablations and drift classes:
+  - mixed-only debt delta `-118`, reduction `1639` bps, CI `[-158, -78]`;
+  - mild-only debt delta `-50`, reduction `1562` bps, CI `[-76, -27]`;
+  - no-Phase-D aggregate debt delta `-54`, reduction `672` bps, CI `[-82, -28]`;
+  - structural-only debt delta `-4`, reduction `83` bps, CI `[-12, 0]`, below the
+    `500` bps support threshold.
+- Interpretation: the larger run supports post-drift workflow recovery over the strong static
+  baseline in this frozen local protocol, and the result is not explained by observe-only or the
+  rule-adaptive control. It does not meet the stricter broad nonstationary confirmation contract
+  because structural-only support is too small. The most defensible claim is narrower:
+  mixed-reversion / policy-retirement-sensitive drift support, with additional mild-drift support.
+- Limits: the final `classification_receipt.json` has `effect_claim_allowed: false` because only
+  `oasg_nonstationary_confirmed` is treated as a broad confirmatory effect claim. The result does
+  not prove universal OASG effectiveness, model intelligence improvement, or deployability of the
+  oracle control.
+- Curated artifacts:
+  [`experiment/ollama_gemma4_e4b_nonstationary_confirmatory/results/report.md`](experiment/ollama_gemma4_e4b_nonstationary_confirmatory/results/report.md),
+  [`experiment/ollama_gemma4_e4b_nonstationary_confirmatory/results/metrics.json`](experiment/ollama_gemma4_e4b_nonstationary_confirmatory/results/metrics.json),
+  and
+  [`experiment/ollama_gemma4_e4b_nonstationary_confirmatory/results/verification.json`](experiment/ollama_gemma4_e4b_nonstationary_confirmatory/results/verification.json).
+
 ### Reproduce the Decisive Experiment
 
 Requires local Ollama with `gemma4:e4b` installed.
@@ -505,6 +546,19 @@ uv run python experiment\ollama_gemma4_e4b_nonstationary_strong_baseline\scripts
 uv run python experiment\ollama_gemma4_e4b_nonstationary_strong_baseline\scripts\analyze_nonstationary_results.py --run-dir experiment\ollama_gemma4_e4b_nonstationary_strong_baseline\runs\latest --out experiment\ollama_gemma4_e4b_nonstationary_strong_baseline\results
 ```
 
+### Reproduce the Nonstationary Confirmatory Experiment
+
+Requires local Ollama with `gemma4:e4b` installed. The main config is a long all-variant run. On the
+reference local machine, the completed run used `20260509` through `20260513` replicate seeds.
+
+```powershell
+cd path\to\oasg
+uv sync
+ollama list
+uv run python experiment\ollama_gemma4_e4b_nonstationary_confirmatory\scripts\run_confirmatory_experiment.py --config experiment\ollama_gemma4_e4b_nonstationary_confirmatory\config_confirmatory_main.json --all-variants
+uv run python experiment\ollama_gemma4_e4b_nonstationary_confirmatory\scripts\analyze_confirmatory_results.py --run-dir experiment\ollama_gemma4_e4b_nonstationary_confirmatory\runs\latest --out experiment\ollama_gemma4_e4b_nonstationary_confirmatory\results
+```
+
 ## Development Checks
 
 Before publishing a change or port:
@@ -514,11 +568,13 @@ uv run pytest
 uv run ruff check
 uv run mypy src
 uv run oasg conformance run examples/conformance
+uv build
 ```
 
-At the time this README was updated after auditing the confirmatory nonstationary protocol, these
-checks passed in the current workspace: `111 passed`, `ruff` clean, `mypy` clean, and conformance
-`status: ok`.
+At the time this README was updated after the final nonstationary confirmatory analysis, these
+checks passed in the current workspace: `112 passed`, `ruff` clean, `mypy` clean, conformance
+`status: ok`, and a clean package build. Built artifacts were scanned for local paths,
+high-confidence secret patterns, and raw experiment run payloads.
 
 The current public-readiness review is recorded in
 [`docs/publication_audit.md`](docs/publication_audit.md).

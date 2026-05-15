@@ -54,7 +54,18 @@ uv run pytest
 uv run ruff check
 uv run mypy src
 uv run oasg conformance run examples/conformance
+uv build
 ```
 
-Also inspect generated artifacts before committing them. Experiment `runs/`, caches, `.env` files,
-and local optimizer state are intentionally ignored.
+Also inspect generated artifacts before committing them:
+
+- keep experiment `runs/` directories as local raw output; publish only curated summaries and
+  receipts that were deliberately copied into `results/`;
+- scan public docs, curated artifacts, and built packages for local absolute paths, local usernames,
+  API keys, bearer tokens, authorization headers, and `.env` references;
+- confirm wheel contents contain only package files and metadata;
+- confirm source distributions do not include raw run payloads beyond intentional
+  `runs/.gitignore` placeholders.
+
+Experiment `runs/`, caches, `.env` files, build artifacts, coverage output, and local optimizer
+state are intentionally ignored.

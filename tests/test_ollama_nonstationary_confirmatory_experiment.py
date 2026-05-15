@@ -392,6 +392,28 @@ def test_confirmatory_ablation_denominators_are_subset_local() -> None:
     assert ablations["structural_only"]["debt_reduction_bps"] == 5000
 
 
+def test_confirmatory_drift_label_uses_support_threshold() -> None:
+    analyzer = _load_script("analyze_confirmatory_results")
+    effects = {
+        "mild": {
+            "debt_reduction_bps": 1562,
+            "debt_bootstrap_ci": {"delta_ci": [-76, -27]},
+        },
+        "mixed": {
+            "debt_reduction_bps": 1639,
+            "debt_bootstrap_ci": {"delta_ci": [-160, -80]},
+        },
+        "structural": {
+            "debt_reduction_bps": 83,
+            "debt_bootstrap_ci": {"delta_ci": [-12, 0]},
+        },
+    }
+    assert (
+        analyzer._drift_interpretation_label(effects, support_threshold_bps=500)
+        == "mixed_reversion_or_retirement_specific_support"
+    )
+
+
 def test_confirmatory_structural_support_required_for_confirmation() -> None:
     common = _load_script("confirmatory_common")
     summaries = {

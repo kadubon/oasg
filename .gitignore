@@ -1,18 +1,40 @@
+# Python / tool caches
 .venv/
 .mypy_cache/
 .pytest_cache/
 .ruff_cache/
+.hypothesis/
+.pyre/
+.pytype/
+.dmypy.json
 __pycache__/
 **/__pycache__/
 *.py[cod]
+
+# Build / package artifacts
 dist/
 build/
 *.egg-info/
+pip-wheel-metadata/
+
+# Coverage / generated docs
 .coverage
+.coverage.*
+coverage.xml
 htmlcov/
+site/
+
+# Local environment and OS/editor noise
 .env
 .env.*
 !.env.example
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.orig
+*.rej
 
 # Local OASG optimizer / experiment outputs
 .oasg/
@@ -27,3 +49,6 @@ experiment/**/runs*/**
 # intentionally moved out of runs and reviewed.
 *.tmp
 *.log
+*.prof
+*.trace
+*.pid

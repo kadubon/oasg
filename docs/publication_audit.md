@@ -1,6 +1,6 @@
 # Publication Audit
 
-Date: 2026-05-13
+Date: 2026-05-15
 
 This audit records the public-readiness checks for the current OASG reference package.
 
@@ -14,6 +14,7 @@ Reviewed public surface:
 - quickstart and conformance examples;
 - architecture documentation;
 - security-relevant runner, adapter, library, ledger, and gate surfaces;
+- repository ignore policy for local/generated outputs;
 - package build artifacts.
 
 ## Security Review
@@ -39,6 +40,15 @@ Residual limits:
   judges.
 - Dependency vulnerability scanning was not performed with `pip-audit` in this workspace.
 
+Repository hygiene:
+
+- `.gitignore` excludes Python/tool caches, build outputs, coverage output, local `.env` files,
+  editor/OS noise, profiler traces, local OASG optimizer state, and experiment `runs/` trees.
+- Raw experiment run directories are treated as local provenance material, not public release
+  artifacts. Public claims should reference curated `results/` summaries and receipts only.
+- `runs/.gitignore` placeholders are retained so experiment layouts remain reproducible without
+  publishing large raw run payloads.
+
 ## Documentation Review
 
 Public entry points are present:
@@ -58,8 +68,8 @@ The old `CONTRIBUTING.md` file was intentionally removed.
 ## Experiment Evidence Review
 
 The README reports all local Ollama `gemma4:e4b` experiment outcomes, including null,
-inconclusive, workload-not-sensitive, negative strong-baseline, positive decisive, and positive
-time-boxed nonstationary runs.
+inconclusive, workload-not-sensitive, negative strong-baseline, positive decisive, positive
+time-boxed nonstationary, and narrowed confirmatory nonstationary runs.
 
 The decisive weak-baseline result is limited to that experiment's frozen workload, model,
 validators, prompts, implementation, and thresholds. It is not presented as universal proof.
@@ -84,17 +94,30 @@ calibration-selected strong static workflow in this frozen protocol, not a unive
 Curated artifacts are in
 `experiment/ollama_gemma4_e4b_nonstationary_strong_baseline/results/`.
 
-The nonstationary confirmatory follow-up profile has been added as protocol-only public material in
-`experiment/ollama_gemma4_e4b_nonstationary_confirmatory/`. It defines four variants: direct full
-drift replication, no-mixed-reversion ablation, mixed-reversion-only probe, and delayed-drift
-recovery. The protocol was audited so its analysis now separates aggregate, mild-only,
-structural-only, mixed-only, and no-Phase-D effects with subset-local denominators. It also emits
-drift-class, oracle-headroom-by-class, cost, and retirement/tightening receipts. Mixed-only gains are
-classified as narrower phase-specific evidence rather than broad nonstationary support, and
-confirmed support requires structural drift support plus acceptable cost-to-close uncertainty. The
-checked mock/small run classifies `inconclusive_insufficient_power`; it is a wiring check and does
-not support a confirmatory effect claim. A real all-variant Ollama run is required before the root
-README may report a confirmatory result.
+The nonstationary confirmatory follow-up profile now has a completed real all-variant Ollama run in
+`experiment/ollama_gemma4_e4b_nonstationary_confirmatory/results/`. It defines four variants:
+direct full drift replication, no-mixed-reversion ablation, mixed-reversion-only probe, and
+delayed-drift recovery. The final classification is `mixed_reversion_only_effect`: verification is
+`ok`, all four required variants completed, the primary comparison has 600 paired post-drift tasks,
+and OASG adaptive reduced debt AUC from `1524` to `1352` versus the Phase-A-calibrated strong static
+baseline. Primary debt delta is `-172` with CI `[-222, -125]`; primary cost-to-close delta is
+`-87081` with CI `[-104210, -69629]`; closure improves from `259/600` to `300/600`; hard-floor
+regressions remain `0`.
+
+The confirmatory result is scientifically positive but narrower than broad nonstationary
+confirmation. OASG also beats observe-only (`-172`, CI `[-222, -125]`) and rule-adaptive (`-98`, CI
+`[-169, -28]`), so the primary effect is not explained by measurement alone or by the simple
+hand-coded adaptation control. The strongest supported class is mixed reversion / policy-retirement
+sensitive drift (`-118`, 1639 bps, CI `[-158, -78]`), and mild drift also supports improvement
+(`-50`, 1562 bps, CI `[-76, -27]`). Structural-only movement is small (`-4`, 83 bps, CI `[-12, 0]`)
+and below the configured 500 bps support threshold. Therefore the README reports narrowed
+mixed-reversion support rather than `oasg_nonstationary_confirmed`; `classification_receipt.json`
+has `effect_claim_allowed: false`.
+
+During this update, the drift-class interpretation label was tightened to use the same configured
+support threshold as the final classifier, avoiding a misleading broad-support label when
+structural-only movement is below threshold. The checked mock/small path remains a wiring check and
+does not support a confirmatory effect claim.
 
 ## Build And Quality Checks
 
@@ -108,13 +131,14 @@ uv run oasg conformance run examples/conformance
 uv build
 ```
 
-Observed results after auditing and tightening the nonstationary confirmatory protocol:
+Observed results after auditing, completing, and tightening the nonstationary confirmatory protocol:
 
-- `pytest`: 111 passed.
+- `pytest`: 112 passed.
 - `ruff`: all checks passed.
 - `mypy`: no issues in 36 source files.
 - `mypy` on the new nonstationary confirmatory experiment scripts: no issues in 5 files.
 - conformance: `status: ok`.
+- `uv build`: built `dist/oasg-1.1.0.tar.gz` and `dist/oasg-1.1.0-py3-none-any.whl`.
 
 Package artifact inspection:
 
@@ -125,6 +149,12 @@ Package artifact inspection:
   protocols/results. Generated experiment run contents remain excluded by `.gitignore`.
 - Public files and built artifacts were scanned for local absolute paths and the local username;
   no matches remained outside the ignored virtual environment.
+- Current wheel and source distribution archive scan found `0` high-confidence secret/local-path
+  matches and `0` raw run payloads. The source distribution includes only the intentional
+  `runs/.gitignore` placeholders for run directories.
+- Large-file review found the largest retained public files are curated experiment `results/`
+  metrics and tables. They are retained because the README's scientific claims cite those summaries;
+  high-volume raw run directories remain ignored.
 
 Additional post-experiment public-surface scan on 2026-05-13:
 
@@ -136,6 +166,15 @@ Additional post-experiment public-surface scan on 2026-05-13:
   no matches were found. The wheel contains package files only; the source distribution includes
   curated docs, tests, examples, and experiment result summaries, but not generated run payloads
   beyond the `runs/.gitignore` placeholders.
+
+Additional confirmatory-artifact scan on 2026-05-15:
+
+- No local absolute paths or local username strings were found in
+  `experiment/ollama_gemma4_e4b_nonstationary_confirmatory/results/`.
+- No API-key, bearer-token, authorization, password, or token patterns were found in the curated
+  nonstationary confirmatory result artifacts.
+- The final public report and README explicitly mark `mixed_reversion_only_effect` as narrowed
+  evidence, not broad `oasg_nonstationary_confirmed` support.
 
 ## Release Position
 

@@ -211,7 +211,10 @@ def analyze_run(run_dir: Path, bootstrap_samples: int | None = None) -> dict[str
         "receipt_type": "drift_class_effect_receipt",
         "status": "computed",
         "drift_class_effects": compact_drift_class,
-        "interpretation_label": _drift_interpretation_label(compact_drift_class),
+        "interpretation_label": _drift_interpretation_label(
+            compact_drift_class,
+            support_threshold_bps=int(config.get("control_support_min_reduction_bps", 500)),
+        ),
         "metrics_hash": metrics["metrics_hash"],
     }
     metrics["retirement_effect_receipt"] = {
@@ -408,7 +411,7 @@ def _aggregate_oracle(variant_receipts: dict[str, dict[str, Any]]) -> dict[str, 
             "status": "oracle_headroom_present" if improved_subset else "oracle_headroom_absent",
             "probe_count": len(subset),
             "improved_probe_count": len(improved_subset),
-            "probe_receipts_hash": receipt_hash(subset),
+            "probe_receipts_hash": receipt_hash({"probe_receipts": subset}),
         }
     return {
         "receipt_type": "oracle_headroom_receipt",
@@ -417,7 +420,7 @@ def _aggregate_oracle(variant_receipts: dict[str, dict[str, Any]]) -> dict[str, 
         "improved_probe_count": len(improved),
         "oracle_headroom_by_drift_class": by_class,
         "non_deployable_control": True,
-        "probe_receipts_hash": receipt_hash(probes),
+        "probe_receipts_hash": receipt_hash({"probe_receipts": probes}),
     }
 
 
@@ -760,18 +763,29 @@ def _interpretation(classification: str) -> str:
             "The result supports a narrower phase-specific interpretation. The observed effect is "
             "not broad across all drift types."
         )
-    if classification in {"mixed_reversion_only_effect", "no_mixed_reversion_support"}:
-        return "The ablation pattern narrows the effect to part of the drift schedule."
+    if classification == "mixed_reversion_only_effect":
+        return (
+            "The primary comparison favors OASG, but the ablation contract narrows the effect to "
+            "mixed reversion or policy-retirement-sensitive drift rather than broad confirmatory "
+            "nonstationary support."
+        )
+    if classification == "no_mixed_reversion_support":
+        return (
+            "The ablation pattern supports drift recovery without mixed reversion, but it does not "
+            "satisfy the full broad-confirmation contract."
+        )
     if classification == "inconclusive_insufficient_power":
         return "The run is a protocol or diagnostic run and does not justify a confirmatory claim."
     return "The run does not support a positive OASG confirmatory effect claim under this protocol."
 
 
-def _drift_interpretation_label(drift_class_effects: dict[str, dict[str, Any]]) -> str:
+def _drift_interpretation_label(
+    drift_class_effects: dict[str, dict[str, Any]], *, support_threshold_bps: int = 500
+) -> str:
     supported = {
         label
         for label, effect in drift_class_effects.items()
-        if int(effect.get("debt_reduction_bps", 0)) > 0
+        if int(effect.get("debt_reduction_bps", 0)) >= support_threshold_bps
         and int(effect.get("debt_bootstrap_ci", {}).get("delta_ci", [0, 1])[1]) <= 0
     }
     if {"mild", "structural", "mixed"} <= supported:

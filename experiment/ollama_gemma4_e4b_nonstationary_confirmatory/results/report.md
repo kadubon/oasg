@@ -1,6 +1,6 @@
 # OASG Nonstationary Confirmatory Experiment Report
 
-Final classification: `inconclusive_insufficient_power`
+Final classification: `mixed_reversion_only_effect`
 
 ## Scientific Question
 
@@ -12,40 +12,40 @@ This protocol does not test whether OASG is strong for nonstationarity in genera
 
 - Verification: `ok`.
 - Completed variants: `delayed_drift_recovery, full_drift_confirmatory, mixed_reversion_only_probe, no_mixed_reversion_ablation`.
-- Primary paired post-drift tasks: `20`.
-- Active post-drift OASG seeds: `1`.
+- Primary paired post-drift tasks: `600`.
+- Active post-drift OASG seeds: `5`.
 - Stable A2 active mutation rows: `0`.
 
 ## Primary Comparison
 
-- `oasg_adaptive_from_strong` vs `strong_static_calibrated`: debt delta `-12`, debt CI `[-24, -4]`, cost delta `194`, cost CI `[0, 482]`.
-- OASG vs observe-only: debt delta `-12`, CI `[-24, 0]`.
-- OASG vs rule-adaptive: debt delta `0`, CI `[0, 0]`.
+- `oasg_adaptive_from_strong` vs `strong_static_calibrated`: debt delta `-172`, debt CI `[-225, -126]`, cost delta `-87081`, cost CI `[-104847, -69824]`.
+- OASG vs observe-only: debt delta `-172`, CI `[-225, -124]`.
+- OASG vs rule-adaptive: debt delta `-98`, CI `[-164, -23]`.
 
 ## Ablation Summary
 
-- No-Phase-D aggregate: `0` debt delta, CI `[0, 0]`.
-- Mixed-reversion-only aggregate: `-12` debt delta, CI `[-20, 0]`.
-- Structural-only aggregate: `0` debt delta, CI `[0, 0]`.
-- Mild-only aggregate: `0` debt delta, CI `[0, 0]`.
+- No-Phase-D aggregate: `-54` debt delta, CI `[-83, -29]`.
+- Mixed-reversion-only aggregate: `-118` debt delta, CI `[-158, -78]`.
+- Structural-only aggregate: `-4` debt delta, CI `[-12, 0]`.
+- Mild-only aggregate: `-50` debt delta, CI `[-72, -28]`.
 
 ## Drift-Class Effects
 
 - Interpretation label: `mixed_reversion_or_retirement_specific_support`.
-- `delayed_stable`: debt delta `0`, reduction `0` bps, CI `[0, 0]`, cost delta `0`.
-- `mild`: debt delta `0`, reduction `0` bps, CI `[0, 0]`, cost delta `0`.
-- `mixed`: debt delta `-12`, reduction `3750` bps, CI `[-20, -4]`, cost delta `194`.
-- `structural`: debt delta `0`, reduction `0` bps, CI `[0, 0]`, cost delta `0`.
+- `delayed_stable`: debt delta `0`, reduction `0` bps, CI `[0, 0]`, cost delta `54`.
+- `mild`: debt delta `-50`, reduction `1562` bps, CI `[-76, -28]`, cost delta `-9977`.
+- `mixed`: debt delta `-118`, reduction `1639` bps, CI `[-158, -78]`, cost delta `-50893`.
+- `structural`: debt delta `-4`, reduction `83` bps, CI `[-12, 0]`, cost delta `-26211`.
 
 ## Cost And Retirement
 
-- Primary cost-to-close delta: `194`, CI `[0, 482]`.
-- Active retirement/tightening rows: `0`.
-- Mixed retirement/tightening rows: `0`.
+- Primary cost-to-close delta: `-87081`, CI `[-104847, -69824]`.
+- Active retirement/tightening rows: `9`.
+- Mixed retirement/tightening rows: `5`.
 
 ## Scientific Interpretation
 
-The run is a protocol or diagnostic run and does not justify a confirmatory claim.
+The primary comparison favors OASG, but the ablation contract narrows the effect to mixed reversion or policy-retirement-sensitive drift rather than broad confirmatory nonstationary support.
 
 ## Claims Not Supported
 

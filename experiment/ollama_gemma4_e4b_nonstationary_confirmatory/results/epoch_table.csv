@@ -1,41 +1,401 @@
 variant_id,seed,phase_id,epoch,condition,task_count,closed,closure_rate_bps,operational_debt_auc,cost_units,cost_to_close_units,closure_adjusted_cost_units,validation_failures,parse_failures,retries,unresolved_obligations,attempts,char_budget,latency_ms,active_mutation_ids,active_mutation_count,active_retirement_ids,retirement_count,hard_floor_regression_count,rollback_failures,evidence_gap,rollback_gap
-delayed_drift_recovery,20260509,phase_c_structural_drift,3,strong_static_calibrated,2,0,0,8,2306,2306,22306,2,0,0,2,2,306,0,[],0,[],0,0,0,2,0
-delayed_drift_recovery,20260509,phase_c_structural_drift,3,oasg_observe_only_from_strong,2,0,0,8,2306,2306,22306,2,0,0,2,2,306,0,[],0,[],0,0,0,2,0
-delayed_drift_recovery,20260509,phase_c_structural_drift,3,rule_adaptive_control,2,0,0,8,2306,2306,22306,2,0,0,2,2,306,0,[],0,[],0,0,0,2,0
-delayed_drift_recovery,20260509,phase_c_structural_drift,3,oasg_adaptive_from_strong,2,0,0,8,2306,2306,22306,2,0,0,2,2,306,0,[],0,[],0,0,0,2,0
-delayed_drift_recovery,20260509,phase_d_partial_reversion,4,strong_static_calibrated,2,0,0,8,2271,2271,22271,2,0,0,2,2,271,0,[],0,[],0,0,0,2,0
-delayed_drift_recovery,20260509,phase_d_partial_reversion,4,oasg_observe_only_from_strong,2,0,0,8,2271,2271,22271,2,0,0,2,2,271,0,[],0,[],0,0,0,2,0
-delayed_drift_recovery,20260509,phase_d_partial_reversion,4,rule_adaptive_control,2,0,0,8,2271,2271,22271,2,0,0,2,2,271,0,[],0,[],0,0,0,2,0
-delayed_drift_recovery,20260509,phase_d_partial_reversion,4,oasg_adaptive_from_strong,2,0,0,8,2271,2271,22271,2,0,0,2,2,271,0,[],0,[],0,0,0,2,0
-full_drift_confirmatory,20260509,phase_b_mild_drift,2,strong_static_calibrated,2,0,0,8,2261,2261,22261,1,2,0,2,2,261,0,[],0,[],0,0,0,1,0
-full_drift_confirmatory,20260509,phase_b_mild_drift,2,oasg_observe_only_from_strong,2,0,0,8,2261,2261,22261,1,2,0,2,2,261,0,[],0,[],0,0,0,1,0
-full_drift_confirmatory,20260509,phase_b_mild_drift,2,rule_adaptive_control,2,0,0,8,2261,2261,22261,1,2,0,2,2,261,0,[],0,[],0,0,0,1,0
-full_drift_confirmatory,20260509,phase_b_mild_drift,2,oasg_adaptive_from_strong,2,0,0,8,2261,2261,22261,1,2,0,2,2,261,0,[],0,[],0,0,0,1,0
-full_drift_confirmatory,20260509,phase_c_structural_drift,3,strong_static_calibrated,2,0,0,8,2348,2348,22348,2,0,0,2,2,348,0,[],0,[],0,0,0,2,0
-full_drift_confirmatory,20260509,phase_c_structural_drift,3,oasg_observe_only_from_strong,2,0,0,8,2348,2348,22348,2,0,0,2,2,348,0,[],0,[],0,0,0,2,0
-full_drift_confirmatory,20260509,phase_c_structural_drift,3,rule_adaptive_control,2,0,0,8,2348,2348,22348,2,0,0,2,2,348,0,[],0,[],0,0,0,2,0
-full_drift_confirmatory,20260509,phase_c_structural_drift,3,oasg_adaptive_from_strong,2,0,0,8,2348,2348,22348,2,0,0,2,2,348,0,[],0,[],0,0,0,2,0
-full_drift_confirmatory,20260509,phase_d_mixed_reversion,4,strong_static_calibrated,2,0,0,8,2300,2300,22300,2,0,0,2,2,300,0,[],0,[],0,0,0,2,0
-full_drift_confirmatory,20260509,phase_d_mixed_reversion,4,oasg_observe_only_from_strong,2,0,0,8,2300,2300,22300,2,0,0,2,2,300,0,[],0,[],0,0,0,2,0
-full_drift_confirmatory,20260509,phase_d_mixed_reversion,4,rule_adaptive_control,2,2,10000,0,2406,2406,2406,0,0,0,0,2,406,0,[],0,[],0,0,0,0,0
-full_drift_confirmatory,20260509,phase_d_mixed_reversion,4,oasg_adaptive_from_strong,2,2,10000,0,2384,2384,2384,0,0,0,0,2,384,0,"['mut_strict_json_minimal_code_transform_phase_d_mixed_reversion', 'mut_strict_json_minimal_json_schema_repair_phase_d_mixed_reversion']",2,[],0,0,0,0,0
-mixed_reversion_only_probe,20260509,phase_d1_mixed_reversion,2,strong_static_calibrated,2,0,0,8,2269,2269,22269,2,0,0,2,2,269,0,[],0,[],0,0,0,2,0
-mixed_reversion_only_probe,20260509,phase_d1_mixed_reversion,2,oasg_observe_only_from_strong,2,0,0,8,2269,2269,22269,2,0,0,2,2,269,0,[],0,[],0,0,0,2,0
-mixed_reversion_only_probe,20260509,phase_d1_mixed_reversion,2,rule_adaptive_control,2,0,0,8,2269,2269,22269,2,0,0,2,2,269,0,[],0,[],0,0,0,2,0
-mixed_reversion_only_probe,20260509,phase_d1_mixed_reversion,2,oasg_adaptive_from_strong,2,0,0,8,2269,2269,22269,2,0,0,2,2,269,0,[],0,[],0,0,0,2,0
-mixed_reversion_only_probe,20260509,phase_d2_mixed_ratio_shift,3,strong_static_calibrated,2,0,0,8,2295,2295,22295,2,0,0,2,2,295,0,[],0,[],0,0,0,2,0
-mixed_reversion_only_probe,20260509,phase_d2_mixed_ratio_shift,3,oasg_observe_only_from_strong,2,0,0,8,2295,2295,22295,2,0,0,2,2,295,0,[],0,[],0,0,0,2,0
-mixed_reversion_only_probe,20260509,phase_d2_mixed_ratio_shift,3,rule_adaptive_control,2,1,5000,4,2405,2405,12405,1,0,0,1,2,405,0,[],0,[],0,0,0,1,0
-mixed_reversion_only_probe,20260509,phase_d2_mixed_ratio_shift,3,oasg_adaptive_from_strong,2,1,5000,4,2405,2405,12405,1,0,0,1,2,405,0,['mut_schema_keys_only_obligation_closure_phase_d2_mixed_ratio_shift'],1,[],0,0,0,1,0
-no_mixed_reversion_ablation,20260509,phase_b_mild_drift,2,strong_static_calibrated,2,2,10000,0,2387,2387,2387,0,0,0,0,2,387,0,[],0,[],0,0,0,0,0
-no_mixed_reversion_ablation,20260509,phase_b_mild_drift,2,oasg_observe_only_from_strong,2,2,10000,0,2387,2387,2387,0,0,0,0,2,387,0,[],0,[],0,0,0,0,0
-no_mixed_reversion_ablation,20260509,phase_b_mild_drift,2,rule_adaptive_control,2,2,10000,0,2387,2387,2387,0,0,0,0,2,387,0,[],0,[],0,0,0,0,0
-no_mixed_reversion_ablation,20260509,phase_b_mild_drift,2,oasg_adaptive_from_strong,2,2,10000,0,2387,2387,2387,0,0,0,0,2,387,0,[],0,[],0,0,0,0,0
-no_mixed_reversion_ablation,20260509,phase_c1_structural_drift,3,strong_static_calibrated,2,0,0,9,2369,2369,22369,2,0,0,2,2,369,0,[],0,[],0,0,0,2,1
-no_mixed_reversion_ablation,20260509,phase_c1_structural_drift,3,oasg_observe_only_from_strong,2,0,0,9,2369,2369,22369,2,0,0,2,2,369,0,[],0,[],0,0,0,2,1
-no_mixed_reversion_ablation,20260509,phase_c1_structural_drift,3,rule_adaptive_control,2,0,0,9,2369,2369,22369,2,0,0,2,2,369,0,[],0,[],0,0,0,2,1
-no_mixed_reversion_ablation,20260509,phase_c1_structural_drift,3,oasg_adaptive_from_strong,2,0,0,9,2369,2369,22369,2,0,0,2,2,369,0,[],0,[],0,0,0,2,1
-no_mixed_reversion_ablation,20260509,phase_c2_structural_surface_shift,4,strong_static_calibrated,2,0,0,8,2373,2373,22373,2,0,0,2,2,373,0,[],0,[],0,0,0,2,0
-no_mixed_reversion_ablation,20260509,phase_c2_structural_surface_shift,4,oasg_observe_only_from_strong,2,0,0,8,2373,2373,22373,2,0,0,2,2,373,0,[],0,[],0,0,0,2,0
-no_mixed_reversion_ablation,20260509,phase_c2_structural_surface_shift,4,rule_adaptive_control,2,0,0,8,2373,2373,22373,2,0,0,2,2,373,0,[],0,[],0,0,0,2,0
-no_mixed_reversion_ablation,20260509,phase_c2_structural_surface_shift,4,oasg_adaptive_from_strong,2,0,0,8,2373,2373,22373,2,0,0,2,2,373,0,[],0,[],0,0,0,2,0
+delayed_drift_recovery,20260509,phase_c_structural_drift,5,strong_static_calibrated,6,3,5000,12,13613,13613,43613,3,0,0,3,6,1810,58061,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260509,phase_c_structural_drift,5,oasg_observe_only_from_strong,6,3,5000,12,13548,13548,43548,3,0,0,3,6,1810,57409,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260509,phase_c_structural_drift,5,rule_adaptive_control,6,3,5000,12,12266,12266,42266,3,0,0,3,6,1814,44547,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260509,phase_c_structural_drift,5,oasg_adaptive_from_strong,6,3,5000,12,13578,13578,43578,3,0,0,3,6,1810,57723,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260509,phase_c_structural_drift,6,strong_static_calibrated,6,3,5000,12,13176,13176,43176,3,0,0,3,6,1810,53682,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260509,phase_c_structural_drift,6,oasg_observe_only_from_strong,6,3,5000,12,13179,13179,43179,3,0,0,3,6,1810,53722,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260509,phase_c_structural_drift,6,rule_adaptive_control,6,3,5000,12,12278,12278,42278,3,0,0,3,6,1857,44245,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260509,phase_c_structural_drift,6,oasg_adaptive_from_strong,6,3,5000,12,12349,12349,42349,3,0,0,3,6,1857,44946,"['mut_schema_keys_only_code_transform_phase_c_structural_drift', 'mut_schema_keys_only_obligation_closure_phase_c_structural_drift']",2,[],0,0,0,3,0
+delayed_drift_recovery,20260509,phase_d_partial_reversion,7,strong_static_calibrated,6,3,5000,16,11481,11481,41481,3,0,2,3,6,1741,37426,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260509,phase_d_partial_reversion,7,oasg_observe_only_from_strong,6,3,5000,16,11420,11420,41420,3,0,2,3,6,1741,36812,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260509,phase_d_partial_reversion,7,rule_adaptive_control,6,4,6667,12,10129,10129,30129,2,0,2,2,6,1681,24514,[],0,[],0,0,0,2,0
+delayed_drift_recovery,20260509,phase_d_partial_reversion,7,oasg_adaptive_from_strong,6,3,5000,16,11451,11451,41451,3,0,2,3,6,1664,37899,"['mut_policy_retirement_obligation_closure_phase_d_partial_reversion', 'mut_schema_keys_only_code_transform_phase_d_partial_reversion']",2,['mut_policy_retirement_obligation_closure_phase_d_partial_reversion'],1,0,0,3,0
+delayed_drift_recovery,20260509,phase_d_partial_reversion,8,strong_static_calibrated,6,3,5000,16,11840,11840,41840,3,0,2,3,6,1766,40756,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260509,phase_d_partial_reversion,8,oasg_observe_only_from_strong,6,3,5000,16,11858,11858,41858,3,0,2,3,6,1766,40951,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260509,phase_d_partial_reversion,8,rule_adaptive_control,6,2,3333,16,13982,13982,53982,4,0,0,4,6,1882,61038,[],0,[],0,0,0,4,0
+delayed_drift_recovery,20260509,phase_d_partial_reversion,8,oasg_adaptive_from_strong,6,4,6667,12,9982,9982,29982,2,0,2,2,6,1681,23049,"['mut_schema_keys_only_code_transform_phase_d_partial_reversion', 'mut_schema_keys_only_obligation_closure_phase_d_partial_reversion']",2,[],0,0,0,2,0
+delayed_drift_recovery,20260510,phase_c_structural_drift,5,strong_static_calibrated,6,3,5000,12,12629,12629,42629,3,0,0,3,6,1782,48500,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260510,phase_c_structural_drift,5,oasg_observe_only_from_strong,6,3,5000,12,12739,12739,42739,3,0,0,3,6,1782,49615,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260510,phase_c_structural_drift,5,rule_adaptive_control,6,3,5000,12,11679,11679,41679,3,0,0,3,6,1814,38673,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260510,phase_c_structural_drift,5,oasg_adaptive_from_strong,6,3,5000,12,12628,12628,42628,3,0,0,3,6,1782,48498,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260510,phase_c_structural_drift,6,strong_static_calibrated,6,3,5000,12,13447,13447,43447,3,0,0,3,6,1816,56343,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260510,phase_c_structural_drift,6,oasg_observe_only_from_strong,6,3,5000,12,13491,13491,43491,3,0,0,3,6,1816,56771,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260510,phase_c_structural_drift,6,rule_adaptive_control,6,3,5000,12,12369,12369,42369,3,0,0,3,6,1859,45125,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260510,phase_c_structural_drift,6,oasg_adaptive_from_strong,6,3,5000,12,12412,12412,42412,3,0,0,3,6,1859,45550,"['mut_schema_keys_only_code_transform_phase_c_structural_drift', 'mut_schema_keys_only_obligation_closure_phase_c_structural_drift']",2,[],0,0,0,3,0
+delayed_drift_recovery,20260510,phase_d_partial_reversion,7,strong_static_calibrated,6,3,5000,16,11913,11913,41913,3,0,2,3,6,1766,41502,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260510,phase_d_partial_reversion,7,oasg_observe_only_from_strong,6,3,5000,16,11920,11920,41920,3,0,2,3,6,1766,41566,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260510,phase_d_partial_reversion,7,rule_adaptive_control,6,4,6667,12,10057,10057,30057,2,0,2,2,6,1681,23773,[],0,[],0,0,0,2,0
+delayed_drift_recovery,20260510,phase_d_partial_reversion,7,oasg_adaptive_from_strong,6,4,6667,12,10041,10041,30041,2,0,2,2,6,1681,23623,"['mut_schema_keys_only_code_transform_phase_d_partial_reversion', 'mut_schema_keys_only_obligation_closure_phase_d_partial_reversion']",2,[],0,0,0,2,0
+delayed_drift_recovery,20260510,phase_d_partial_reversion,8,strong_static_calibrated,6,3,5000,16,11533,11533,41533,3,0,2,3,6,1777,37590,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260510,phase_d_partial_reversion,8,oasg_observe_only_from_strong,6,3,5000,16,11526,11526,41526,3,0,2,3,6,1777,37513,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260510,phase_d_partial_reversion,8,rule_adaptive_control,6,2,3333,17,13810,13810,53810,4,1,0,4,6,1760,60533,[],0,[],0,0,0,4,0
+delayed_drift_recovery,20260510,phase_d_partial_reversion,8,oasg_adaptive_from_strong,6,4,6667,12,10139,10139,30139,2,0,2,2,6,1690,24521,"['mut_schema_keys_only_code_transform_phase_d_partial_reversion', 'mut_schema_keys_only_obligation_closure_phase_d_partial_reversion']",2,[],0,0,0,2,0
+delayed_drift_recovery,20260511,phase_c_structural_drift,5,strong_static_calibrated,6,3,5000,12,12494,12494,42494,3,0,0,3,6,1778,47177,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260511,phase_c_structural_drift,5,oasg_observe_only_from_strong,6,3,5000,12,12524,12524,42524,3,0,0,3,6,1778,47487,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260511,phase_c_structural_drift,5,rule_adaptive_control,6,3,5000,12,11926,11926,41926,3,0,0,3,6,1814,41139,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260511,phase_c_structural_drift,5,oasg_adaptive_from_strong,6,3,5000,12,12478,12478,42478,3,0,0,3,6,1778,47020,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260511,phase_c_structural_drift,6,strong_static_calibrated,6,3,5000,12,13358,13358,43358,3,0,0,3,6,1821,55408,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260511,phase_c_structural_drift,6,oasg_observe_only_from_strong,6,3,5000,12,13477,13477,43477,3,0,0,3,6,1821,56593,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260511,phase_c_structural_drift,6,rule_adaptive_control,6,3,5000,12,12059,12059,42059,3,0,0,3,6,1851,42105,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260511,phase_c_structural_drift,6,oasg_adaptive_from_strong,6,3,5000,12,12024,12024,42024,3,0,0,3,6,1851,41763,"['mut_schema_keys_only_code_transform_phase_c_structural_drift', 'mut_schema_keys_only_obligation_closure_phase_c_structural_drift']",2,[],0,0,0,3,0
+delayed_drift_recovery,20260511,phase_d_partial_reversion,7,strong_static_calibrated,6,3,5000,16,11203,11203,41203,3,0,2,3,6,1770,34348,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260511,phase_d_partial_reversion,7,oasg_observe_only_from_strong,6,3,5000,16,11216,11216,41216,3,0,2,3,6,1770,34485,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260511,phase_d_partial_reversion,7,rule_adaptive_control,6,4,6667,12,9895,9895,29895,2,0,2,2,6,1683,22147,[],0,[],0,0,0,2,0
+delayed_drift_recovery,20260511,phase_d_partial_reversion,7,oasg_adaptive_from_strong,6,4,6667,12,9921,9921,29921,2,0,2,2,6,1683,22393,"['mut_schema_keys_only_code_transform_phase_d_partial_reversion', 'mut_schema_keys_only_obligation_closure_phase_d_partial_reversion']",2,[],0,0,0,2,0
+delayed_drift_recovery,20260511,phase_d_partial_reversion,8,strong_static_calibrated,6,3,5000,16,11286,11286,41286,3,0,2,3,6,1768,35202,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260511,phase_d_partial_reversion,8,oasg_observe_only_from_strong,6,3,5000,16,11307,11307,41307,3,0,2,3,6,1768,35422,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260511,phase_d_partial_reversion,8,rule_adaptive_control,6,2,3333,17,13630,13630,53630,4,1,0,4,6,1663,59709,[],0,[],0,0,0,4,0
+delayed_drift_recovery,20260511,phase_d_partial_reversion,8,oasg_adaptive_from_strong,6,4,6667,12,10144,10144,30144,2,0,2,2,6,1694,24519,"['mut_schema_keys_only_code_transform_phase_d_partial_reversion', 'mut_schema_keys_only_obligation_closure_phase_d_partial_reversion']",2,[],0,0,0,2,0
+delayed_drift_recovery,20260512,phase_c_structural_drift,5,strong_static_calibrated,6,3,5000,12,13419,13419,43419,3,0,0,3,6,1817,56048,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260512,phase_c_structural_drift,5,oasg_observe_only_from_strong,6,3,5000,12,13443,13443,43443,3,0,0,3,6,1817,56283,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260512,phase_c_structural_drift,5,rule_adaptive_control,6,3,5000,12,12467,12467,42467,3,0,0,3,6,1811,46587,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260512,phase_c_structural_drift,5,oasg_adaptive_from_strong,6,3,5000,12,13386,13386,43386,3,0,0,3,6,1817,55706,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260512,phase_c_structural_drift,6,strong_static_calibrated,6,3,5000,12,13381,13381,43381,3,0,0,3,6,1811,55734,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260512,phase_c_structural_drift,6,oasg_observe_only_from_strong,6,3,5000,12,13371,13371,43371,3,0,0,3,6,1811,55635,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260512,phase_c_structural_drift,6,rule_adaptive_control,6,3,5000,12,12314,12314,42314,3,0,0,3,6,1854,44615,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260512,phase_c_structural_drift,6,oasg_adaptive_from_strong,6,3,5000,12,12802,12802,42802,3,0,0,3,6,1742,50624,"['mut_policy_tightening_obligation_closure_phase_c_structural_drift', 'mut_schema_keys_only_code_transform_phase_c_structural_drift']",2,['mut_policy_tightening_obligation_closure_phase_c_structural_drift'],1,0,0,3,0
+delayed_drift_recovery,20260512,phase_d_partial_reversion,7,strong_static_calibrated,6,3,5000,16,11323,11323,41323,3,0,2,3,6,1770,35565,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260512,phase_d_partial_reversion,7,oasg_observe_only_from_strong,6,3,5000,16,11299,11299,41299,3,0,2,3,6,1770,35313,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260512,phase_d_partial_reversion,7,rule_adaptive_control,6,4,6667,12,9939,9939,29939,2,0,2,2,6,1685,22566,[],0,[],0,0,0,2,0
+delayed_drift_recovery,20260512,phase_d_partial_reversion,7,oasg_adaptive_from_strong,6,4,6667,12,9897,9897,29897,2,0,2,2,6,1685,22146,"['mut_schema_keys_only_code_transform_phase_d_partial_reversion', 'mut_schema_keys_only_obligation_closure_phase_d_partial_reversion']",2,[],0,0,0,2,0
+delayed_drift_recovery,20260512,phase_d_partial_reversion,8,strong_static_calibrated,6,3,5000,16,11644,11644,41644,3,0,2,3,6,1770,38759,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260512,phase_d_partial_reversion,8,oasg_observe_only_from_strong,6,3,5000,16,11544,11544,41544,3,0,2,3,6,1770,37776,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260512,phase_d_partial_reversion,8,rule_adaptive_control,6,2,3333,16,13935,13935,53935,4,0,0,4,6,1860,60785,[],0,[],0,0,0,4,0
+delayed_drift_recovery,20260512,phase_d_partial_reversion,8,oasg_adaptive_from_strong,6,4,6667,12,10043,10043,30043,2,0,2,2,6,1685,23612,"['mut_schema_keys_only_code_transform_phase_d_partial_reversion', 'mut_schema_keys_only_obligation_closure_phase_d_partial_reversion']",2,[],0,0,0,2,0
+delayed_drift_recovery,20260513,phase_c_structural_drift,5,strong_static_calibrated,6,3,5000,12,12785,12785,42785,3,0,0,3,6,1820,49680,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260513,phase_c_structural_drift,5,oasg_observe_only_from_strong,6,3,5000,12,12789,12789,42789,3,0,0,3,6,1820,49716,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260513,phase_c_structural_drift,5,rule_adaptive_control,6,3,5000,12,11981,11981,41981,3,0,0,3,6,1854,41303,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260513,phase_c_structural_drift,5,oasg_adaptive_from_strong,6,3,5000,12,12837,12837,42837,3,0,0,3,6,1820,50204,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260513,phase_c_structural_drift,6,strong_static_calibrated,6,3,5000,12,13245,13245,43245,3,0,0,3,6,1811,54363,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260513,phase_c_structural_drift,6,oasg_observe_only_from_strong,6,3,5000,12,13261,13261,43261,3,0,0,3,6,1811,54527,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260513,phase_c_structural_drift,6,rule_adaptive_control,6,3,5000,12,12106,12106,42106,3,0,0,3,6,1814,42949,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260513,phase_c_structural_drift,6,oasg_adaptive_from_strong,6,3,5000,12,12097,12097,42097,3,0,0,3,6,1814,42852,"['mut_schema_keys_only_code_transform_phase_c_structural_drift', 'mut_schema_keys_only_obligation_closure_phase_c_structural_drift']",2,[],0,0,0,3,0
+delayed_drift_recovery,20260513,phase_d_partial_reversion,7,strong_static_calibrated,6,3,5000,16,11304,11304,41304,3,0,2,3,6,1771,35363,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260513,phase_d_partial_reversion,7,oasg_observe_only_from_strong,6,3,5000,16,11276,11276,41276,3,0,2,3,6,1771,35062,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260513,phase_d_partial_reversion,7,rule_adaptive_control,6,4,6667,12,9978,9978,29978,2,0,2,2,6,1684,22971,[],0,[],0,0,0,2,0
+delayed_drift_recovery,20260513,phase_d_partial_reversion,7,oasg_adaptive_from_strong,6,4,6667,12,9983,9983,29983,2,0,2,2,6,1684,23018,"['mut_schema_keys_only_code_transform_phase_d_partial_reversion', 'mut_schema_keys_only_obligation_closure_phase_d_partial_reversion']",2,[],0,0,0,2,0
+delayed_drift_recovery,20260513,phase_d_partial_reversion,8,strong_static_calibrated,6,3,5000,16,11288,11288,41288,3,0,2,3,6,1769,35217,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260513,phase_d_partial_reversion,8,oasg_observe_only_from_strong,6,3,5000,16,11240,11240,41240,3,0,2,3,6,1769,34749,[],0,[],0,0,0,3,0
+delayed_drift_recovery,20260513,phase_d_partial_reversion,8,rule_adaptive_control,6,2,3333,16,13942,13942,53942,4,0,0,4,6,1883,60624,[],0,[],0,0,0,4,0
+delayed_drift_recovery,20260513,phase_d_partial_reversion,8,oasg_adaptive_from_strong,6,4,6667,12,9991,9991,29991,2,0,2,2,6,1682,23123,"['mut_schema_keys_only_code_transform_phase_d_partial_reversion', 'mut_schema_keys_only_obligation_closure_phase_d_partial_reversion']",2,[],0,0,0,2,0
+full_drift_confirmatory,20260509,phase_b_mild_drift,3,strong_static_calibrated,6,2,3333,16,11550,11550,51550,3,2,0,4,6,1574,39789,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260509,phase_b_mild_drift,3,oasg_observe_only_from_strong,6,2,3333,16,11541,11541,51541,3,2,0,4,6,1574,39709,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260509,phase_b_mild_drift,3,rule_adaptive_control,6,3,5000,11,10829,10829,40829,2,1,0,3,6,1574,32584,[],0,[],0,0,0,2,0
+full_drift_confirmatory,20260509,phase_b_mild_drift,3,oasg_adaptive_from_strong,6,2,3333,16,11528,11528,51528,3,2,0,4,6,1574,39562,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260509,phase_b_mild_drift,4,strong_static_calibrated,6,2,3333,16,11464,11464,51464,3,2,0,4,6,1585,38813,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260509,phase_b_mild_drift,4,oasg_observe_only_from_strong,6,2,3333,16,11443,11443,51443,3,2,0,4,6,1585,38602,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260509,phase_b_mild_drift,4,rule_adaptive_control,6,3,5000,12,11691,11691,41691,3,0,0,3,6,1720,39718,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260509,phase_b_mild_drift,4,oasg_adaptive_from_strong,6,3,5000,11,10145,10145,40145,2,1,0,3,6,1577,25696,"['mut_schema_keys_only_code_transform_phase_b_mild_drift', 'mut_schema_keys_only_obligation_closure_phase_b_mild_drift']",2,[],0,0,0,2,0
+full_drift_confirmatory,20260509,phase_c_structural_drift,5,strong_static_calibrated,6,3,5000,12,13109,13109,43109,3,0,0,3,6,1811,53005,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260509,phase_c_structural_drift,5,oasg_observe_only_from_strong,6,3,5000,12,13154,13154,43154,3,0,0,3,6,1811,53447,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260509,phase_c_structural_drift,5,rule_adaptive_control,6,2,3333,16,13162,13162,53162,4,0,0,4,6,1886,52784,[],0,[],0,0,0,4,0
+full_drift_confirmatory,20260509,phase_c_structural_drift,5,oasg_adaptive_from_strong,6,3,5000,12,11802,11802,41802,3,0,0,3,6,1854,39515,"['mut_schema_keys_only_code_transform_phase_c_structural_drift', 'mut_schema_keys_only_obligation_closure_phase_c_structural_drift']",2,[],0,0,0,3,0
+full_drift_confirmatory,20260509,phase_c_structural_drift,6,strong_static_calibrated,6,3,5000,12,13589,13589,43589,3,0,0,3,6,1810,57819,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260509,phase_c_structural_drift,6,oasg_observe_only_from_strong,6,3,5000,12,13583,13583,43583,3,0,0,3,6,1810,57748,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260509,phase_c_structural_drift,6,rule_adaptive_control,6,2,3333,16,13377,13377,53377,4,0,0,4,6,1837,55420,[],0,[],0,0,0,4,0
+full_drift_confirmatory,20260509,phase_c_structural_drift,6,oasg_adaptive_from_strong,6,3,5000,12,12663,12663,42663,3,0,0,3,6,1813,48523,"['mut_schema_keys_only_code_transform_phase_c_structural_drift', 'mut_schema_keys_only_obligation_closure_phase_c_structural_drift']",2,[],0,0,0,3,0
+full_drift_confirmatory,20260509,phase_d_mixed_reversion,7,strong_static_calibrated,6,3,5000,16,11932,11932,41932,3,0,2,3,6,1767,41672,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260509,phase_d_mixed_reversion,7,oasg_observe_only_from_strong,6,3,5000,16,11911,11911,41911,3,0,2,3,6,1767,41475,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260509,phase_d_mixed_reversion,7,rule_adaptive_control,6,3,5000,14,10434,10434,40434,3,0,1,3,6,1612,28244,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260509,phase_d_mixed_reversion,7,oasg_adaptive_from_strong,6,3,5000,18,11488,11488,41488,3,0,3,3,6,1772,37192,"['mut_policy_tightening_obligation_closure_phase_d_mixed_reversion', 'mut_schema_keys_only_code_transform_phase_d_mixed_reversion']",2,['mut_policy_tightening_obligation_closure_phase_d_mixed_reversion'],1,0,0,3,0
+full_drift_confirmatory,20260509,phase_d_mixed_reversion,8,strong_static_calibrated,6,3,5000,16,11270,11270,41270,3,0,2,3,6,1771,35010,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260509,phase_d_mixed_reversion,8,oasg_observe_only_from_strong,6,3,5000,16,11254,11254,41254,3,0,2,3,6,1771,34865,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260509,phase_d_mixed_reversion,8,rule_adaptive_control,6,2,3333,17,12557,12557,52557,4,1,0,4,6,1682,48775,[],0,[],0,0,0,4,0
+full_drift_confirmatory,20260509,phase_d_mixed_reversion,8,oasg_adaptive_from_strong,6,4,6667,12,10000,10000,30000,2,0,2,2,6,1684,23208,"['mut_schema_keys_only_code_transform_phase_d_mixed_reversion', 'mut_schema_keys_only_obligation_closure_phase_d_mixed_reversion']",2,[],0,0,0,2,0
+full_drift_confirmatory,20260510,phase_b_mild_drift,3,strong_static_calibrated,6,2,3333,16,11439,11439,51439,3,2,0,4,6,1571,38704,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260510,phase_b_mild_drift,3,oasg_observe_only_from_strong,6,2,3333,16,11454,11454,51454,3,2,0,4,6,1571,38850,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260510,phase_b_mild_drift,3,rule_adaptive_control,6,3,5000,11,10499,10499,40499,2,1,0,3,6,1581,29206,[],0,[],0,0,0,2,0
+full_drift_confirmatory,20260510,phase_b_mild_drift,3,oasg_adaptive_from_strong,6,2,3333,16,11448,11448,51448,3,2,0,4,6,1571,38795,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260510,phase_b_mild_drift,4,strong_static_calibrated,6,2,3333,16,12259,12259,52259,3,2,0,4,6,1572,46892,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260510,phase_b_mild_drift,4,oasg_observe_only_from_strong,6,2,3333,16,12230,12230,52230,3,2,0,4,6,1572,46596,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260510,phase_b_mild_drift,4,rule_adaptive_control,6,3,5000,12,11861,11861,41861,3,0,0,3,6,1710,41544,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260510,phase_b_mild_drift,4,oasg_adaptive_from_strong,6,3,5000,11,10638,10638,40638,2,1,0,3,6,1573,30676,"['mut_schema_keys_only_code_transform_phase_b_mild_drift', 'mut_schema_keys_only_obligation_closure_phase_b_mild_drift']",2,[],0,0,0,2,0
+full_drift_confirmatory,20260510,phase_c_structural_drift,5,strong_static_calibrated,6,3,5000,12,13312,13312,43312,3,0,0,3,6,1819,54950,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260510,phase_c_structural_drift,5,oasg_observe_only_from_strong,6,3,5000,12,13434,13434,43434,3,0,0,3,6,1819,56177,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260510,phase_c_structural_drift,5,rule_adaptive_control,6,2,3333,16,13719,13719,53719,4,0,0,4,6,1883,58376,[],0,[],0,0,0,4,0
+full_drift_confirmatory,20260510,phase_c_structural_drift,5,oasg_adaptive_from_strong,6,3,5000,12,12347,12347,42347,3,0,0,3,6,1859,44911,"['mut_schema_keys_only_code_transform_phase_c_structural_drift', 'mut_schema_keys_only_obligation_closure_phase_c_structural_drift']",2,[],0,0,0,3,0
+full_drift_confirmatory,20260510,phase_c_structural_drift,6,strong_static_calibrated,6,3,5000,12,13025,13025,43025,3,0,0,3,6,1822,52053,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260510,phase_c_structural_drift,6,oasg_observe_only_from_strong,6,3,5000,12,13024,13024,43024,3,0,0,3,6,1822,52051,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260510,phase_c_structural_drift,6,rule_adaptive_control,6,2,3333,16,13168,13168,53168,4,0,0,4,6,1840,53307,[],0,[],0,0,0,4,0
+full_drift_confirmatory,20260510,phase_c_structural_drift,6,oasg_adaptive_from_strong,6,3,5000,12,12195,12195,42195,3,0,0,3,6,1856,43411,"['mut_schema_keys_only_code_transform_phase_c_structural_drift', 'mut_schema_keys_only_obligation_closure_phase_c_structural_drift']",2,[],0,0,0,3,0
+full_drift_confirmatory,20260510,phase_d_mixed_reversion,7,strong_static_calibrated,6,3,5000,16,12126,12126,42126,3,0,2,3,6,1838,42898,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260510,phase_d_mixed_reversion,7,oasg_observe_only_from_strong,6,3,5000,16,12257,12257,42257,3,0,2,3,6,1838,44212,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260510,phase_d_mixed_reversion,7,rule_adaptive_control,6,3,5000,14,10469,10469,40469,3,0,1,3,6,1613,28588,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260510,phase_d_mixed_reversion,7,oasg_adaptive_from_strong,6,4,6667,12,10004,10004,30004,2,0,2,2,6,1682,23250,"['mut_schema_keys_only_code_transform_phase_d_mixed_reversion', 'mut_schema_keys_only_obligation_closure_phase_d_mixed_reversion']",2,[],0,0,0,2,0
+full_drift_confirmatory,20260510,phase_d_mixed_reversion,8,strong_static_calibrated,6,3,5000,16,12157,12157,42157,3,0,2,3,6,1775,43848,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260510,phase_d_mixed_reversion,8,oasg_observe_only_from_strong,6,3,5000,16,12195,12195,42195,3,0,2,3,6,1775,44228,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260510,phase_d_mixed_reversion,8,rule_adaptive_control,6,2,3333,17,12659,12659,52659,4,1,0,4,6,1694,49678,[],0,[],0,0,0,4,0
+full_drift_confirmatory,20260510,phase_d_mixed_reversion,8,oasg_adaptive_from_strong,6,4,6667,12,10256,10256,30256,2,0,2,2,6,1690,25695,"['mut_schema_keys_only_code_transform_phase_d_mixed_reversion', 'mut_schema_keys_only_obligation_closure_phase_d_mixed_reversion']",2,[],0,0,0,2,0
+full_drift_confirmatory,20260511,phase_b_mild_drift,3,strong_static_calibrated,6,2,3333,16,11215,11215,51215,3,2,0,4,6,1573,36447,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260511,phase_b_mild_drift,3,oasg_observe_only_from_strong,6,2,3333,16,11208,11208,51208,3,2,0,4,6,1573,36368,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260511,phase_b_mild_drift,3,rule_adaptive_control,6,3,5000,11,10094,10094,40094,2,1,0,3,6,1562,25339,[],0,[],0,0,0,2,0
+full_drift_confirmatory,20260511,phase_b_mild_drift,3,oasg_adaptive_from_strong,6,2,3333,16,11197,11197,51197,3,2,0,4,6,1573,36264,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260511,phase_b_mild_drift,4,strong_static_calibrated,6,2,3333,16,11404,11404,51404,3,2,0,4,6,1583,38250,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260511,phase_b_mild_drift,4,oasg_observe_only_from_strong,6,2,3333,16,11425,11425,51425,3,2,0,4,6,1583,38455,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260511,phase_b_mild_drift,4,rule_adaptive_control,6,3,5000,12,11793,11793,41793,3,0,0,3,6,1561,42350,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260511,phase_b_mild_drift,4,oasg_adaptive_from_strong,6,3,5000,11,10251,10251,40251,2,1,0,3,6,1572,26816,"['mut_schema_keys_only_code_transform_phase_b_mild_drift', 'mut_schema_keys_only_obligation_closure_phase_b_mild_drift']",2,[],0,0,0,2,0
+full_drift_confirmatory,20260511,phase_c_structural_drift,5,strong_static_calibrated,6,3,5000,12,13043,13043,43043,3,0,0,3,6,1782,52659,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260511,phase_c_structural_drift,5,oasg_observe_only_from_strong,6,3,5000,12,12916,12916,42916,3,0,0,3,6,1782,51361,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260511,phase_c_structural_drift,5,rule_adaptive_control,6,2,3333,16,13268,13268,53268,4,0,0,4,6,1844,54255,[],0,[],0,0,0,4,0
+full_drift_confirmatory,20260511,phase_c_structural_drift,5,oasg_adaptive_from_strong,6,3,5000,12,12452,12452,42452,3,0,0,3,6,1839,46146,"['mut_schema_keys_only_obligation_closure_phase_c_structural_drift', 'mut_strict_json_minimal_code_transform_phase_c_structural_drift']",2,[],0,0,0,3,0
+full_drift_confirmatory,20260511,phase_c_structural_drift,6,strong_static_calibrated,6,3,5000,12,12949,12949,42949,3,0,0,3,6,1807,51441,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260511,phase_c_structural_drift,6,oasg_observe_only_from_strong,6,3,5000,12,13067,13067,43067,3,0,0,3,6,1807,52625,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260511,phase_c_structural_drift,6,rule_adaptive_control,6,2,3333,16,13117,13117,53117,4,0,0,4,6,1886,52346,[],0,[],0,0,0,4,0
+full_drift_confirmatory,20260511,phase_c_structural_drift,6,oasg_adaptive_from_strong,6,3,5000,12,11868,11868,41868,3,0,0,3,6,1854,40162,"['mut_schema_keys_only_code_transform_phase_c_structural_drift', 'mut_schema_keys_only_obligation_closure_phase_c_structural_drift']",2,[],0,0,0,3,0
+full_drift_confirmatory,20260511,phase_d_mixed_reversion,7,strong_static_calibrated,6,3,5000,16,11387,11387,41387,3,0,2,3,6,1741,36493,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260511,phase_d_mixed_reversion,7,oasg_observe_only_from_strong,6,3,5000,16,11396,11396,41396,3,0,2,3,6,1741,36579,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260511,phase_d_mixed_reversion,7,rule_adaptive_control,6,3,5000,14,10338,10338,40338,3,0,1,3,6,1611,27295,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260511,phase_d_mixed_reversion,7,oasg_adaptive_from_strong,6,3,5000,16,11416,11416,41416,3,0,2,3,6,1664,37549,"['mut_policy_retirement_obligation_closure_phase_d_mixed_reversion', 'mut_schema_keys_only_code_transform_phase_d_mixed_reversion']",2,['mut_policy_retirement_obligation_closure_phase_d_mixed_reversion'],1,0,0,3,0
+full_drift_confirmatory,20260511,phase_d_mixed_reversion,8,strong_static_calibrated,6,3,5000,16,11735,11735,41735,3,0,2,3,6,1769,39692,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260511,phase_d_mixed_reversion,8,oasg_observe_only_from_strong,6,3,5000,16,11630,11630,41630,3,0,2,3,6,1769,38635,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260511,phase_d_mixed_reversion,8,rule_adaptive_control,6,2,3333,17,12535,12535,52535,4,1,0,4,6,1680,48575,[],0,[],0,0,0,4,0
+full_drift_confirmatory,20260511,phase_d_mixed_reversion,8,oasg_adaptive_from_strong,6,4,6667,12,10021,10021,30021,2,0,2,2,6,1682,23418,"['mut_schema_keys_only_code_transform_phase_d_mixed_reversion', 'mut_schema_keys_only_obligation_closure_phase_d_mixed_reversion']",2,[],0,0,0,2,0
+full_drift_confirmatory,20260512,phase_b_mild_drift,3,strong_static_calibrated,6,2,3333,16,11240,11240,51240,3,2,0,4,6,1573,36719,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260512,phase_b_mild_drift,3,oasg_observe_only_from_strong,6,2,3333,16,11225,11225,51225,3,2,0,4,6,1573,36540,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260512,phase_b_mild_drift,3,rule_adaptive_control,6,3,5000,11,10539,10539,40539,2,1,0,3,6,1585,29555,[],0,[],0,0,0,2,0
+full_drift_confirmatory,20260512,phase_b_mild_drift,3,oasg_adaptive_from_strong,6,2,3333,16,11191,11191,51191,3,2,0,4,6,1573,36202,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260512,phase_b_mild_drift,4,strong_static_calibrated,6,2,3333,16,11311,11311,51311,3,2,0,4,6,1566,37487,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260512,phase_b_mild_drift,4,oasg_observe_only_from_strong,6,2,3333,16,11209,11209,51209,3,2,0,4,6,1566,36447,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260512,phase_b_mild_drift,4,rule_adaptive_control,6,3,5000,12,11899,11899,41899,3,0,0,3,6,1710,41918,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260512,phase_b_mild_drift,4,oasg_adaptive_from_strong,6,3,5000,11,10784,10784,40784,2,1,0,3,6,1544,32432,"['mut_schema_keys_only_obligation_closure_phase_b_mild_drift', 'mut_strict_json_minimal_code_transform_phase_b_mild_drift']",2,[],0,0,0,2,0
+full_drift_confirmatory,20260512,phase_c_structural_drift,5,strong_static_calibrated,6,3,5000,12,12891,12891,42891,3,0,0,3,6,1781,51124,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260512,phase_c_structural_drift,5,oasg_observe_only_from_strong,6,3,5000,12,12904,12904,42904,3,0,0,3,6,1781,51253,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260512,phase_c_structural_drift,5,rule_adaptive_control,6,2,3333,16,13835,13835,53835,4,0,0,4,6,1837,59999,[],0,[],0,0,0,4,0
+full_drift_confirmatory,20260512,phase_c_structural_drift,5,oasg_adaptive_from_strong,6,3,5000,12,12160,12160,42160,3,0,0,3,6,1813,43496,"['mut_schema_keys_only_code_transform_phase_c_structural_drift', 'mut_schema_keys_only_obligation_closure_phase_c_structural_drift']",2,[],0,0,0,3,0
+full_drift_confirmatory,20260512,phase_c_structural_drift,6,strong_static_calibrated,6,3,5000,12,13512,13512,43512,3,0,0,3,6,1813,57009,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260512,phase_c_structural_drift,6,oasg_observe_only_from_strong,6,3,5000,12,13600,13600,43600,3,0,0,3,6,1813,57896,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260512,phase_c_structural_drift,6,rule_adaptive_control,6,2,3333,16,13713,13713,53713,4,0,0,4,6,1840,58751,[],0,[],0,0,0,4,0
+full_drift_confirmatory,20260512,phase_c_structural_drift,6,oasg_adaptive_from_strong,6,3,5000,12,12131,12131,42131,3,0,0,3,6,1852,42814,"['mut_schema_keys_only_code_transform_phase_c_structural_drift', 'mut_schema_keys_only_obligation_closure_phase_c_structural_drift']",2,[],0,0,0,3,0
+full_drift_confirmatory,20260512,phase_d_mixed_reversion,7,strong_static_calibrated,6,3,5000,16,11546,11546,41546,3,0,2,3,6,1741,38092,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260512,phase_d_mixed_reversion,7,oasg_observe_only_from_strong,6,3,5000,16,11688,11688,41688,3,0,2,3,6,1741,39499,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260512,phase_d_mixed_reversion,7,rule_adaptive_control,6,3,5000,14,10505,10505,40505,3,0,1,3,6,1623,28851,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260512,phase_d_mixed_reversion,7,oasg_adaptive_from_strong,6,3,5000,16,11127,11127,41127,3,0,2,3,6,1648,34823,"['mut_policy_retirement_obligation_closure_phase_d_mixed_reversion', 'mut_schema_keys_only_code_transform_phase_d_mixed_reversion']",2,['mut_policy_retirement_obligation_closure_phase_d_mixed_reversion'],1,0,0,3,0
+full_drift_confirmatory,20260512,phase_d_mixed_reversion,8,strong_static_calibrated,6,3,5000,16,11834,11834,41834,3,0,2,3,6,1770,40652,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260512,phase_d_mixed_reversion,8,oasg_observe_only_from_strong,6,3,5000,16,11775,11775,41775,3,0,2,3,6,1770,40065,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260512,phase_d_mixed_reversion,8,rule_adaptive_control,6,2,3333,17,12523,12523,52523,4,1,0,4,6,1684,48413,[],0,[],0,0,0,4,0
+full_drift_confirmatory,20260512,phase_d_mixed_reversion,8,oasg_adaptive_from_strong,6,4,6667,12,9940,9940,29940,2,0,2,2,6,1685,22570,"['mut_schema_keys_only_code_transform_phase_d_mixed_reversion', 'mut_schema_keys_only_obligation_closure_phase_d_mixed_reversion']",2,[],0,0,0,2,0
+full_drift_confirmatory,20260513,phase_b_mild_drift,3,strong_static_calibrated,6,2,3333,16,11800,11800,51800,3,2,0,4,6,1562,42401,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260513,phase_b_mild_drift,3,oasg_observe_only_from_strong,6,2,3333,16,11821,11821,51821,3,2,0,4,6,1562,42605,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260513,phase_b_mild_drift,3,rule_adaptive_control,6,3,5000,11,10494,10494,40494,2,1,0,3,6,1581,29155,[],0,[],0,0,0,2,0
+full_drift_confirmatory,20260513,phase_b_mild_drift,3,oasg_adaptive_from_strong,6,2,3333,16,11767,11767,51767,3,2,0,4,6,1562,42086,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260513,phase_b_mild_drift,4,strong_static_calibrated,6,2,3333,16,11252,11252,51252,3,2,0,4,6,1572,36835,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260513,phase_b_mild_drift,4,oasg_observe_only_from_strong,6,2,3333,16,11313,11313,51313,3,2,0,4,6,1572,37431,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260513,phase_b_mild_drift,4,rule_adaptive_control,6,3,5000,12,12073,12073,42073,3,0,0,3,6,1560,45161,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260513,phase_b_mild_drift,4,oasg_adaptive_from_strong,6,3,5000,11,10502,10502,40502,2,1,0,3,6,1568,29361,"['mut_schema_keys_only_code_transform_phase_b_mild_drift', 'mut_schema_keys_only_obligation_closure_phase_b_mild_drift']",2,[],0,0,0,2,0
+full_drift_confirmatory,20260513,phase_c_structural_drift,5,strong_static_calibrated,6,3,5000,12,12615,12615,42615,3,0,0,3,6,1796,48214,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260513,phase_c_structural_drift,5,oasg_observe_only_from_strong,6,3,5000,12,12672,12672,42672,3,0,0,3,6,1796,48788,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260513,phase_c_structural_drift,5,rule_adaptive_control,6,2,3333,16,13190,13190,53190,4,0,0,4,6,1837,53548,[],0,[],0,0,0,4,0
+full_drift_confirmatory,20260513,phase_c_structural_drift,5,oasg_adaptive_from_strong,6,3,5000,12,12741,12741,42741,3,0,0,3,6,1838,49073,"['mut_schema_keys_only_obligation_closure_phase_c_structural_drift', 'mut_strict_json_minimal_code_transform_phase_c_structural_drift']",2,[],0,0,0,3,0
+full_drift_confirmatory,20260513,phase_c_structural_drift,6,strong_static_calibrated,6,3,5000,12,12839,12839,42839,3,0,0,3,6,1820,50227,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260513,phase_c_structural_drift,6,oasg_observe_only_from_strong,6,3,5000,12,12871,12871,42871,3,0,0,3,6,1820,50538,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260513,phase_c_structural_drift,6,rule_adaptive_control,6,2,3333,16,13577,13577,53577,4,0,0,4,6,1838,57418,[],0,[],0,0,0,4,0
+full_drift_confirmatory,20260513,phase_c_structural_drift,6,oasg_adaptive_from_strong,6,3,5000,12,12115,12115,42115,3,0,0,3,6,1854,42646,"['mut_schema_keys_only_code_transform_phase_c_structural_drift', 'mut_schema_keys_only_obligation_closure_phase_c_structural_drift']",2,[],0,0,0,3,0
+full_drift_confirmatory,20260513,phase_d_mixed_reversion,7,strong_static_calibrated,6,3,5000,16,11438,11438,41438,3,0,2,3,6,1771,36702,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260513,phase_d_mixed_reversion,7,oasg_observe_only_from_strong,6,3,5000,16,11533,11533,41533,3,0,2,3,6,1771,37650,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260513,phase_d_mixed_reversion,7,rule_adaptive_control,6,3,5000,14,10339,10339,40339,3,0,1,3,6,1614,27289,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260513,phase_d_mixed_reversion,7,oasg_adaptive_from_strong,6,3,5000,16,11352,11352,41352,3,0,2,3,6,1667,36877,"['mut_policy_retirement_obligation_closure_phase_d_mixed_reversion', 'mut_schema_keys_only_code_transform_phase_d_mixed_reversion']",2,['mut_policy_retirement_obligation_closure_phase_d_mixed_reversion'],1,0,0,3,0
+full_drift_confirmatory,20260513,phase_d_mixed_reversion,8,strong_static_calibrated,6,3,5000,16,11790,11790,41790,3,0,2,3,6,1742,40502,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260513,phase_d_mixed_reversion,8,oasg_observe_only_from_strong,6,3,5000,16,11772,11772,41772,3,0,2,3,6,1742,40333,[],0,[],0,0,0,3,0
+full_drift_confirmatory,20260513,phase_d_mixed_reversion,8,rule_adaptive_control,6,2,3333,16,13170,13170,53170,4,0,0,4,6,1926,52476,[],0,[],0,0,0,4,0
+full_drift_confirmatory,20260513,phase_d_mixed_reversion,8,oasg_adaptive_from_strong,6,4,6667,12,9847,9847,29847,2,0,2,2,6,1684,21644,"['mut_schema_keys_only_code_transform_phase_d_mixed_reversion', 'mut_schema_keys_only_obligation_closure_phase_d_mixed_reversion']",2,[],0,0,0,2,0
+mixed_reversion_only_probe,20260509,phase_d1_mixed_reversion,3,strong_static_calibrated,6,2,3333,20,10703,10703,50703,4,0,2,4,6,1688,30180,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260509,phase_d1_mixed_reversion,3,oasg_observe_only_from_strong,6,2,3333,20,10727,10727,50727,4,0,2,4,6,1688,30422,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260509,phase_d1_mixed_reversion,3,rule_adaptive_control,6,3,5000,16,9364,9364,39364,3,0,2,3,6,1601,17652,[],0,[],0,0,0,3,0
+mixed_reversion_only_probe,20260509,phase_d1_mixed_reversion,3,oasg_adaptive_from_strong,6,2,3333,20,10739,10739,50739,4,0,2,4,6,1688,30536,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260509,phase_d1_mixed_reversion,4,strong_static_calibrated,6,2,3333,20,11346,11346,51346,4,0,2,4,6,1625,37245,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260509,phase_d1_mixed_reversion,4,oasg_observe_only_from_strong,6,2,3333,20,11307,11307,51307,4,0,2,4,6,1625,36858,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260509,phase_d1_mixed_reversion,4,rule_adaptive_control,6,2,3333,16,14016,14016,54016,4,0,0,4,6,1856,61628,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260509,phase_d1_mixed_reversion,4,oasg_adaptive_from_strong,6,3,5000,16,9936,9936,39936,3,0,2,3,6,1679,22593,['mut_schema_keys_only_obligation_closure_phase_d1_mixed_reversion'],1,[],0,0,0,3,0
+mixed_reversion_only_probe,20260509,phase_d2_mixed_ratio_shift,5,strong_static_calibrated,6,2,3333,20,11683,11683,51683,4,0,2,4,6,1690,39947,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260509,phase_d2_mixed_ratio_shift,5,oasg_observe_only_from_strong,6,2,3333,20,11684,11684,51684,4,0,2,4,6,1690,39968,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260509,phase_d2_mixed_ratio_shift,5,rule_adaptive_control,6,2,3333,16,10658,10658,50658,4,0,0,4,6,1569,30919,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260509,phase_d2_mixed_ratio_shift,5,oasg_adaptive_from_strong,6,3,5000,16,9443,9443,39443,3,0,2,3,6,1605,18420,"['mut_schema_keys_only_code_transform_phase_d2_mixed_ratio_shift', 'mut_schema_keys_only_obligation_closure_phase_d2_mixed_ratio_shift']",2,[],0,0,0,3,0
+mixed_reversion_only_probe,20260509,phase_d2_mixed_ratio_shift,6,strong_static_calibrated,6,2,3333,20,10799,10799,50799,4,0,2,4,6,1694,31074,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260509,phase_d2_mixed_ratio_shift,6,oasg_observe_only_from_strong,6,2,3333,20,10712,10712,50712,4,0,2,4,6,1694,30210,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260509,phase_d2_mixed_ratio_shift,6,rule_adaptive_control,6,2,3333,16,10970,10970,50970,4,0,0,4,6,1578,33952,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260509,phase_d2_mixed_ratio_shift,6,oasg_adaptive_from_strong,6,3,5000,16,9430,9430,39430,3,0,2,3,6,1607,18266,"['mut_schema_keys_only_code_transform_phase_d2_mixed_ratio_shift', 'mut_schema_keys_only_obligation_closure_phase_d2_mixed_ratio_shift']",2,[],0,0,0,3,0
+mixed_reversion_only_probe,20260510,phase_d1_mixed_reversion,3,strong_static_calibrated,6,2,3333,20,10978,10978,50978,4,0,2,4,6,1694,32861,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260510,phase_d1_mixed_reversion,3,oasg_observe_only_from_strong,6,2,3333,20,10929,10929,50929,4,0,2,4,6,1694,32374,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260510,phase_d1_mixed_reversion,3,rule_adaptive_control,6,3,5000,16,9403,9403,39403,3,0,2,3,6,1605,17988,[],0,[],0,0,0,3,0
+mixed_reversion_only_probe,20260510,phase_d1_mixed_reversion,3,oasg_adaptive_from_strong,6,2,3333,20,10940,10940,50940,4,0,2,4,6,1694,32480,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260510,phase_d1_mixed_reversion,4,strong_static_calibrated,6,2,3333,20,10767,10767,50767,4,0,2,4,6,1665,31055,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260510,phase_d1_mixed_reversion,4,oasg_observe_only_from_strong,6,2,3333,20,10769,10769,50769,4,0,2,4,6,1665,31073,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260510,phase_d1_mixed_reversion,4,rule_adaptive_control,6,2,3333,16,14137,14137,54137,4,0,0,4,6,1891,62481,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260510,phase_d1_mixed_reversion,4,oasg_adaptive_from_strong,6,3,5000,16,9410,9410,39410,3,0,2,3,6,1605,18081,"['mut_schema_keys_only_code_transform_phase_d1_mixed_reversion', 'mut_schema_keys_only_obligation_closure_phase_d1_mixed_reversion']",2,[],0,0,0,3,0
+mixed_reversion_only_probe,20260510,phase_d2_mixed_ratio_shift,5,strong_static_calibrated,6,2,3333,20,11286,11286,51286,4,0,2,4,6,1690,35995,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260510,phase_d2_mixed_ratio_shift,5,oasg_observe_only_from_strong,6,2,3333,20,11263,11263,51263,4,0,2,4,6,1690,35762,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260510,phase_d2_mixed_ratio_shift,5,rule_adaptive_control,6,2,3333,16,10879,10879,50879,4,0,0,4,6,1581,33003,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260510,phase_d2_mixed_ratio_shift,5,oasg_adaptive_from_strong,6,3,5000,16,9379,9379,39379,3,0,2,3,6,1605,17776,"['mut_schema_keys_only_code_transform_phase_d2_mixed_ratio_shift', 'mut_schema_keys_only_obligation_closure_phase_d2_mixed_ratio_shift']",2,[],0,0,0,3,0
+mixed_reversion_only_probe,20260510,phase_d2_mixed_ratio_shift,6,strong_static_calibrated,6,2,3333,20,10752,10752,50752,4,0,2,4,6,1692,30623,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260510,phase_d2_mixed_ratio_shift,6,oasg_observe_only_from_strong,6,2,3333,20,10748,10748,50748,4,0,2,4,6,1692,30579,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260510,phase_d2_mixed_ratio_shift,6,rule_adaptive_control,6,2,3333,16,10829,10829,50829,4,0,0,4,6,1570,32618,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260510,phase_d2_mixed_ratio_shift,6,oasg_adaptive_from_strong,6,3,5000,16,9401,9401,39401,3,0,2,3,6,1605,17978,"['mut_schema_keys_only_code_transform_phase_d2_mixed_ratio_shift', 'mut_schema_keys_only_obligation_closure_phase_d2_mixed_ratio_shift']",2,[],0,0,0,3,0
+mixed_reversion_only_probe,20260511,phase_d1_mixed_reversion,3,strong_static_calibrated,6,2,3333,20,11442,11442,51442,4,0,2,4,6,1686,37581,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260511,phase_d1_mixed_reversion,3,oasg_observe_only_from_strong,6,2,3333,20,11253,11253,51253,4,0,2,4,6,1686,35697,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260511,phase_d1_mixed_reversion,3,rule_adaptive_control,6,3,5000,16,9391,9391,39391,3,0,2,3,6,1601,17923,[],0,[],0,0,0,3,0
+mixed_reversion_only_probe,20260511,phase_d1_mixed_reversion,3,oasg_adaptive_from_strong,6,2,3333,20,11245,11245,51245,4,0,2,4,6,1686,35622,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260511,phase_d1_mixed_reversion,4,strong_static_calibrated,6,2,3333,20,11500,11500,51500,4,0,2,4,6,1720,37828,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260511,phase_d1_mixed_reversion,4,oasg_observe_only_from_strong,6,2,3333,20,11473,11473,51473,4,0,2,4,6,1720,37546,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260511,phase_d1_mixed_reversion,4,rule_adaptive_control,6,2,3333,17,13567,13567,53567,4,1,0,4,6,1650,59200,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260511,phase_d1_mixed_reversion,4,oasg_adaptive_from_strong,6,3,5000,16,9379,9379,39379,3,0,2,3,6,1603,17784,"['mut_schema_keys_only_code_transform_phase_d1_mixed_reversion', 'mut_schema_keys_only_obligation_closure_phase_d1_mixed_reversion']",2,[],0,0,0,3,0
+mixed_reversion_only_probe,20260511,phase_d2_mixed_ratio_shift,5,strong_static_calibrated,6,2,3333,20,11223,11223,51223,4,0,2,4,6,1687,35393,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260511,phase_d2_mixed_ratio_shift,5,oasg_observe_only_from_strong,6,2,3333,20,11249,11249,51249,4,0,2,4,6,1687,35644,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260511,phase_d2_mixed_ratio_shift,5,rule_adaptive_control,6,2,3333,16,13072,13072,53072,4,0,0,4,6,1835,52407,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260511,phase_d2_mixed_ratio_shift,5,oasg_adaptive_from_strong,6,3,5000,16,9381,9381,39381,3,0,2,3,6,1602,17821,"['mut_schema_keys_only_code_transform_phase_d2_mixed_ratio_shift', 'mut_schema_keys_only_obligation_closure_phase_d2_mixed_ratio_shift']",2,[],0,0,0,3,0
+mixed_reversion_only_probe,20260511,phase_d2_mixed_ratio_shift,6,strong_static_calibrated,6,2,3333,20,11801,11801,51801,4,0,2,4,6,1721,40823,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260511,phase_d2_mixed_ratio_shift,6,oasg_observe_only_from_strong,6,2,3333,20,11797,11797,51797,4,0,2,4,6,1721,40782,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260511,phase_d2_mixed_ratio_shift,6,rule_adaptive_control,6,2,3333,16,10762,10762,50762,4,0,0,4,6,1570,31954,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260511,phase_d2_mixed_ratio_shift,6,oasg_adaptive_from_strong,6,3,5000,16,9365,9365,39365,3,0,2,3,6,1607,17613,"['mut_schema_keys_only_code_transform_phase_d2_mixed_ratio_shift', 'mut_schema_keys_only_obligation_closure_phase_d2_mixed_ratio_shift']",2,[],0,0,0,3,0
+mixed_reversion_only_probe,20260512,phase_d1_mixed_reversion,3,strong_static_calibrated,6,2,3333,20,10754,10754,50754,4,0,2,4,6,1688,30677,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260512,phase_d1_mixed_reversion,3,oasg_observe_only_from_strong,6,2,3333,20,10756,10756,50756,4,0,2,4,6,1688,30709,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260512,phase_d1_mixed_reversion,3,rule_adaptive_control,6,3,5000,16,9403,9403,39403,3,0,2,3,6,1601,18049,[],0,[],0,0,0,3,0
+mixed_reversion_only_probe,20260512,phase_d1_mixed_reversion,3,oasg_adaptive_from_strong,6,2,3333,20,10781,10781,50781,4,0,2,4,6,1688,30940,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260512,phase_d1_mixed_reversion,4,strong_static_calibrated,6,2,3333,20,10936,10936,50936,4,0,2,4,6,1692,32471,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260512,phase_d1_mixed_reversion,4,oasg_observe_only_from_strong,6,2,3333,20,10936,10936,50936,4,0,2,4,6,1692,32475,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260512,phase_d1_mixed_reversion,4,rule_adaptive_control,6,2,3333,17,13754,13754,53754,4,1,0,4,6,1751,60050,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260512,phase_d1_mixed_reversion,4,oasg_adaptive_from_strong,6,3,5000,16,9389,9389,39389,3,0,2,3,6,1605,17884,"['mut_schema_keys_only_code_transform_phase_d1_mixed_reversion', 'mut_schema_keys_only_obligation_closure_phase_d1_mixed_reversion']",2,[],0,0,0,3,0
+mixed_reversion_only_probe,20260512,phase_d2_mixed_ratio_shift,5,strong_static_calibrated,6,2,3333,20,10716,10716,50716,4,0,2,4,6,1692,30273,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260512,phase_d2_mixed_ratio_shift,5,oasg_observe_only_from_strong,6,2,3333,20,10764,10764,50764,4,0,2,4,6,1692,30742,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260512,phase_d2_mixed_ratio_shift,5,rule_adaptive_control,6,2,3333,17,12613,12613,52613,4,1,0,4,6,1691,49248,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260512,phase_d2_mixed_ratio_shift,5,oasg_adaptive_from_strong,6,3,5000,16,9394,9394,39394,3,0,2,3,6,1605,17903,"['mut_schema_keys_only_code_transform_phase_d2_mixed_ratio_shift', 'mut_schema_keys_only_obligation_closure_phase_d2_mixed_ratio_shift']",2,[],0,0,0,3,0
+mixed_reversion_only_probe,20260512,phase_d2_mixed_ratio_shift,6,strong_static_calibrated,6,2,3333,20,11278,11278,51278,4,0,2,4,6,1690,35909,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260512,phase_d2_mixed_ratio_shift,6,oasg_observe_only_from_strong,6,2,3333,20,11274,11274,51274,4,0,2,4,6,1690,35875,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260512,phase_d2_mixed_ratio_shift,6,rule_adaptive_control,6,2,3333,17,12904,12904,52904,4,1,0,4,6,1700,52053,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260512,phase_d2_mixed_ratio_shift,6,oasg_adaptive_from_strong,6,3,5000,16,9502,9502,39502,3,0,2,3,6,1605,18999,"['mut_schema_keys_only_code_transform_phase_d2_mixed_ratio_shift', 'mut_schema_keys_only_obligation_closure_phase_d2_mixed_ratio_shift']",2,[],0,0,0,3,0
+mixed_reversion_only_probe,20260513,phase_d1_mixed_reversion,3,strong_static_calibrated,6,2,3333,20,10770,10770,50770,4,0,2,4,6,1664,31089,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260513,phase_d1_mixed_reversion,3,oasg_observe_only_from_strong,6,2,3333,20,10787,10787,50787,4,0,2,4,6,1664,31246,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260513,phase_d1_mixed_reversion,3,rule_adaptive_control,6,3,5000,16,9376,9376,39376,3,0,2,3,6,1604,17744,[],0,[],0,0,0,3,0
+mixed_reversion_only_probe,20260513,phase_d1_mixed_reversion,3,oasg_adaptive_from_strong,6,2,3333,20,10753,10753,50753,4,0,2,4,6,1664,30930,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260513,phase_d1_mixed_reversion,4,strong_static_calibrated,6,2,3333,20,11473,11473,51473,4,0,2,4,6,1719,37571,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260513,phase_d1_mixed_reversion,4,oasg_observe_only_from_strong,6,2,3333,20,11476,11476,51476,4,0,2,4,6,1719,37583,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260513,phase_d1_mixed_reversion,4,rule_adaptive_control,6,2,3333,16,14246,14246,54246,4,0,0,4,6,1957,62915,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260513,phase_d1_mixed_reversion,4,oasg_adaptive_from_strong,6,3,5000,16,9619,9619,39619,3,0,2,3,6,1680,19410,['mut_schema_keys_only_obligation_closure_phase_d1_mixed_reversion'],1,[],0,0,0,3,0
+mixed_reversion_only_probe,20260513,phase_d2_mixed_ratio_shift,5,strong_static_calibrated,6,2,3333,20,10713,10713,50713,4,0,2,4,6,1692,30243,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260513,phase_d2_mixed_ratio_shift,5,oasg_observe_only_from_strong,6,2,3333,20,10746,10746,50746,4,0,2,4,6,1692,30560,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260513,phase_d2_mixed_ratio_shift,5,rule_adaptive_control,6,2,3333,16,10945,10945,50945,4,0,0,4,6,1572,33767,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260513,phase_d2_mixed_ratio_shift,5,oasg_adaptive_from_strong,6,3,5000,16,9400,9400,39400,3,0,2,3,6,1605,17986,"['mut_schema_keys_only_code_transform_phase_d2_mixed_ratio_shift', 'mut_schema_keys_only_obligation_closure_phase_d2_mixed_ratio_shift']",2,[],0,0,0,3,0
+mixed_reversion_only_probe,20260513,phase_d2_mixed_ratio_shift,6,strong_static_calibrated,6,2,3333,20,11287,11287,51287,4,0,2,4,6,1721,35683,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260513,phase_d2_mixed_ratio_shift,6,oasg_observe_only_from_strong,6,2,3333,20,11258,11258,51258,4,0,2,4,6,1721,35386,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260513,phase_d2_mixed_ratio_shift,6,rule_adaptive_control,6,2,3333,16,10936,10936,50936,4,0,0,4,6,1572,33663,[],0,[],0,0,0,4,0
+mixed_reversion_only_probe,20260513,phase_d2_mixed_ratio_shift,6,oasg_adaptive_from_strong,6,3,5000,16,9415,9415,39415,3,0,2,3,6,1605,18122,"['mut_schema_keys_only_code_transform_phase_d2_mixed_ratio_shift', 'mut_schema_keys_only_obligation_closure_phase_d2_mixed_ratio_shift']",2,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260509,phase_b_mild_drift,3,strong_static_calibrated,6,2,3333,16,12071,12071,52071,3,2,0,4,6,1573,45004,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260509,phase_b_mild_drift,3,oasg_observe_only_from_strong,6,2,3333,16,12130,12130,52130,3,2,0,4,6,1573,45602,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260509,phase_b_mild_drift,3,rule_adaptive_control,6,3,5000,11,10157,10157,40157,2,1,0,3,6,1561,25994,[],0,[],0,0,0,2,0
+no_mixed_reversion_ablation,20260509,phase_b_mild_drift,3,oasg_adaptive_from_strong,6,2,3333,16,12143,12143,52143,3,2,0,4,6,1573,45733,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260509,phase_b_mild_drift,4,strong_static_calibrated,6,2,3333,16,11543,11543,51543,3,2,0,4,6,1568,39781,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260509,phase_b_mild_drift,4,oasg_observe_only_from_strong,6,2,3333,16,11535,11535,51535,3,2,0,4,6,1568,39690,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260509,phase_b_mild_drift,4,rule_adaptive_control,6,3,5000,12,11858,11858,41858,3,0,0,3,6,1554,43066,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260509,phase_b_mild_drift,4,oasg_adaptive_from_strong,6,3,5000,11,10444,10444,40444,2,1,0,3,6,1561,28859,"['mut_schema_keys_only_code_transform_phase_b_mild_drift', 'mut_schema_keys_only_obligation_closure_phase_b_mild_drift']",2,[],0,0,0,2,0
+no_mixed_reversion_ablation,20260509,phase_c1_structural_drift,5,strong_static_calibrated,6,3,5000,12,13040,13040,43040,3,0,0,3,6,1830,52123,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260509,phase_c1_structural_drift,5,oasg_observe_only_from_strong,6,3,5000,12,13080,13080,43080,3,0,0,3,6,1830,52534,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260509,phase_c1_structural_drift,5,rule_adaptive_control,6,2,3333,16,13953,13953,53953,4,0,0,4,6,1875,60816,[],0,[],0,0,0,4,0
+no_mixed_reversion_ablation,20260509,phase_c1_structural_drift,5,oasg_adaptive_from_strong,6,3,5000,12,12788,12788,42788,3,0,0,3,6,1901,48888,"['mut_schema_keys_only_obligation_closure_phase_c1_structural_drift', 'mut_strict_json_minimal_code_transform_phase_c1_structural_drift']",2,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260509,phase_c1_structural_drift,6,strong_static_calibrated,6,2,3333,16,13305,13305,53305,4,0,0,4,6,1823,54854,[],0,[],0,0,0,4,0
+no_mixed_reversion_ablation,20260509,phase_c1_structural_drift,6,oasg_observe_only_from_strong,6,2,3333,16,13352,13352,53352,4,0,0,4,6,1823,55309,[],0,[],0,0,0,4,0
+no_mixed_reversion_ablation,20260509,phase_c1_structural_drift,6,rule_adaptive_control,6,2,3333,16,13389,13389,53389,4,0,0,4,6,1883,55086,[],0,[],0,0,0,4,0
+no_mixed_reversion_ablation,20260509,phase_c1_structural_drift,6,oasg_adaptive_from_strong,6,3,5000,12,12071,12071,42071,3,0,0,3,6,1851,42223,"['mut_schema_keys_only_code_transform_phase_c1_structural_drift', 'mut_schema_keys_only_obligation_closure_phase_c1_structural_drift']",2,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260509,phase_c2_structural_surface_shift,7,strong_static_calibrated,6,3,5000,12,13252,13252,43252,3,0,0,3,6,1812,54436,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260509,phase_c2_structural_surface_shift,7,oasg_observe_only_from_strong,6,3,5000,12,13230,13230,43230,3,0,0,3,6,1812,54210,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260509,phase_c2_structural_surface_shift,7,rule_adaptive_control,6,2,3333,16,13382,13382,53382,4,0,0,4,6,1839,55461,[],0,[],0,0,0,4,0
+no_mixed_reversion_ablation,20260509,phase_c2_structural_surface_shift,7,oasg_adaptive_from_strong,6,3,5000,12,12531,12531,42531,3,0,0,3,6,1714,48206,"['mut_policy_tightening_obligation_closure_phase_c2_structural_surface_shift', 'mut_schema_keys_only_code_transform_phase_c2_structural_surface_shift']",2,['mut_policy_tightening_obligation_closure_phase_c2_structural_surface_shift'],1,0,0,3,0
+no_mixed_reversion_ablation,20260509,phase_c2_structural_surface_shift,8,strong_static_calibrated,6,3,5000,12,12661,12661,42661,3,0,0,3,6,1823,48417,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260509,phase_c2_structural_surface_shift,8,oasg_observe_only_from_strong,6,3,5000,12,12657,12657,42657,3,0,0,3,6,1823,48357,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260509,phase_c2_structural_surface_shift,8,rule_adaptive_control,6,2,3333,16,12835,12835,52835,4,0,0,4,6,1840,49965,[],0,[],0,0,0,4,0
+no_mixed_reversion_ablation,20260509,phase_c2_structural_surface_shift,8,oasg_adaptive_from_strong,6,3,5000,12,11926,11926,41926,3,0,0,3,6,1856,40724,"['mut_schema_keys_only_code_transform_phase_c2_structural_surface_shift', 'mut_schema_keys_only_obligation_closure_phase_c2_structural_surface_shift']",2,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260510,phase_b_mild_drift,3,strong_static_calibrated,6,2,3333,16,11857,11857,51857,3,2,0,4,6,1570,42884,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260510,phase_b_mild_drift,3,oasg_observe_only_from_strong,6,2,3333,16,11875,11875,51875,3,2,0,4,6,1570,43081,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260510,phase_b_mild_drift,3,rule_adaptive_control,6,3,5000,11,10223,10223,40223,2,1,0,3,6,1565,26593,[],0,[],0,0,0,2,0
+no_mixed_reversion_ablation,20260510,phase_b_mild_drift,3,oasg_adaptive_from_strong,6,2,3333,16,11988,11988,51988,3,2,0,4,6,1570,44204,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260510,phase_b_mild_drift,4,strong_static_calibrated,6,2,3333,16,11175,11175,51175,3,2,0,4,6,1569,36084,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260510,phase_b_mild_drift,4,oasg_observe_only_from_strong,6,2,3333,16,11291,11291,51291,3,2,0,4,6,1569,37239,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260510,phase_b_mild_drift,4,rule_adaptive_control,6,3,5000,12,12068,12068,42068,3,0,0,3,6,1558,45132,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260510,phase_b_mild_drift,4,oasg_adaptive_from_strong,6,3,5000,11,10448,10448,40448,2,1,0,3,6,1569,28820,"['mut_schema_keys_only_code_transform_phase_b_mild_drift', 'mut_schema_keys_only_obligation_closure_phase_b_mild_drift']",2,[],0,0,0,2,0
+no_mixed_reversion_ablation,20260510,phase_c1_structural_drift,5,strong_static_calibrated,6,3,5000,12,13167,13167,43167,3,0,0,3,6,1812,53585,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260510,phase_c1_structural_drift,5,oasg_observe_only_from_strong,6,3,5000,12,13345,13345,43345,3,0,0,3,6,1812,55347,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260510,phase_c1_structural_drift,5,rule_adaptive_control,6,2,3333,16,13320,13320,53320,4,0,0,4,6,1843,54802,[],0,[],0,0,0,4,0
+no_mixed_reversion_ablation,20260510,phase_c1_structural_drift,5,oasg_adaptive_from_strong,6,3,5000,12,12936,12936,42936,3,0,0,3,6,1897,50405,"['mut_schema_keys_only_obligation_closure_phase_c1_structural_drift', 'mut_strict_json_minimal_code_transform_phase_c1_structural_drift']",2,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260510,phase_c1_structural_drift,6,strong_static_calibrated,6,3,5000,12,12712,12712,42712,3,0,0,3,6,1778,49371,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260510,phase_c1_structural_drift,6,oasg_observe_only_from_strong,6,3,5000,12,12904,12904,42904,3,0,0,3,6,1778,51282,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260510,phase_c1_structural_drift,6,rule_adaptive_control,6,2,3333,16,13882,13882,53882,4,0,0,4,6,1838,60470,[],0,[],0,0,0,4,0
+no_mixed_reversion_ablation,20260510,phase_c1_structural_drift,6,oasg_adaptive_from_strong,6,3,5000,12,12301,12301,42301,3,0,0,3,6,1814,44900,"['mut_schema_keys_only_code_transform_phase_c1_structural_drift', 'mut_schema_keys_only_obligation_closure_phase_c1_structural_drift']",2,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260510,phase_c2_structural_surface_shift,7,strong_static_calibrated,6,3,5000,12,12211,12211,42211,3,0,0,3,6,1785,44289,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260510,phase_c2_structural_surface_shift,7,oasg_observe_only_from_strong,6,3,5000,12,12351,12351,42351,3,0,0,3,6,1785,45679,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260510,phase_c2_structural_surface_shift,7,rule_adaptive_control,6,2,3333,16,12898,12898,52898,4,0,0,4,6,1841,50600,[],0,[],0,0,0,4,0
+no_mixed_reversion_ablation,20260510,phase_c2_structural_surface_shift,7,oasg_adaptive_from_strong,6,3,5000,12,11838,11838,41838,3,0,0,3,6,1817,40232,"['mut_schema_keys_only_code_transform_phase_c2_structural_surface_shift', 'mut_schema_keys_only_obligation_closure_phase_c2_structural_surface_shift']",2,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260510,phase_c2_structural_surface_shift,8,strong_static_calibrated,6,3,5000,12,12758,12758,42758,3,0,0,3,6,1813,49482,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260510,phase_c2_structural_surface_shift,8,oasg_observe_only_from_strong,6,3,5000,12,12877,12877,42877,3,0,0,3,6,1813,50665,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260510,phase_c2_structural_surface_shift,8,rule_adaptive_control,6,2,3333,16,13372,13372,53372,4,0,0,4,6,1888,54865,[],0,[],0,0,0,4,0
+no_mixed_reversion_ablation,20260510,phase_c2_structural_surface_shift,8,oasg_adaptive_from_strong,6,3,5000,12,11998,11998,41998,3,0,0,3,6,1856,41446,"['mut_schema_keys_only_code_transform_phase_c2_structural_surface_shift', 'mut_schema_keys_only_obligation_closure_phase_c2_structural_surface_shift']",2,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260511,phase_b_mild_drift,3,strong_static_calibrated,6,2,3333,16,11365,11365,51365,3,2,0,4,6,1565,38026,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260511,phase_b_mild_drift,3,oasg_observe_only_from_strong,6,2,3333,16,11291,11291,51291,3,2,0,4,6,1565,37286,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260511,phase_b_mild_drift,3,rule_adaptive_control,6,3,5000,11,10094,10094,40094,2,1,0,3,6,1558,25378,[],0,[],0,0,0,2,0
+no_mixed_reversion_ablation,20260511,phase_b_mild_drift,3,oasg_adaptive_from_strong,6,2,3333,16,11322,11322,51322,3,2,0,4,6,1565,37598,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260511,phase_b_mild_drift,4,strong_static_calibrated,6,2,3333,16,11333,11333,51333,3,2,0,4,6,1565,37711,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260511,phase_b_mild_drift,4,oasg_observe_only_from_strong,6,2,3333,16,11309,11309,51309,3,2,0,4,6,1565,37463,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260511,phase_b_mild_drift,4,rule_adaptive_control,6,3,5000,12,11949,11949,41949,3,0,0,3,6,1711,42405,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260511,phase_b_mild_drift,4,oasg_adaptive_from_strong,6,3,5000,11,10547,10547,40547,2,1,0,3,6,1568,29816,"['mut_schema_keys_only_code_transform_phase_b_mild_drift', 'mut_schema_keys_only_obligation_closure_phase_b_mild_drift']",2,[],0,0,0,2,0
+no_mixed_reversion_ablation,20260511,phase_c1_structural_drift,5,strong_static_calibrated,6,3,5000,12,13707,13707,43707,3,0,0,3,6,1808,59020,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260511,phase_c1_structural_drift,5,oasg_observe_only_from_strong,6,3,5000,12,13725,13725,43725,3,0,0,3,6,1808,59200,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260511,phase_c1_structural_drift,5,rule_adaptive_control,6,2,3333,16,13842,13842,53842,4,0,0,4,6,1843,60015,[],0,[],0,0,0,4,0
+no_mixed_reversion_ablation,20260511,phase_c1_structural_drift,5,oasg_adaptive_from_strong,6,3,5000,12,12987,12987,42987,3,0,0,3,6,1876,51132,"['mut_schema_keys_only_obligation_closure_phase_c1_structural_drift', 'mut_strict_json_minimal_code_transform_phase_c1_structural_drift']",2,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260511,phase_c1_structural_drift,6,strong_static_calibrated,6,3,5000,12,13143,13143,43143,3,0,0,3,6,1818,53282,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260511,phase_c1_structural_drift,6,oasg_observe_only_from_strong,6,3,5000,12,12964,12964,42964,3,0,0,3,6,1818,51480,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260511,phase_c1_structural_drift,6,rule_adaptive_control,6,2,3333,16,13142,13142,53142,4,0,0,4,6,1840,53053,[],0,[],0,0,0,4,0
+no_mixed_reversion_ablation,20260511,phase_c1_structural_drift,6,oasg_adaptive_from_strong,6,3,5000,12,12249,12249,42249,3,0,0,3,6,1856,43951,"['mut_schema_keys_only_code_transform_phase_c1_structural_drift', 'mut_schema_keys_only_obligation_closure_phase_c1_structural_drift']",2,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260511,phase_c2_structural_surface_shift,7,strong_static_calibrated,6,3,5000,12,12934,12934,42934,3,0,0,3,6,1823,51135,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260511,phase_c2_structural_surface_shift,7,oasg_observe_only_from_strong,6,3,5000,12,12997,12997,42997,3,0,0,3,6,1823,51771,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260511,phase_c2_structural_surface_shift,7,rule_adaptive_control,6,2,3333,16,13806,13806,53806,4,0,0,4,6,1879,59299,[],0,[],0,0,0,4,0
+no_mixed_reversion_ablation,20260511,phase_c2_structural_surface_shift,7,oasg_adaptive_from_strong,6,3,5000,12,12674,12674,42674,3,0,0,3,6,1744,49328,"['mut_policy_tightening_obligation_closure_phase_c2_structural_surface_shift', 'mut_schema_keys_only_code_transform_phase_c2_structural_surface_shift']",2,['mut_policy_tightening_obligation_closure_phase_c2_structural_surface_shift'],1,0,0,3,0
+no_mixed_reversion_ablation,20260511,phase_c2_structural_surface_shift,8,strong_static_calibrated,6,3,5000,12,13115,13115,43115,3,0,0,3,6,1810,53074,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260511,phase_c2_structural_surface_shift,8,oasg_observe_only_from_strong,6,3,5000,12,13082,13082,43082,3,0,0,3,6,1810,52745,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260511,phase_c2_structural_surface_shift,8,rule_adaptive_control,6,2,3333,16,13573,13573,53573,4,0,0,4,6,1885,56902,[],0,[],0,0,0,4,0
+no_mixed_reversion_ablation,20260511,phase_c2_structural_surface_shift,8,oasg_adaptive_from_strong,6,3,5000,12,12223,12223,42223,3,0,0,3,6,1853,43734,"['mut_schema_keys_only_code_transform_phase_c2_structural_surface_shift', 'mut_schema_keys_only_obligation_closure_phase_c2_structural_surface_shift']",2,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260512,phase_b_mild_drift,3,strong_static_calibrated,6,2,3333,16,11955,11955,51955,3,2,0,4,6,1573,43837,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260512,phase_b_mild_drift,3,oasg_observe_only_from_strong,6,2,3333,16,11979,11979,51979,3,2,0,4,6,1573,44081,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260512,phase_b_mild_drift,3,rule_adaptive_control,6,3,5000,11,10094,10094,40094,2,1,0,3,6,1568,25287,[],0,[],0,0,0,2,0
+no_mixed_reversion_ablation,20260512,phase_b_mild_drift,3,oasg_adaptive_from_strong,6,2,3333,16,11884,11884,51884,3,2,0,4,6,1573,43136,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260512,phase_b_mild_drift,4,strong_static_calibrated,6,2,3333,16,11508,11508,51508,3,2,0,4,6,1567,39422,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260512,phase_b_mild_drift,4,oasg_observe_only_from_strong,6,2,3333,16,11533,11533,51533,3,2,0,4,6,1567,39704,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260512,phase_b_mild_drift,4,rule_adaptive_control,6,3,5000,12,12156,12156,42156,3,0,0,3,6,1713,44450,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260512,phase_b_mild_drift,4,oasg_adaptive_from_strong,6,3,5000,11,10655,10655,40655,2,1,0,3,6,1569,30882,"['mut_schema_keys_only_code_transform_phase_b_mild_drift', 'mut_schema_keys_only_obligation_closure_phase_b_mild_drift']",2,[],0,0,0,2,0
+no_mixed_reversion_ablation,20260512,phase_c1_structural_drift,5,strong_static_calibrated,6,3,5000,12,12789,12789,42789,3,0,0,3,6,1820,49721,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260512,phase_c1_structural_drift,5,oasg_observe_only_from_strong,6,3,5000,12,12829,12829,42829,3,0,0,3,6,1820,50127,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260512,phase_c1_structural_drift,5,rule_adaptive_control,6,2,3333,16,13600,13600,53600,4,0,0,4,6,1838,57648,[],0,[],0,0,0,4,0
+no_mixed_reversion_ablation,20260512,phase_c1_structural_drift,5,oasg_adaptive_from_strong,6,3,5000,12,12588,12588,42588,3,0,0,3,6,1891,46997,"['mut_schema_keys_only_obligation_closure_phase_c1_structural_drift', 'mut_strict_json_minimal_code_transform_phase_c1_structural_drift']",2,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260512,phase_c1_structural_drift,6,strong_static_calibrated,6,3,5000,12,13140,13140,43140,3,0,0,3,6,1820,53229,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260512,phase_c1_structural_drift,6,oasg_observe_only_from_strong,6,3,5000,12,13188,13188,43188,3,0,0,3,6,1820,53716,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260512,phase_c1_structural_drift,6,rule_adaptive_control,6,2,3333,16,13858,13858,53858,4,0,0,4,6,1838,60219,[],0,[],0,0,0,4,0
+no_mixed_reversion_ablation,20260512,phase_c1_structural_drift,6,oasg_adaptive_from_strong,6,3,5000,12,12831,12831,42831,3,0,0,3,6,1742,50928,"['mut_policy_tightening_obligation_closure_phase_c1_structural_drift', 'mut_schema_keys_only_code_transform_phase_c1_structural_drift']",2,['mut_policy_tightening_obligation_closure_phase_c1_structural_drift'],1,0,0,3,0
+no_mixed_reversion_ablation,20260512,phase_c2_structural_surface_shift,7,strong_static_calibrated,6,3,5000,12,13202,13202,43202,3,0,0,3,6,1813,53918,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260512,phase_c2_structural_surface_shift,7,oasg_observe_only_from_strong,6,3,5000,12,13277,13277,43277,3,0,0,3,6,1813,54670,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260512,phase_c2_structural_surface_shift,7,rule_adaptive_control,6,2,3333,16,13533,13533,53533,4,0,0,4,6,1848,56877,[],0,[],0,0,0,4,0
+no_mixed_reversion_ablation,20260512,phase_c2_structural_surface_shift,7,oasg_adaptive_from_strong,6,3,5000,12,12378,12378,42378,3,0,0,3,6,1856,45253,"['mut_schema_keys_only_code_transform_phase_c2_structural_surface_shift', 'mut_schema_keys_only_obligation_closure_phase_c2_structural_surface_shift']",2,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260512,phase_c2_structural_surface_shift,8,strong_static_calibrated,6,3,5000,12,13058,13058,43058,3,0,0,3,6,1813,52481,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260512,phase_c2_structural_surface_shift,8,oasg_observe_only_from_strong,6,3,5000,12,13090,13090,43090,3,0,0,3,6,1813,52798,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260512,phase_c2_structural_surface_shift,8,rule_adaptive_control,6,2,3333,16,13707,13707,53707,4,0,0,4,6,1839,58703,[],0,[],0,0,0,4,0
+no_mixed_reversion_ablation,20260512,phase_c2_structural_surface_shift,8,oasg_adaptive_from_strong,6,3,5000,12,12177,12177,42177,3,0,0,3,6,1855,43247,"['mut_schema_keys_only_code_transform_phase_c2_structural_surface_shift', 'mut_schema_keys_only_obligation_closure_phase_c2_structural_surface_shift']",2,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260513,phase_b_mild_drift,3,strong_static_calibrated,6,2,3333,16,11383,11383,51383,3,2,0,4,6,1578,38073,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260513,phase_b_mild_drift,3,oasg_observe_only_from_strong,6,2,3333,16,11361,11361,51361,3,2,0,4,6,1578,37853,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260513,phase_b_mild_drift,3,rule_adaptive_control,6,3,5000,11,10515,10515,40515,2,1,0,3,6,1570,29474,[],0,[],0,0,0,2,0
+no_mixed_reversion_ablation,20260513,phase_b_mild_drift,3,oasg_adaptive_from_strong,6,2,3333,16,11396,11396,51396,3,2,0,4,6,1578,38202,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260513,phase_b_mild_drift,4,strong_static_calibrated,6,2,3333,16,11314,11314,51314,3,2,0,4,6,1580,37375,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260513,phase_b_mild_drift,4,oasg_observe_only_from_strong,6,2,3333,16,11310,11310,51310,3,2,0,4,6,1580,37321,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260513,phase_b_mild_drift,4,rule_adaptive_control,6,3,5000,12,11770,11770,41770,3,0,0,3,6,1558,42141,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260513,phase_b_mild_drift,4,oasg_adaptive_from_strong,6,3,5000,11,10183,10183,40183,2,1,0,3,6,1569,26176,"['mut_schema_keys_only_code_transform_phase_b_mild_drift', 'mut_schema_keys_only_obligation_closure_phase_b_mild_drift']",2,[],0,0,0,2,0
+no_mixed_reversion_ablation,20260513,phase_c1_structural_drift,5,strong_static_calibrated,6,3,5000,12,13171,13171,43171,3,0,0,3,6,1781,53920,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260513,phase_c1_structural_drift,5,oasg_observe_only_from_strong,6,3,5000,12,13087,13087,43087,3,0,0,3,6,1781,53089,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260513,phase_c1_structural_drift,5,rule_adaptive_control,6,2,3333,16,13415,13415,53415,4,0,0,4,6,1837,55802,[],0,[],0,0,0,4,0
+no_mixed_reversion_ablation,20260513,phase_c1_structural_drift,5,oasg_adaptive_from_strong,6,3,5000,12,12457,12457,42457,3,0,0,3,6,1813,46474,"['mut_schema_keys_only_code_transform_phase_c1_structural_drift', 'mut_schema_keys_only_obligation_closure_phase_c1_structural_drift']",2,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260513,phase_c1_structural_drift,6,strong_static_calibrated,6,3,5000,12,12872,12872,42872,3,0,0,3,6,1782,50928,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260513,phase_c1_structural_drift,6,oasg_observe_only_from_strong,6,3,5000,12,12973,12973,42973,3,0,0,3,6,1782,51943,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260513,phase_c1_structural_drift,6,rule_adaptive_control,6,2,3333,16,13547,13547,53547,4,0,0,4,6,1838,57111,[],0,[],0,0,0,4,0
+no_mixed_reversion_ablation,20260513,phase_c1_structural_drift,6,oasg_adaptive_from_strong,6,3,5000,12,12122,12122,42122,3,0,0,3,6,1814,43109,"['mut_schema_keys_only_code_transform_phase_c1_structural_drift', 'mut_schema_keys_only_obligation_closure_phase_c1_structural_drift']",2,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260513,phase_c2_structural_surface_shift,7,strong_static_calibrated,6,3,5000,12,13107,13107,43107,3,0,0,3,6,1841,52680,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260513,phase_c2_structural_surface_shift,7,oasg_observe_only_from_strong,6,3,5000,12,13229,13229,43229,3,0,0,3,6,1841,53913,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260513,phase_c2_structural_surface_shift,7,rule_adaptive_control,6,2,3333,16,13458,13458,53458,4,0,0,4,6,1844,56166,[],0,[],0,0,0,4,0
+no_mixed_reversion_ablation,20260513,phase_c2_structural_surface_shift,7,oasg_adaptive_from_strong,6,3,5000,12,12242,12242,42242,3,0,0,3,6,1852,43933,"['mut_schema_keys_only_code_transform_phase_c2_structural_surface_shift', 'mut_schema_keys_only_obligation_closure_phase_c2_structural_surface_shift']",2,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260513,phase_c2_structural_surface_shift,8,strong_static_calibrated,6,3,5000,12,12870,12870,42870,3,0,0,3,6,1818,50546,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260513,phase_c2_structural_surface_shift,8,oasg_observe_only_from_strong,6,3,5000,12,12863,12863,42863,3,0,0,3,6,1818,50480,[],0,[],0,0,0,3,0
+no_mixed_reversion_ablation,20260513,phase_c2_structural_surface_shift,8,rule_adaptive_control,6,2,3333,16,14072,14072,54072,4,0,0,4,6,1887,61874,[],0,[],0,0,0,4,0
+no_mixed_reversion_ablation,20260513,phase_c2_structural_surface_shift,8,oasg_adaptive_from_strong,6,3,5000,12,12052,12052,42052,3,0,0,3,6,1861,41945,"['mut_schema_keys_only_code_transform_phase_c2_structural_surface_shift', 'mut_schema_keys_only_obligation_closure_phase_c2_structural_surface_shift']",2,[],0,0,0,3,0

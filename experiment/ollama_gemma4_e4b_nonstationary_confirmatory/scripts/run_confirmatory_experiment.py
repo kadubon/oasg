@@ -650,7 +650,9 @@ def _promote_from_prior_epoch(
                     "baseline_summary": baseline_summary,
                     "candidate_summary": best_summary,
                     "canary_task_ids": [str(row["task_id"]) for row in source_rows],
-                    "positive_evidence_hash": receipt_hash(best_candidate_rows),
+                    "positive_evidence_hash": receipt_hash(
+                        {"candidate_rows": best_candidate_rows}
+                    ),
                     "evidence_source": "runner_observed_canary_rows",
                 }
             )
