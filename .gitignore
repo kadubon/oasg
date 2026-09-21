@@ -1,5 +1,6 @@
 # Python / tool caches
 .venv/
+.tmp/
 .mypy_cache/
 .pytest_cache/
 .ruff_cache/
