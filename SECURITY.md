@@ -69,3 +69,18 @@ Also inspect generated artifacts before committing them:
 
 Experiment `runs/`, caches, `.env` files, build artifacts, coverage output, and local optimizer
 state are intentionally ignored.
+
+## Optional collective profile
+
+The fixed finite worker is shell-free and permits only registered pure line-set
+operations. Closed bounded wire records reject executable configuration, unknown
+fields, duplicate keys and noninteger quantities. Scoped signatures bind source
+records; they do not prove external truth. Same-version modified companion code
+is rejected. Native checkers, memory retrieval and model capacity never grant
+host authority. Current lease, fence, receiver, policy, dependency and expiry are
+rechecked at use. See [evidence](docs/collective-evidence.md),
+[recovery](docs/collective-recovery.md) and [release gates](docs/collective-release.md).
+
+Keep host keys and raw runtime stores private. Published qualification reports
+contain finite summaries and hashes only. PyPI uses registered OIDC trust and a
+protected environment; no long-lived package token is requested or stored.

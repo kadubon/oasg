@@ -87,3 +87,10 @@ safe to promote.
 The important lesson is not the toy task. The important lesson is the insertion point: your agent
 emits observable ledgers; OASG decides whether workflow-policy changes have enough evidence to be
 promoted.
+# Collective workflow option
+
+For a finite registered task, CCR assigns and funds work, OASG checks whether a
+workflow change improves its protected coordinates, and OAWM separately admits
+procedural memory. A later task still needs its own current host/receiver/lease
+checks. [The collective guide](collective-profile.md) includes a disposable
+two-cycle execution. This option does not broaden legacy promotion evidence.

@@ -45,6 +45,7 @@ from oasg.pressure import compute_pressure
 from oasg.reducers.core import ReducerSnapshot, reduce_ledger
 from oasg.scheduler import SchedulerResult, schedule_pressure
 from oasg.schemas import export_schemas
+from oasg.collective.cli import app as collective_app
 
 app = typer.Typer(help="OASG local-first workflow self-improvement toolkit.")
 ledger_app = typer.Typer(help="Ledger operations.")
@@ -73,6 +74,7 @@ app.add_typer(workload_app, name="workload")
 app.add_typer(harness_app, name="harness")
 app.add_typer(trial_app, name="trial")
 app.add_typer(experiment_app, name="experiment")
+app.add_typer(collective_app, name="collective")
 console = Console()
 
 

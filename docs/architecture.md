@@ -37,3 +37,9 @@ The trusted path is intentionally small:
 - optional append-only ingestion of accepted lease trial ledgers.
 
 Adapters are outside the gate. They may emit observable events, but they do not decide promotion.
+# Optional collective execution
+
+The additive `oasg.collective` package connects the existing local gate and
+lifecycle to owner-controlled native systems. See [the role map](collective-evidence.md),
+[source/contract profile](collective-profile.md), and [recovery rules](collective-recovery.md).
+Its eight closed schemas have separate URNs and do not modify legacy exports.

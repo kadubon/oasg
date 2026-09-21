@@ -101,7 +101,30 @@ conformance fixtures.
 
 ## Current Status
 
-Package version: `1.1.0`.
+Package version: `1.2.0` (Alpha).
+
+The optional [collective profile](docs/collective-profile.md) connects a registered
+finite CCR trial to OASG's existing gate, native OAWM admission, and an actual later
+CCR task in a fresh process. VEK checks verification records and a capacity model.
+It does not turn local improvement into execution authority or empirical AI evidence.
+The base installation and legacy schemas remain independent of these companions.
+
+For an explicit disposable execution from this checkout:
+
+```bash
+uv sync --locked --group native
+uv run --group native oasg collective support
+uv run --group native oasg collective example --out .tmp/collective-example --execute
+uv run --group native oasg collective replay .tmp/collective-example
+```
+
+Use a new empty output directory. Installed users can install the hash-locked
+`native-requirements.txt` release asset alongside OASG and run the same commands
+without `uv run --group native`. Read-only checks require no execution approval.
+See [evidence and ownership](docs/collective-evidence.md),
+[recovery](docs/collective-recovery.md), and [release qualification](docs/collective-release.md).
+The [public research index](https://kadubon.github.io/github.io/collective-intelligence-index.html)
+is an optional discovery aid.
 
 This repository is a working reference implementation with a conservative trusted core and an
 experimental long-running validation suite. It is suitable for local experiments and controlled
@@ -592,7 +615,7 @@ If you use OASG, cite the archived software release:
 ```yaml
 cff-version: 1.2.0
 title: "OASG: Observable-only Autonomic Slack Gradient for Local-first AI Agent Workflow Optimization"
-version: 1.1.0
+version: 1.2.0
 doi: 10.5281/zenodo.20107660
 repository-code: "https://github.com/kadubon/oasg"
 ```

@@ -19,3 +19,16 @@ Run:
 ```bash
 uv run oasg conformance run examples/conformance
 ```
+
+Phase 3 uses separate additive schemas and semantic tests:
+
+```bash
+uv sync --locked --group native
+uv run --group native pytest tests -k collective --cov=oasg.collective --cov-branch --cov-report=json:coverage.json
+uv run python scripts/check_collective_coverage.py coverage.json
+```
+
+These tests execute pinned distributed CCR/OAWM/VEK contracts, reconstruct source
+maps and signatures, run a later task in a fresh process, and reject substituted,
+stale, synthetic and unresolved evidence. Schema parsing alone is not native
+conformance. See [the supported subset](../../docs/collective-profile.md).

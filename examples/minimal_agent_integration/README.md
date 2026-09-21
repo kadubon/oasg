@@ -39,3 +39,10 @@ Expected statuses:
 
 The toy `trial_receipt.json` in this example is only a minimal receipt shape. Production promotion
 should use runner-produced shadow/lease ledgers from your actual workflow harness.
+# Optional native collective host
+
+This legacy adapter example remains unchanged. For a registered finite CCR task
+and native procedural-memory lifecycle, use the separate
+[collective profile](../../docs/collective-profile.md) and
+[host/recovery guide](../../docs/collective-recovery.md). Imported reports and
+retrieved procedures cannot select executable modules or grant host permission.

@@ -1,6 +1,6 @@
 [project]
 name = "oasg"
-version = "1.1.0"
+version = "1.2.0"
 description = "Observable-only Autonomic Slack Gradient reference implementation."
 readme = "README.md"
 requires-python = ">=3.12"
@@ -39,6 +39,18 @@ dev = [
   "mypy>=1.10",
   "pytest>=8.2",
   "ruff>=0.5",
+  "pytest-cov>=7",
+  "hypothesis>=6",
+  "cryptography>=44",
+  "pip-audit>=2.9",
+  "twine>=6",
+]
+native = [
+  "collective-capability-runtime==1.9.0",
+  "verification-ecology-kit==1.3.0",
+  "observable-agent-workflow-memory @ https://github.com/kadubon/observable-agent-workflow-memory/releases/download/v0.2.0b0/observable_agent_workflow_memory-0.2.0b0-py3-none-any.whl#sha256=acf1319ddce4f857ff507d3fbe58392f1839b2b89d7d3b9af4fc0ec1591d8cbd",
+  "alt-foundry-kernel @ https://github.com/kadubon/alt-foundry-kernel/releases/download/v0.5.0/alt_foundry_kernel-0.5.0-py3-none-any.whl#sha256=cd6755db6d97f978300d978695dc70c19d64fdd11c58e0c6dc4c1fcb7db9f487",
+  "cait-certificate-schema==0.2.0",
 ]
 
 [build-system]
