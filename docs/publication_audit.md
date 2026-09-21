@@ -192,3 +192,18 @@ The project is public-ready as an alpha research/reference implementation:
 - suitable for controlled local workflow-policy optimization and reproducible experiments;
 - conservative by design, with rejection preferred over false promotion;
 - not a claim of universal agent improvement, sandboxing, semantic truth, or model-weight learning.
+# Phase 3 qualification record
+
+The historical audit below remains a record of its original release. Phase 3
+adds isolated distributed-companion tests and a protected OIDC workflow described
+in [collective-release.md](collective-release.md). Local candidate wheel and sdist
+installation checks run outside checkout with runtime network blocked. They do
+not establish public PyPI availability. Public-install and release statuses must
+be checked separately in the release workflow and its manifest.
+
+Base and native dependency audits on 2026-09-22 reported no known vulnerabilities
+for queried distributions. The audit skipped OASG and the GitHub-only ALT/OAWM
+packages absent from its index; no audit clearance is claimed for those packages.
+The source/private-path scan found no credential or workstation-path matches in
+the changed source, tests, guides, workflows and scripts. Original raw runtime
+stores and host keys are not release assets.

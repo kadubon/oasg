@@ -111,3 +111,16 @@ blocks the local scope, then records native retirement/lifecycle changes and loc
 policy rollback. Rollback restores policy only. It cannot undo external effects.
 Read-only replay preserves historical results and explicitly requires a fresh
 host check before any further execution.
+
+The closed additive record set comprises contract, source, task binding, projection,
+workflow export, lifecycle feedback, checkpoint and execution schemas. A whole
+installed OASG checking/lifecycle code and schema commitment prevents a changed
+checker from accepting an older contract under the same identifier. Dependency
+installation metadata is not an authority source.
+
+For a separately preregistered finite negative control, the Python `example`
+helper accepts `negative_control=True`. A later actual execution loses its output;
+native verification rejects service and restricts future use. Its fourth signed
+CCR result records measured work without positive service. Independent replay
+totals 70. Reconciliation after a later host withdrawal creates another immutable
+source-bound snapshot and preserves the earlier as-of result.
