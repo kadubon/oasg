@@ -38,7 +38,11 @@ def main():
         ["conformance", "run", "conformance"],
         ["collective", "support"],
     ):
-        subprocess.run([str(executable), *command], check=True, capture_output=True)
+        result = subprocess.run(
+            [str(executable), *command], capture_output=True, text=True, timeout=60
+        )
+        if result.returncode:
+            raise RuntimeError(result.stdout[-4000:] + result.stderr[-8000:])
     assert all(row["content_verified"] for row in support()["companions"])
     rows = []
     for negative, expected in ((False, 62), (True, 70)):

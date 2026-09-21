@@ -24,7 +24,10 @@ if os.environ.get("OASG_OFFLINE_CHECK") == "1":
 
 
 def run(argv, **kwargs):
-    return subprocess.run(argv, check=True, text=True, capture_output=True, **kwargs).stdout
+    result = subprocess.run(argv, text=True, capture_output=True, timeout=300, **kwargs)
+    if result.returncode:
+        raise RuntimeError(result.stdout[-4000:] + result.stderr[-12000:])
+    return result.stdout
 
 
 def archive_check(path):
@@ -106,17 +109,16 @@ def main():
                 cwd=root,
             )
             run([str(python), "-m", "pip", "check"], cwd=root)
-            site = Path(
-                run(
-                    [str(python), "-c", "import sysconfig; print(sysconfig.get_path('purelib'))"],
-                    cwd=root,
-                ).strip()
-            )
-            (site / "sitecustomize.py").write_text(BLOCK_NETWORK, encoding="utf-8")
+            # Some system interpreters ship an earlier stdlib sitecustomize.
+            # Give this dedicated blocker precedence; it contains no application code.
+            guard = root / "offline-guard"
+            guard.mkdir()
+            (guard / "sitecustomize.py").write_text(BLOCK_NETWORK, encoding="utf-8")
             script = root / "installed_checks.py"
             shutil.copyfile(checkout / "scripts/installed_checks.py", script)
             env = {k: v for k, v in os.environ.items() if k not in {"PYTHONPATH", "VIRTUAL_ENV"}}
             env["OASG_OFFLINE_CHECK"] = "1"
+            env["PYTHONPATH"] = str(guard)
             output = run(
                 [str(python), str(script), "--version", args.version, "--checkout", str(checkout)],
                 cwd=root,
