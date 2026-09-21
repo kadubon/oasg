@@ -38,8 +38,7 @@ def execute(text: str, variant: str) -> Measurement:
             seen.append(line)
             index.add(line)
         trace.append(probes)
-    return Measurement(input=text, output="\n".join(sorted(seen)),
-                       probes=sum(trace), trace=trace)
+    return Measurement(input=text, output="\n".join(sorted(seen)), probes=sum(trace), trace=trace)
 
 
 def main() -> None:

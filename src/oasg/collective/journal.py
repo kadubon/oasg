@@ -6,7 +6,17 @@ import os
 from pathlib import Path
 from typing import Any
 
-from oasg.collective.wire import Contract, Closed, Digest, Name, digest, encoded, loads, sha
+from oasg.collective.wire import (
+    Contract,
+    Checkpoint,
+    Closed,
+    Digest,
+    Name,
+    digest,
+    encoded,
+    loads,
+    sha,
+)
 from oasg.library import _library_lock
 
 
@@ -19,9 +29,11 @@ class Entry(Closed):
 
 
 def check_ack(data: dict[str, Any]) -> None:
-    if (set(data) != {"intent", "original_result", "result_sha256"}
-            or not isinstance(data["original_result"], str)
-            or sha(data["original_result"].encode()) != data["result_sha256"]):
+    if (
+        set(data) != {"intent", "original_result", "result_sha256"}
+        or not isinstance(data["original_result"], str)
+        or sha(data["original_result"].encode()) != data["result_sha256"]
+    ):
         raise ValueError("invalid original acknowledgment")
 
 
@@ -31,7 +43,9 @@ class Journal:
 
     def inspect(self) -> dict[str, Any]:
         if not self.path.exists():
-            return {"revision": "0" * 64, "entries": [], "unresolved": [], "withdrawn": []}
+            return Checkpoint(
+                revision="0" * 64, entries=[], unresolved=[], withdrawn=[]
+            ).model_dump()
         raw = loads(self.path.read_bytes())
         if not isinstance(raw, list) or not 1 <= len(raw) <= 128:
             raise ValueError("invalid journal bounds")
@@ -42,7 +56,11 @@ class Journal:
         for row in raw:
             row = Entry.model_validate(row).model_dump()
             body = {k: row[k] for k in ("previous", "id", "kind", "data")}
-            if row["previous"] != previous or digest(body) != row["digest"] or row["id"] in identities:
+            if (
+                row["previous"] != previous
+                or digest(body) != row["digest"]
+                or row["id"] in identities
+            ):
                 raise ValueError("forked or conflicting journal")
             identities.add(row["id"])
             previous = row["digest"]
@@ -60,8 +78,9 @@ class Journal:
         if raw[0]["kind"] != "register" or any(r["kind"] == "register" for r in raw[1:]):
             raise ValueError("registration history missing or replaced")
         Contract.model_validate(raw[0]["data"]["contract"])
-        return {"revision": previous, "entries": raw, "unresolved": list(unresolved),
-                "withdrawn": withdrawals}
+        return Checkpoint(
+            revision=previous, entries=raw, unresolved=list(unresolved), withdrawn=withdrawals
+        ).model_dump()
 
     def append(self, kind: str, identity: str, data: dict[str, Any], *, expected: str) -> str:
         # Validate exact bounded JSON before acquiring the lock.

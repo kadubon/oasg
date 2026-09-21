@@ -19,6 +19,7 @@ from oasg.collective.wire import Contract, encoded, loads, sha
 @pytest.fixture(scope="module", autouse=True)
 def native_installed():
     import importlib.metadata
+
     for name, (package, _) in PINS.items():
         try:
             importlib.metadata.version(package)
@@ -85,13 +86,20 @@ def test_fixed_native_manifest():
     assert not result["execution_authorization"]
 
 
-@pytest.mark.parametrize("point,pending", [
-    ("task-created", "trial-task-lease"), ("lease-acquired", "trial-task-lease"),
-    ("execute-candidate", "execute-candidate"), ("trial-result", "trial-result"),
-    ("memory-admission", "memory-admission"), ("local-promotion", "local-promotion"),
-    ("cycle-two-use", "cycle-two-use"), ("memory-withdrawal", "withdrawal"),
-    ("policy-rollback", "withdrawal"),
-])
+@pytest.mark.parametrize(
+    "point,pending",
+    [
+        ("task-created", "trial-task-lease"),
+        ("lease-acquired", "trial-task-lease"),
+        ("execute-candidate", "execute-candidate"),
+        ("trial-result", "trial-result"),
+        ("memory-admission", "memory-admission"),
+        ("local-promotion", "local-promotion"),
+        ("cycle-two-use", "cycle-two-use"),
+        ("memory-withdrawal", "withdrawal"),
+        ("policy-rollback", "withdrawal"),
+    ],
+)
 def test_uncertain_effects_stop_without_retry_or_erasure(tmp_path, point, pending):
     root = tmp_path / "runtime"
     with pytest.raises(RuntimeError, match="injected crash"):
@@ -112,11 +120,11 @@ def test_uncertain_effects_stop_without_retry_or_erasure(tmp_path, point, pendin
 def test_single_winner_journal_cas(tmp_path, completed):
     original = Journal(completed[0]).inspect()["entries"][0]["data"]
     journal = Journal(tmp_path)
-    revision = journal.append("register", "registration", original, expected="0"*64)
+    revision = journal.append("register", "registration", original, expected="0" * 64)
 
     def append(i):
         try:
-            journal.append("intent", "attempt:"+str(i), {}, expected=revision)
+            journal.append("intent", "attempt:" + str(i), {}, expected=revision)
             return "committed"
         except ValueError:
             return "stale"
@@ -133,3 +141,38 @@ def test_source_files_remain_original(completed):
     trial = loads((root / "trial.json").read_bytes())
     for name, projection in zip(("baseline", "candidate"), trial["projections"], strict=True):
         assert (root / (name + ".json")).read_bytes() == encoded(projection["source"])
+
+
+def test_actual_negative_after_success_preserves_cost_and_blocks_reuse(tmp_path):
+    root = tmp_path / "fault-control"
+    report = example(root, negative_control=True)
+    assert report["second_cycle"]["outcome"]["service"]
+    negative = report["negative_control"]
+    assert negative["applied"]["negative_control"]
+    assert negative["applied"]["measurement"]["output"] == ""
+    assert negative["applied"]["measurement"]["probes"] == 8
+    assert not negative["outcome"]["service"]
+    assert not negative["eligible_after_check"]
+    assert not report["withdrawal"]["memory_eligible"]
+    checked = replay(root)
+    assert checked["actual_registered_work"] == 70
+    assert checked["source_costs"]["negative-use-work"] == 8
+    assert checked["source_costs"]["cycle-two-work"] == 8
+    assert checked["reward_added"] == checked["asset_stock_added"] == 0
+
+
+def test_native_cli_execution_and_explicit_reconciliation(tmp_path, completed):
+    from typer.testing import CliRunner
+    from oasg.cli import app
+
+    runner = CliRunner()
+    result = runner.invoke(
+        app, ["collective", "example", "--out", str(tmp_path / "cli"), "--execute"]
+    )
+    assert result.exit_code == 0, result.output
+    value = loads(result.output.encode())
+    assert value["second_cycle_policy"] == "indexed"
+    assert not value["after_withdrawal_eligible"]
+    reconciled = runner.invoke(app, ["collective", "reconcile", str(completed[0]), "--apply"])
+    assert reconciled.exit_code == 0, reconciled.output
+    assert loads(reconciled.output.encode())["idempotent"]

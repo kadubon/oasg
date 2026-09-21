@@ -37,10 +37,13 @@ class Contract(Closed):
     training: Annotated[list[Text], Field(min_length=2, max_length=8)]
     confirmation: Annotated[list[Text], Field(min_length=1, max_length=8)]
     candidate: Literal["indexed", "scan", "skip-last"] = "indexed"
+    negative_control: Literal["none", "second-use-output-loss"] = "none"
     baseline: Literal["scan"] = "scan"
     patch: Literal["set_routing_policy"] = "set_routing_policy"
     effects: Literal["pure"] = "pure"
-    measurement_rule: Literal["membership-probe-plus-registered-control-work-v1"] = "membership-probe-plus-registered-control-work-v1"
+    measurement_rule: Literal["membership-probe-plus-registered-control-work-v1"] = (
+        "membership-probe-plus-registered-control-work-v1"
+    )
     evidence_class: Literal["executed_finite_software", "synthetic"]
     clock: Literal["host-utc-seconds"] = "host-utc-seconds"
     registered_at: Clock
@@ -121,7 +124,9 @@ class Execution(Closed):
     received_at: Clock
     measurements: Annotated[list[Measurement], Field(min_length=1, max_length=8)]
     external_effects: Literal[0]
-    verification: Literal["positive", "negative", "timeout", "invalid", "inconclusive", "pending", "unavailable"]
+    verification: Literal[
+        "positive", "negative", "timeout", "invalid", "inconclusive", "pending", "unavailable"
+    ]
     complete: bool
     cost_id: Name
     work: Count
@@ -150,6 +155,49 @@ class Source(Closed):
         return result
 
 
+# Companion/legacy documents remain in their owner's wire domain. Their nested
+# semantics are independently reconstructed by check/replay, never coerced here.
+NativeDocument = Annotated[dict[str, Any], Field(max_length=64)]
+
+
+class ProjectionReport(Closed):
+    schema_id: Literal["oasg.collective.projection.v1"] = "oasg.collective.projection.v1"
+    contract: Digest
+    source: Source
+    records: Annotated[list[NativeDocument], Field(min_length=1, max_length=1)]
+    field_map: Annotated[dict[str, str], Field(max_length=16)]
+    dimensions: NativeDocument
+
+
+class WorkflowExport(Closed):
+    schema_id: Literal["oasg.collective.workflow.v1"] = "oasg.collective.workflow.v1"
+    contract: Digest
+    qualification: NativeDocument
+    receipt: NativeDocument
+    manifest: NativeDocument
+    intent: NativeDocument
+    memory: NativeDocument
+    revision: Digest
+    costs: Annotated[list[NativeDocument], Field(min_length=1, max_length=32)]
+
+
+class LifecycleFeedback(Closed):
+    schema_id: Literal["oasg.collective.feedback.v1"] = "oasg.collective.feedback.v1"
+    contract: Digest
+    memory: Digest
+    reason: Annotated[str, Field(min_length=1, max_length=256)]
+    time: Clock
+    signature: Annotated[str, Field(min_length=1, max_length=256)]
+
+
+class Checkpoint(Closed):
+    schema_id: Literal["oasg.collective.checkpoint.v1"] = "oasg.collective.checkpoint.v1"
+    revision: Digest
+    entries: Annotated[list[NativeDocument], Field(max_length=128)]
+    unresolved: Annotated[list[Name], Field(max_length=128)]
+    withdrawn: Annotated[list[LifecycleFeedback], Field(max_length=128)]
+
+
 def sha(raw: bytes) -> str:
     return hashlib.sha256(raw).hexdigest()
 
@@ -157,8 +205,9 @@ def sha(raw: bytes) -> str:
 def encoded(value: Any) -> bytes:
     if isinstance(value, BaseModel):
         value = value.model_dump(mode="json")
-    return json.dumps(value, sort_keys=True, ensure_ascii=False, separators=(",", ":"),
-                      allow_nan=False).encode("utf-8")
+    return json.dumps(
+        value, sort_keys=True, ensure_ascii=False, separators=(",", ":"), allow_nan=False
+    ).encode("utf-8")
 
 
 def digest(value: Any) -> str:
@@ -181,8 +230,9 @@ def loads(raw: bytes) -> Any:
         raise ValueError("only bounded integers supported")
 
     try:
-        result = json.loads(raw.decode("utf-8"), object_pairs_hook=pairs,
-                            parse_float=number, parse_constant=number)
+        result = json.loads(
+            raw.decode("utf-8"), object_pairs_hook=pairs, parse_float=number, parse_constant=number
+        )
     except (RecursionError, UnicodeError) as exc:
         raise ValueError("invalid encoding or nesting") from exc
     pending = [(result, 0)]

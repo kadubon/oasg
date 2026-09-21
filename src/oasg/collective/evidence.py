@@ -11,7 +11,15 @@ from oasg.collective.wire import Contract, Execution, Source, digest, encoded, s
 
 
 def checker_digest() -> str:
-    return sha(Path(__file__).read_bytes().replace(b"\r\n", b"\n"))
+    # Bind the whole installed checking/lifecycle implementation, including its schemas.
+    root = Path(__file__).parent.parent
+    return digest(
+        {
+            path.relative_to(root).as_posix(): sha(path.read_bytes().replace(b"\r\n", b"\n"))
+            for path in sorted(root.rglob("*"))
+            if path.is_file() and path.suffix in {".py", ".json"}
+        }
+    )
 
 
 def reference(text: str) -> str:
@@ -28,7 +36,8 @@ def checked_execution(contract: Contract, source: Source, public_key: bytes) -> 
     ed = importlib.import_module("cryptography.hazmat.primitives.asymmetric.ed25519")
     try:
         ed.Ed25519PublicKey.from_public_bytes(public_key).verify(
-            base64.b64decode(result.signature, validate=True), encoded(payload))
+            base64.b64decode(result.signature, validate=True), encoded(payload)
+        )
     except Exception as exc:
         raise ValueError("invalid scoped host signature") from exc
     if result.contract != digest(contract) or result.implementation != contract.implementation:
@@ -40,7 +49,13 @@ def checked_execution(contract: Contract, source: Source, public_key: bytes) -> 
         raise ValueError("worker or receiver mismatch")
     if binding.policy_digest != digest({"variant": result.variant}):
         raise ValueError("policy substitution")
-    if not contract.registered_at <= binding.lease_start <= result.observed_at <= result.received_at < min(binding.lease_end, contract.expires_at):
+    if (
+        not contract.registered_at
+        <= binding.lease_start
+        <= result.observed_at
+        <= result.received_at
+        < min(binding.lease_end, contract.expires_at)
+    ):
         raise ValueError("expired evidence or incompatible source clocks")
     if result.split == "training":
         inputs = contract.training
@@ -83,12 +98,17 @@ def checked_execution(contract: Contract, source: Source, public_key: bytes) -> 
 
 
 def eligibility(contract: Contract, result: Execution) -> dict[str, Any]:
-    supported = (contract.evidence_class == result.evidence_class == "executed_finite_software"
-                 and result.verification == "positive" and result.complete
-                 and result.work <= contract.max_work)
-    return {"runner_execution_support": supported,
-            "evidence_class": result.evidence_class,
-            "source_authentication": "scoped_host_attestation",
-            "verification_work_status": result.verification,
-            "execution_authorization": False,
-            "statistical_support": None}
+    supported = (
+        contract.evidence_class == result.evidence_class == "executed_finite_software"
+        and result.verification == "positive"
+        and result.complete
+        and result.work <= contract.max_work
+    )
+    return {
+        "runner_execution_support": supported,
+        "evidence_class": result.evidence_class,
+        "source_authentication": "scoped_host_attestation",
+        "verification_work_status": result.verification,
+        "execution_authorization": False,
+        "statistical_support": None,
+    }

@@ -10,11 +10,13 @@ from typing import Any
 
 from oasg.collective.wire import loads, sha
 
-PINS = {"ccr": ("collective-capability-runtime", "1.9.0"),
-        "oawm": ("observable-agent-workflow-memory", "0.2.0b0"),
-        "vek": ("verification-ecology-kit", "1.3.0"),
-        "alt": ("alt-foundry-kernel", "0.5.0"),
-        "cait": ("cait-certificate-schema", "0.2.0")}
+PINS = {
+    "ccr": ("collective-capability-runtime", "1.9.0"),
+    "oawm": ("observable-agent-workflow-memory", "0.2.0b0"),
+    "vek": ("verification-ecology-kit", "1.3.0"),
+    "alt": ("alt-foundry-kernel", "0.5.0"),
+    "cait": ("cait-certificate-schema", "0.2.0"),
+}
 
 
 def require(name: str) -> None:
@@ -34,7 +36,9 @@ def require(name: str) -> None:
 
 
 def manifest() -> dict[str, Any]:
-    value: dict[str, Any] = loads(files("oasg.collective").joinpath("resources/companions.json").read_bytes())
+    value: dict[str, Any] = loads(
+        files("oasg.collective").joinpath("resources/companions.json").read_bytes()
+    )
     return value
 
 
@@ -57,14 +61,32 @@ def support() -> dict[str, Any]:
                 require(name)
             except ValueError as exc:
                 problem = str(exc)
-        rows.append({"companion": name, "package": package, "expected": expected,
-                     "installed": actual, "compatible_version": actual == expected,
-                     "content_verified": actual == expected and problem is None,
-                     "problem": problem, "pin": pinned[name]})
-    return {"schema_id": "oasg.collective.support.v1", "companions": rows,
-            "profile": "finite-normalize-lines-v1", "classification": "Alpha",
-            "unsupported": ["production execution", "arbitrary procedures", "cross-receiver authority",
-                            "OAWM qualified.native.ccr_proposal with CCR 1.9.0", "distributed OAWM writers"],
-            "tested_subset": "registered receiver A; formation-first CCR action order; UTC integer seconds",
-            "operationally_observed": False, "execution_authorization": False,
-            "mutates": False}
+        rows.append(
+            {
+                "companion": name,
+                "package": package,
+                "expected": expected,
+                "installed": actual,
+                "compatible_version": actual == expected,
+                "content_verified": actual == expected and problem is None,
+                "problem": problem,
+                "pin": pinned[name],
+            }
+        )
+    return {
+        "schema_id": "oasg.collective.support.v1",
+        "companions": rows,
+        "profile": "finite-normalize-lines-v1",
+        "classification": "Alpha",
+        "unsupported": [
+            "production execution",
+            "arbitrary procedures",
+            "cross-receiver authority",
+            "OAWM qualified.native.ccr_proposal with CCR 1.9.0",
+            "distributed OAWM writers",
+        ],
+        "tested_subset": "registered receiver A; formation-first CCR action order; UTC integer seconds",
+        "operationally_observed": False,
+        "execution_authorization": False,
+        "mutates": False,
+    }
